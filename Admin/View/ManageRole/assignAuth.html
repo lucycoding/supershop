@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>分配权限</title>
+    <link rel="shortcut icon" href="favicon.ico">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	{include file="../inc/cssall.html"}
+  </head>
+  
+  <body>
+				<div class="row-fluid">
+                                    <div class="box span12" style="margin-top:0">
+                                        <div>
+                                                <ul class="breadcrumb">
+                                                    <li><i class="icon-lock"></i>权限管理/<a href="{$smarty.const.__CONTROLLER__}/roleList">角色列表</a>/<a href="{$smarty.const.__SELF__}">分配权限【{$rinfo.role_name}】</a></li>
+                                                </ul>
+                                        </div>
+                                        <div class="box-content" style="margin-left: 3px;margin-right: 3px;">
+                                            <form action="{$smarty.const.__SELF__}" method="post">
+                                                <input type="hidden" name="role_id" value="{$rinfo.role_id}"/>
+                                                <div style="margin-left:40%">
+                                                    <script>var chklevel = new Array();</script>
+                                                    <table>
+                                                {function printauth level=0}
+                                                {foreach $data as $v}
+                                                    {if $pid eq $v.auth_pid}
+                                                        {$fontsize = 16 - $level*2}
+                                                        {$fontweight = 900 - $level*400}
+                                                        <script>chklevel.push({$level});</script>
+                                                        <tr><td>{''|indent:$level:'　'}┗<span style="font-size:{$fontsize};font-weight:{$fontweight};">{$v.auth_name}</span></td><td><input type="checkbox" class="chk chk{$level}" data="{$v.auth_pid}" name="auth_id[]" value="{$v.auth_id}"></td></tr>
+                                                        {call printauth data=$data pid=$v.auth_id level=$level+1}
+                                                    {else}
+                                                        {continue}
+                                                    {/if}
+                                                {/foreach}
+                                                {/function}
+                                                {call printauth data=$auth_info pid=0 level=0}
+                                                    </table>
+                                                </div>
+                                                
+                                            {*<table width="100%" class="table_a" style="font-size: 12px;">
+	    					{foreach $auth_infoA as $k=>$v}
+						<tr>
+                                                    <td width="18%" style="font-size:14px;font-weight: bold;"><input type="checkbox" class="chk chka" data="{$v.auth_id}" da name="auth_id[]" value="{$v.auth_id}">{$v.auth_name}</td>
+                                                    <td>
+                                                        {foreach $auth_infoB as $kk=>$vv}
+                                                        {if $vv.auth_pid === $v.auth_id}
+                                                        <div style="width:200px;float:left;">
+                                                            <input type="checkbox" class="chk chkb" data="{$vv.auth_pid}" name="auth_id[]" value="{$vv.auth_id}">{$vv.auth_name}
+                                                        </div>
+                                                        {/if}
+                                                        {/foreach}
+                                                    </td>
+						</tr>
+						{/foreach}
+				     </table><br/>*}
+					<div align="center">
+                                            <input type="checkbox" class="chkall" value="">全选<br/><br/>
+                                            <input type="submit" class="btn btn-success" value="保存">　
+                                            <a href="javascript:void(0);" onclick="chkrset()" class="btn btn-primary">重置</a>
+					</div> 	<br/>
+                                            </form>
+				</div>
+			    </div>  <!-- row-fluid -->				
+			</div>
+			<!--/#content.span9-->
+  		{include file="../inc/jsall.html"}
+                <script>
+                    var auth_ids = '{$rinfo.role_auth_ids}';
+                    var arr_auth_ids = auth_ids.split(',');
+                {literal}
+                    function chkrset() {
+                        $('.chk').attr("checked",false);
+                        for(var i=0;i<arr_auth_ids.length;i++)
+                            $('.chk[value='+arr_auth_ids[i]+']').attr("checked",true);
+                    }
+//                    function foreachtop(chklevel,id,flag) {
+//                        for(var i = 0;i<chklevel.length;i++) {
+//                            if(id != 0) {
+//                                $('.chk'+chklevel[i]+'[data='+id+']').attr("checked",flag);
+//                                var tmp = $('.chk'+chklevel[i]+'[value='+id+']').val();
+//                                foreachtop(chklevel,tmp,flag);
+//                            } else {
+//                                continue;
+//                            }
+//                        }
+//                    }
+                    $(function(){
+                        chkrset();
+                        $(".chk").change(function(){
+                            var flag = $(this).is(':checked');
+                            var pid = $(this).attr('data');
+//                            var ptopid = $(this).attr('data-path').split('-')[0];
+                            var id = $(this).val();
+//                            $('.chk[value='+ptopid+']').not($(this)).attr("checked",flag);
+                            for(var i = 0;i<chklevel.length;i++) {
+                                $('.chk'+chklevel[i]+'[data='+id+']').attr("checked",flag);
+                            }
+                                if($('.chk[data='+pid+']:checked').length >0) {
+                                    $('.chk[value='+pid+']').attr("checked",true);
+                                } else {
+                                    $('.chk[value='+pid+']').attr("checked",false);
+                                }
+                        });
+//                        $(".chkb").click(function(){
+//                            var bid = $(this).attr('data');
+//                            var a = $('.chka[data='+bid+']');
+//                            if($('.chkb[data='+bid+']:checked').length >0) {
+//                                a.attr("checked",true);
+//                            } else {
+//                                a.attr("checked",false);
+//                            }
+//                        });
+                        $(".chkall").click(function(){
+                            var flag = $(this).is(':checked');
+                            $('.chk').attr("checked",flag);
+                        });
+                    });
+                {/literal}
+                </script>
+  </body>
+</html>
+
+    	
+    	
+    	
+    	

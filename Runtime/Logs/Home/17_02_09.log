@@ -1,0 +1,22 @@
+[ 2017-02-09T17:21:17+08:00 ] 127.0.0.1 /supershop/Home/Goods/addCart/r=1486632076002
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+NOTIC: [8] Constant LANG_SET already defined E:\MyEnv\apache\htdocs\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+NOTIC: [8] Undefined index: l E:\MyEnv\apache\htdocs\supershop\Tools\HomeController.class.php 第 26 行.
+NOTIC: [8] Memcache::connect():  E:\MyEnv\apache\htdocs\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect():  E:\MyEnv\apache\htdocs\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `tb_inform` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `tb_inform` WHERE `valid_flag` = 1  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `tb_category` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `tb_category` WHERE `valid_flag` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `tb_goods` [ RunTime:0.0050s ]
+SQL: SELECT g.goods_id,g.goods_name,g.goods_old_price,g.goods_now_price,g.goods_image_url,g.goods_thumb_url,gc.type_id FROM tb_goods g INNER JOIN tb_goods_cate gc ON g.goods_id= gc.goods_id  WHERE gc.type_id IN (1001,1002,1003,1004,1007,1008,1009,1010,1011,1012,1013) AND g.valid_flag = 1 AND g.status = 1 ORDER BY g.goods_id desc LIMIT 6   [ RunTime:0.0010s ]
+SQL: SELECT g.goods_id,g.goods_name,g.goods_old_price,g.goods_now_price,g.goods_image_url,g.goods_thumb_url,gc.type_id FROM tb_goods g INNER JOIN tb_goods_cate gc ON g.goods_id= gc.goods_id  WHERE gc.type_id IN (1005) AND g.valid_flag = 1 AND g.status = 1 ORDER BY g.goods_id desc LIMIT 6   [ RunTime:0.0010s ]
+SQL: SELECT g.goods_id,g.goods_name,g.goods_old_price,g.goods_now_price,g.goods_image_url,g.goods_thumb_url,gc.type_id FROM tb_goods g INNER JOIN tb_goods_cate gc ON g.goods_id= gc.goods_id  WHERE gc.type_id IN (1006) AND g.valid_flag = 1 AND g.status = 1 ORDER BY g.goods_id desc LIMIT 6   [ RunTime:0.0000s ]
+
+[ 2017-02-09T17:21:21+08:00 ] 127.0.0.1 /supershop/cart.jsp
+ERR: 无法加载控制器:Cart.jsp
+

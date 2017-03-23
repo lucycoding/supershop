@@ -1,0 +1,4 @@
+[ 2016-02-29T17:47:48+08:00 ] 127.0.0.1 /supershop/index.php/Index.html
+ERR: 1146:Table 'supershop.tb_supertype' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `tb_supertype` 
+

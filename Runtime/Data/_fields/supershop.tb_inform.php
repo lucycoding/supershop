@@ -1,0 +1,1 @@
+a:7:{i:0;s:9:"inform_id";i:1;s:12:"inform_title";i:2;s:14:"inform_content";i:3;s:10:"valid_flag";i:4;s:11:"create_time";s:3:"_pk";s:9:"inform_id";s:5:"_type";a:5:{s:9:"inform_id";s:10:"bigint(20)";s:12:"inform_title";s:11:"varchar(30)";s:14:"inform_content";s:11:"varchar(30)";s:10:"valid_flag";s:7:"char(1)";s:11:"create_time";s:9:"timestamp";}}

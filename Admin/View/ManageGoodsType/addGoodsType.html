@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>添加分类</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	
+	{include file="../inc/cssall.html"}
+  </head>
+  
+  <body>
+				<div class="row-fluid">
+			   	   <div class="box span12" style="margin-top:0">
+                                        <div>
+                                                <ul class="breadcrumb">
+                                                    <li><i class="icon-user"></i>商品管理/<a href="{$smarty.const.__CONTROLLER__}/goodsTypeList"></a>类别管理/<a href="{$smarty.const.__CONTROLLER__}/addGoodsType">添加类别</a></li>
+                                                </ul>
+                                        </div>
+                                       <form name="addGoodsType_form" method="post" action="{$smarty.const.__SELF__}">  
+					<fieldset style="margin-left: 30%">
+						
+						<div class="control-group">
+                                                    <label class="control-label">类别名称:</label>
+                                                    <input style="height: 25px" class="input-large focused" type="text" id="goodsTypeName" name="type_name"/>
+						</div>
+                                            
+						<div class="control-group">
+							<label class="control-label">类别父级:</label>
+                                                        <select id="goodsTypePid" name="type_pid">
+								<option value="0">请选择(默认顶级)</option>
+							{foreach $tinfo as $v}
+								<option value="{$v.type_id}">{$v.type_name|indent:$v.type_level:'-/'}</option>
+							{/foreach}
+							</select>
+						</div>
+                                            
+						<div class="form-actions" style="background-color: white;border: 0;margin-left: 20%">
+							<button class="btn btn-primary" type="submit"><i class="icon-plus-sign icon-white"></i>添加</button><br/>
+						</div> <!-- /form-actions -->
+					</fieldset>
+    	</form>
+						<br/><br/>
+					
+			    </div>  <!-- row-fluid -->				
+			</div>
+			<!--/#content.span9-->
+  		{include file="../inc/jsall.html"}
+  </body>
+</html>
+
+

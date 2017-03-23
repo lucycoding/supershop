@@ -1,0 +1,94 @@
+{if $smarty.session.user == null}
+<script>alert('会话已过期，请登录!');top.window.location.href='{$smarty.const.__CONTROLLER__}/login';</script>
+{/if}
+<!DOCTYPE HTML>
+<html>
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <title>用户信息</title>
+
+  <link rel="shortcut icon" href="{$smarty.const.PUBLIC_URL}favicon.ico">
+  <link href="{$smarty.const.PUBLIC_URL}css/style.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="{$smarty.const.PUBLIC_URL}css/grid.css" media="screen" rel="stylesheet" type="text/css">
+ 
+  <script src="{$smarty.const.PUBLIC_URL}js/jquery-1.7.2.min.js" ></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/html5.js" ></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/jflow.plus.js"></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/jquery.carouFredSel-5.2.2-packed.js"></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/checkbox.js"></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/radio.js"></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/selectBox.js"></script>
+
+</head>
+<body style="background: none">
+  
+    <div class="container_12">      
+
+		<div class="grid_12 adress">
+			<div class="grid_5" style="float:left;">
+				<br/>
+                                {$user = $smarty.session.user}
+				<span style="font-size: 20px;font-weight: bold;">用户名：</span>
+				{$user.user_name}<br/><br/>
+				<hr>
+				
+				<br/>
+				<span style="font-size: 20px;font-weight: bold;">邮　箱：</span>
+				{$user.user_email}<br/><br/>
+				<hr>
+				
+				<br/>
+				<span style="font-size: 20px;font-weight: bold;">真　名：</span>
+				{$user.user_truename}<br/><br/>
+				<hr>
+				
+				<br/>
+				<span style="font-size: 20px;font-weight: bold;">性　别：</span>
+				{$user.user_gender}<br/><br/>
+				<hr>
+				
+				<br/>
+				<span style="font-size: 20px;font-weight: bold;">生　日：</span>
+				{$user.user_birth}<br/><br/>
+				<hr>
+			</div>	
+			<div class="grid_5" style="float:left;">
+				<br/>
+				<span style="font-size: 20px;font-weight: bold;">地　　址：</span>
+				{$user.user_address}<br/><br/>
+				<hr>
+				
+				<br/>
+				<span style="font-size: 20px;font-weight: bold;">邮　　编：</span>
+				{$user.user_postcode}<br/><br/>
+				<hr>
+				
+				<br/>
+				<span style="font-size: 20px;font-weight: bold;">固　　话：</span>
+				{$user.user_office_phone}<br/><br/>
+				<hr>
+				
+				<br/>
+				<span style="font-size: 20px;font-weight: bold;">手　　机：</span>
+				{$user.user_phone}<br/><br/>
+				<hr>
+				
+				<br/>
+				<span style="font-size: 20px;font-weight: bold;">密保问题：</span>
+				{$user.safe_question}<br/><br/>
+				<hr>
+			</div>
+        </div><!-- .adress -->
+       
+      <div class="clear"></div>
+    </div><!-- .container_12 -->
+  
+  <div class="clear"></div>
+</body>
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+</html>

@@ -1,0 +1,16 @@
+[ 2016-04-20T01:53:08+08:00 ] 127.0.0.1 /supershop/Admin/ManageGoods/addGoods
+ERR: 1452:Cannot add or update a child row: a foreign key constraint fails (`supershop`.`tb_goods_cate`, CONSTRAINT `tb_goods_cate_ibfk_2` FOREIGN KEY (`type_id`) REFERENCES `tb_category` (`type_id`))
+ [ SQL语句 ] : INSERT INTO `tb_goods_cate` (`goods_id`,`type_id`) VALUES ('1000012','0')
+
+[ 2016-04-20T02:10:42+08:00 ] 127.0.0.1 /supershop/Admin/ManageGoods/saveGoodsOneField/r=1461089442590
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.003001s ]
+NOTIC: [8] Constant LANG_SET already defined E:\MyEnv\apache\htdocs\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007001s ]
+NOTIC: [8] Undefined index: l E:\MyEnv\apache\htdocs\supershop\Tools\AdminController.class.php 第 11 行.
+SQL: SHOW COLUMNS FROM `tb_goods` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `tb_goods` WHERE `goods_id` = '1000014' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `goods_name` FROM `tb_goods` WHERE `goods_id` = '1000014' LIMIT 1   [ RunTime:0.0000s ]
+

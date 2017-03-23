@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>添加权限</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	
+	{include file="../inc/cssall.html"}
+  </head>
+  
+  <body>
+				<div class="row-fluid">
+			   	   <div class="box span12" style="margin-top:0">
+                                        <div>
+                                                <ul class="breadcrumb">
+                                                    <li><i class="icon-user"></i>角色管理/<a href="{$smarty.const.__MODULE__}/ManageAuth/authList">权限列表</a>/<a href="{$smarty.const.__MODULE__}/ManageAuth/addAuth">添加权限</a></li>
+                                                </ul>
+                                        </div>
+					<form name="addAuth_form" method="post" action="{$smarty.const.__SELF__}">  
+					<fieldset style="margin-left: 30%">
+						
+						<div class="control-group">
+                                                    <label class="control-label">权限名称:</label>
+                                                    <input style="height: 25px" class="input-large focused" type="text" id="authName" name="auth_name"/>
+						</div>
+                                            
+						<div class="control-group">
+							<label class="control-label">bootstrap图标:</label>
+                                                        <select id="authIcon" name="auth_icon">
+                                                              <option value="">请选择(默认为空)</option>
+                                                              <option value="plus-sign">添加</option>
+                                                              <option value="edit">编辑</option>
+                                                              <option value="remove-sign">删除</option>
+                                                              <option value="ban-circle">禁用</option>
+                                                              <option value="ok-circle">启用</option>
+                                                              <option value="trash">回收</option>
+                                                              <option value="refresh">刷新</option>
+                                                              <option value="cog">设置</option>
+                                                              <option value="lock">上锁</option>
+                                                              <option value="check">检查</option>
+                                                              <option value="move">移动</option>
+                                                              <option value="eject">打开</option>
+                                                              <option value="filter">筛选</option>
+                                                              <option value="retweet">切换</option>
+                                                              <option value="off">关闭</option>
+                                                              <option value="ok">对</option>
+                                                              <option value="remove">错</option>
+                                                              <option value="zoom-in">放大</option>
+                                                              <option value="zoom-out">缩小</option>
+                                                              <option value="signal">信号</option>
+                                                              <option value="download-alt">下载1</option>
+                                                              <option value="download">下载2</option>
+                                                              <option value="upload">上传</option>
+                                                              <option value="cloud-download">云下载</option>
+                                                              <option value="cloud-upload">云上传</option>
+                                                              <option value="share">分享</option>
+                                                              <option value="bullhorn">公告</option>
+                                                              <option value="comment">评论</option>
+                                                              <option value="wrench">维护</option>
+                                                              <option value="shopping-cart">购物车</option>
+                                                              <option value="flag">旗子</option>
+                                                              <option value="asterisk">星号</option>
+                                                              <option value="plus">加号</option>
+                                                              <option value="minus">减号</option>
+                                                              <option value="minus-sign">减少</option>
+                                                              <option value="cloud">云朵</option>
+                                                              <option value="envelope">信封</option>
+                                                              <option value="pencil">铅笔</option>
+                                                              <option value="glass">酒杯</option>
+                                                              <option value="search">搜索</option>
+                                                              <option value="heart">心形</option>
+                                                              <option value="star">满星</option>
+                                                              <option value="star-empty">空星</option>
+                                                              <option value="th-large">四宫格</option>
+                                                              <option value="th">九宫格</option>
+                                                              <option value="th-list">宫格列表</option>
+                                                              <option value="user">用户</option>
+                                                              <option value="home">房子</option>
+                                                              <option value="file">文件</option>
+                                                              <option value="time">时间</option>
+                                                              <option value="road">道路</option>
+                                                              <option value="inbox">盒子</option>
+                                                              <option value="qrcode">二维码</option>
+                                                              <option value="barcode">条形码</option>
+                                                              <option value="tag">标签</option>
+                                                              <option value="tags">多个标签</option>
+                                                              <option value="book">书</option>
+                                                              <option value="bookmark">书签</option>
+                                                              <option value="print">打印</option>
+                                                              <option value="font">字体</option>
+                                                              <option value="bold">粗体</option>
+                                                              <option value="italic">斜体</option>
+                                                              <option value="map-marker">定位</option>
+                                                              <option value="tint">雨滴</option>
+                                                              <option value="info-sign">信息</option>
+                                                              <option value="question-sign">问题</option>
+                                                              <option value="ok-sign">成功</option>
+                                                              <option value="bell">闹铃</option>
+                                                              <option value="globe">地球</option>
+                                                              <option value="paperclip">回形针</option>
+                                                              <option value="link">链接</option>
+                                                              <option value="phone">电话</option>
+                                                              <option value="video">视频</option>
+                                                              <option value="picture">图像</option>
+                                                              <option value="camera">相机</option>
+                                                              <option value="film">电影</option>
+                                                              <option value="music">音乐</option>
+                                                              <option value="headphones">耳机</option>
+                                                              <option value="play-circle">播放</option>
+                                                              <option value="repeat">重播</option>
+                                                        </select><span id="scanIcon"></span>
+						</div>
+                                            
+						<div class="control-group">
+							<label class="control-label">权限父级:</label>
+                                                        <select id="authPid" name="auth_pid">
+								<option value="0">请选择(默认顶级)</option>
+							{foreach $ainfo as $v}
+								<option value="{$v.auth_id}">{$v.auth_name|indent:$v.auth_level:'-/'}</option>
+							{/foreach}
+							</select>
+						</div>
+						
+						<div class="control-group">
+							<label class="control-label">控制器:</label>
+                                                        <input style="height: 25px" class="input-large focused" type="text" id="authC" name="auth_c"/>
+						</div>
+						
+						<div class="control-group">
+							<label class="control-label">操作方法:</label>
+                                                        <input style="height: 25px" class="input-large focused" type="text" id="authA" name="auth_a"/>
+						</div>
+                                            
+						<div class="form-actions" style="background-color: white;border: 0;margin-left: 20%">
+							<button class="btn btn-primary" type="submit"><i class="icon-plus-sign icon-white"></i>添加</button><br/>
+						</div> <!-- /form-actions -->
+					</fieldset>
+    	</form>
+						<br/><br/>
+					
+			    </div>  <!-- row-fluid -->				
+			</div>
+			<!--/#content.span9-->
+  		{include file="../inc/jsall.html"}
+                <script>
+                    $(function(){
+                        $(document).on('change','#authIcon',function(){
+                            $('#scanIcon').html('　预览：<i class="icon-'+$(this).val()+'"></i>');
+                        });
+                    });
+                </script>
+  </body>
+</html>
+

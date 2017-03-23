@@ -1,0 +1,235 @@
+{literal}
+<script type="text/javascript">
+function MoveBox(obj,goodsId,orderType) {
+	var userName='{$smarty.session.name}';
+	if(userName=='null'||userName==""){
+		alert("请先登录！");
+		return;
+	}
+	$(obj).show();
+	var divTop = $(obj).offset().top;
+	var divLeft = $(obj).offset().left;
+	$(obj).css({ "position": "absolute", "z-index": "500", "left": divLeft + "px", "top": divTop + "px" });
+	$(obj).animate({ "left": ($("#collectBox").offset().left - $("#collectBox").width()) + "px", "top": ($(document).scrollTop() + 30) + "px", "width": "100px", "height": "70px" }, 500, function () {
+		$(obj).animate({ "left": $("#collectBox").offset().left + "px", "top": $("#collectBox").offset().top + "px" }, 500).fadeTo(0, 0.1).hide(0);
+	});
+	setTimeout("window.location.href='buyGoodsServlet?GoodsId="+goodsId+"&orderType="+orderType+"'",950);
+	
+}
+</script>
+{/literal}
+<head><!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <style>
+        #msg{ z-index:10000; width:1px; height:40px; line-height:40px; font-size:14px; text-align:center; color:#fff; display:none }
+        .u-flyer{ display: block;width: 50px;height: 50px;border-radius: 50px;position: fixed;z-index: 9999; }
+    </style>
+<!-- /Added by HTTrack --></head>
+  <div class="container_12">
+    <div id="top" style="">
+      <div class="grid_2">
+        <div class="phone_top">
+          {$smarty.session.web_lang.TEL_NAME} 025-12345678
+        </div><!-- .phone_top -->
+      </div><!-- .grid_3 -->
+      
+      <div class="grid_6">
+      	<marquee direction="left" scrollamount="4" style="padding-top: 15px;" truespeed="truespeed" onmouseover="this.stop()" onmouseout="this.start()" >
+   	 		{$informs = $smarty.session.informList}
+                        {if $informs|@count neq 0}
+                                {foreach $informs as $k=>$v} 
+                                    {$v.create_time}&nbsp;<a href="javascript:;" onclick="alert('{$v.inform_content}')">{$v.inform_title}</a>　
+                                {/foreach}
+                        {else}
+   	 			<font color="red">暂时没有公告</font>
+                        {/if}
+   	 	</marquee>
+      </div>
+		<div class="grid_2">
+			<div class="welcome">
+			{*<% out.print("当前在线用户："+application.getAttribute("online"));%>*}
+			</div>
+		</div>
+
+      <div class="grid_2">
+
+        <div class="welcome">
+            {$user = $smarty.session.user}
+            {if isset($user)}
+                欢迎光临　 <a href="###">{$user.user_name}</a>
+            {else}
+                欢迎光临　 <a href="{$smarty.const.__MODULE__}/User/login">登录</a> / <a href="{$smarty.const.__MODULE__}/User/register">注册</a>
+            {/if}
+        </div><!-- .welcome -->
+      </div><!-- .grid_3 -->
+    </div><!-- #top -->
+
+
+    <header id="branding">
+      {if isset($user)}
+      <div class="grid_3">
+      {else}
+      <div class="grid_5">
+      {/if}
+        <hgroup>
+          <h1 id="site_logo" ><a href="" title=""><img src="{$smarty.const.PUBLIC_URL}img/logo.png" alt="Online Store Theme Logo"/></a></h1>
+          <h2 id="site_description">　　足不出户　疯狂购物</h2>
+        </hgroup>
+      </div><!-- .grid_3 -->
+
+      <div class="grid_4">
+    <form class="search" action="pageSearchServlet" method="post" id="searchForm">
+          <input type="text" name="keywords" id="keywords" placeholder="请输入关键字搜索" style="float: left;"/>
+          <input type="image" src="{$smarty.const.PUBLIC_URL}img/bg_search.png" name="submit" style="margin:10px 0 0 5px"/>
+          &nbsp;|&nbsp;<span><a href="showSuperTypeServlet">高级搜索</a></span>
+	</form>
+      </div><!-- .grid_3 -->
+
+
+      {if isset($user)}
+      <div class="grid_5">
+      {else}
+      <div class="grid_3">
+      {/if}
+        <ul id="cart_nav">
+          <li>
+            <a class="cart_li" href="{$smarty.const.__MODULE__}/Goods/cart" id="collectBox" style="width: 80px">￥<span>
+                {if $cartList != null}
+                    {$cartTotalPrice}
+                {else}
+                    0.0
+                {/if}
+    	 	</span></a>
+            <ul class="cart_cont">
+              <li class="no_border"><p>最近添加的商品</p></li>
+              {if $cartList == null}
+                    <font color='red'>购物车中还没有商品，请继续购物！</font>
+              {else}
+                {foreach $cartList as $k=>$v}
+                <li>
+                  <a href="{$smarty.const.__MODULE__}/Goods/details/id/{$v.goods_id}" class="prev_cart"><div class="cart_vert"><img src="{$smarty.const.WEB_URL}{$v.goods_thumb_url}" alt="" title="" /></div></a>
+                  <div class="cont_cart">
+                    <h4>{$v.goods_name}</h4>
+                    <div class="price">{$v.count} x ￥{$v.goods_now_price}</div>
+                  </div>
+                  <a title="close" class="close" href="{$smarty.const.__MODULE__}/Goods/delCart/id/{$k}"></a>
+                  <div class="clear"></div>
+                </li>
+                {/foreach}
+              
+		      <li class="no_border">
+			<a href="cart.jsp" class="view_cart">查看购物车</a>
+			<a href="submitOrder.jsp" class="checkout">提交订单</a>
+		      </li>
+              {/if}
+            </ul>
+          </li>
+	<span id="msg"></span>
+        </ul>
+
+        <nav class="private">
+          <ul>
+            <li><a href="pageNoteServlet">商城论坛</a></li>
+     {if isset($user)}
+        <li class="separator">|</li>
+            <li class="curent"><a href="{$smarty.const.__MODULE__}/User/personalCenter">个人中心</a></li>
+		<li class="separator">|</li>
+            <li><a href="{$smarty.const.__MODULE__}/User/logout">退出登录</a></li>
+     {/if}
+          </ul>
+        </nav><!-- .private -->
+      </div><!-- .grid_6 -->
+    </header><!-- #branding -->
+  </div><!-- .container_12 -->
+  
+
+
+  <div id="block_nav_primary">
+    <div class="container_12">
+      <div class="grid_12">
+        <nav class="primary">
+          <ul>
+            <li {if !isset($type)} class="curent" {/if} ><a href="{$smarty.const.ROOT_URL}">首页</a></li>
+            {$types = $smarty.session.typeList}
+            {foreach $types as $v}
+                {if $v.type_pid eq 0}
+                    <li {if $smarty.get.type == $v.type_id} class="curent" {/if} >
+                        <a href="###">{$v.type_name}</a>
+                        <ul class="sub">
+                        {foreach $types as $vv}
+                            {if $vv.type_pid eq $v.type_id}
+                                <li><a href="###">{$vv.type_name}</a></li>
+                            {/if}
+                        {/foreach}
+                        </ul>
+                    </li>
+                {/if}
+            {/foreach}
+            {*
+            <li {if $type===0} class="curent" {/if} ><a href="page?type=0">所有商品</a></li>
+            <li>
+              <a href="#">商品分类</a>
+              <ul class="sub">
+                    {foreach $smarty.session.clsList as $k=>$v} 
+	                <li><a href="page?type=9&sid={$v.stypeid}">{$v.stypename}</a></li>
+	            {/foreach}
+              </ul>
+            </li>
+            <li {if $type===2} class="curent" {/if} ><a href="page?type=2">新品上市</a></li>
+            <li {if $type===4} class="curent" {/if} ><a href="page?type=4">掌柜推荐</a></li>
+            <li {if $type===1} class="curent" {/if} ><a href="page?type=1">人气热卖</a></li>
+            <li {if $type===3} class="curent" {/if} ><a href="page?type=3">特价促销</a></li>
+	    *}
+          </ul>
+        </nav><!-- .primary -->
+      </div><!-- .grid_12 -->
+    </div><!-- .container_12 -->
+  </div><!-- .block_nav_primary -->
+<script src="{$smarty.const.PUBLIC_URL}js/jquery.fly.min.js"></script>
+<script>
+$(function() { 
+	var offset = $("#cart_nav").offset();
+	$(".bay").click(function(event){
+		var addcar = $(this);
+                var goods_id = addcar.attr('data-id');
+		var img = addcar.parent().parent().find('img').attr('src');
+		var flyer = $('<img class="u-flyer" src="'+img+'">');
+		flyer.fly({
+			start: {
+				left: event.pageX,
+				top: event.pageY
+			},
+			end: {
+				left: offset.left+10,
+				top: offset.top+10,
+				width: 0,
+				height: 0
+			},
+			onEnd: function(){
+                                addcart(goods_id);
+				this.destory();
+                                setTimeout(function () {
+                                    location.reload();
+                                }, 300);
+			}
+		});
+	});
+  
+});
+
+function addcart(id) {
+    $.ajax({ 
+    	url:"{$smarty.const.__MODULE__}/Goods/addCart/r="+new Date().getTime(), 
+    	type:"post", 
+    	data:{ id:id },
+        async:false,
+    	dataType:"json",
+    	success:function(data){
+    		if(data.retval != "ok"){
+			$("#msg").html('加入购物车失败！-'+ data.retinfo).css( 'background', '#FFA8A8').show().animate({ width: '250px' }, 200).fadeOut(1000);
+    		} else {
+			$("#msg").html('已成功加入购物车！').css( 'background', '#360').show().animate({ width: '250px' }, 200).fadeOut(1000);
+                }
+    	}
+    });	
+}
+</script>

@@ -1,0 +1,75 @@
+[ 2016-03-31T16:24:38+08:00 ] 127.0.0.1 /supershop/Index/personalCenter.jsp
+ERR: 非法操作:personalCenter.jsp
+
+[ 2016-03-31T16:45:28+08:00 ] 127.0.0.1 /supershop/index/l/en-us
+ERR: 非法操作:l
+
+[ 2016-03-31T16:45:58+08:00 ] 127.0.0.1 /supershop/Public/Admin/js/admin.js
+ERR: 无法加载控制器:Public
+
+[ 2016-03-31T16:46:03+08:00 ] 127.0.0.1 /supershop/Public/Admin/js/admin.js
+ERR: Controller can't be loaded:Public
+
+[ 2016-03-31T16:46:06+08:00 ] 127.0.0.1 /supershop/Public/Admin/js/admin.js
+ERR: 无法加载控制器:Public
+
+[ 2016-03-31T16:46:07+08:00 ] 127.0.0.1 /supershop/Public/Admin/js/admin.js
+ERR: Controller can't be loaded:Public
+
+[ 2016-03-31T16:46:09+08:00 ] 127.0.0.1 /supershop/Public/Admin/js/admin.js
+ERR: Controller can't be loaded:Public
+
+[ 2016-03-31T16:46:30+08:00 ] 127.0.0.1 /supershop/Public/Admin/js/admin.js
+ERR: Controller can't be loaded:Public
+
+[ 2016-03-31T16:46:33+08:00 ] 127.0.0.1 /supershop/Public/Admin/js/admin.js
+ERR: 无法加载控制器:Public
+
+[ 2016-03-31T16:46:34+08:00 ] 127.0.0.1 /supershop/Public/Admin/js/admin.js
+ERR: Controller can't be loaded:Public
+
+[ 2016-03-31T16:46:35+08:00 ] 127.0.0.1 /supershop/Public/Admin/js/admin.js
+ERR: 无法加载控制器:Public
+
+[ 2016-03-31T17:03:40+08:00 ] 127.0.0.1 /supershop/Public/Admin/js/admin.js
+ERR: Controller can't be loaded:Public
+
+[ 2016-03-31T17:03:45+08:00 ] 127.0.0.1 /supershop/Public/Admin/js/admin.js
+ERR: 无法加载控制器:Public
+
+[ 2016-03-31T17:36:14+08:00 ] 127.0.0.1 /supershop/Public/Admin/js/admin.js
+ERR: 无法加载控制器:Public
+
+[ 2016-03-31T17:36:19+08:00 ] 127.0.0.1 /supershop/Public/Admin/js/admin.js
+ERR: Controller can't be loaded:Public
+
+[ 2016-03-31T17:36:21+08:00 ] 127.0.0.1 /supershop/Public/Admin/js/admin.js
+ERR: 无法加载控制器:Public
+
+[ 2016-03-31T20:53:50+08:00 ] 127.0.0.1 /supershop/PIE.htc
+ERR: 无法加载控制器:PIE.htc
+
+[ 2016-03-31T21:00:17+08:00 ] 127.0.0.1 /supershop/
+ERR: Syntax Error in template "E:\MyEnv\apache\htdocs\supershop\Home\View\inc\header.html"  on line 28 "{$smarty.cookie.web_lang.TEL} 025-12345678" $smarty.cookie is invalid
+
+[ 2016-03-31T21:03:13+08:00 ] 127.0.0.1 /supershop/PIE.htc
+ERR: 无法加载控制器:PIE.htc
+
+[ 2016-03-31T21:38:36+08:00 ] 127.0.0.1 /supershop/PIE.htc
+ERR: 无法加载控制器:PIE.htc
+
+[ 2016-03-31T21:45:12+08:00 ] 127.0.0.1 /supershop/PIE.htc
+ERR: 无法加载控制器:PIE.htc
+
+[ 2016-03-31T21:53:19+08:00 ] 127.0.0.1 /supershop/PIE.htc
+ERR: 无法加载控制器:PIE.htc
+
+[ 2016-03-31T21:55:19+08:00 ] 127.0.0.1 /supershop/PIE.htc
+ERR: 无法加载控制器:PIE.htc
+
+[ 2016-03-31T22:22:24+08:00 ] 127.0.0.1 /supershop/PIE.htc
+ERR: 无法加载控制器:PIE.htc
+
+[ 2016-03-31T22:22:49+08:00 ] 127.0.0.1 /supershop/PIE.htc
+ERR: Controller can't be loaded:PIE.htc
+
