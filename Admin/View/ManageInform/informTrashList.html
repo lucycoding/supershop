@@ -45,7 +45,7 @@
 									<td>{$v.inform_content}</td>
 									<td>{$v.create_time}</td>
 									<td>
-                                                                            <a href="javascript:void(0);" class="btn btn-success" title="还原" onclick="saveData('{$v.inform_id}','valid_flag','1')"><i class="icon-arrow-left"></i></a>
+                                                                            <a href="javascript:void(0);" class="btn btn-success" title="还原" onclick="saveData('{$v.inform_id}','valid_flag','1',this)"><i class="icon-arrow-left"></i></a>
                                                                             <a href="###" class="btn btn-danger" title="删除"><i class="icon-remove-sign"></i></a>
                                                                         </td>
 								</tr>
@@ -64,23 +64,28 @@
 <script>
     var controller_path = '{$smarty.const.__CONTROLLER__}';
 {literal}
-function saveData(id, column, value) {
-    if(!/^\d{5}$/.test(id)||!/^[A-Za-z_]+$/.test(name))
+function saveData(id, column, value, item) {
+    if(!/^\d{5}$/.test(id)||!/^[A-Za-z_]+$/.test(column))
         return;
-    $.ajax({ 
-	url:controller_path+"/saveInformOneField/r="+new Date().getTime(), 
-	type:"post", 
-	data:{id:id,column:column,value:value},
-	async:false,
-	dataType:"json",
-	success:function(data){
-		if(data.retval == 'ok'){
-                    location.reload();
-		} else {
-                    alert(data.retinfo);
-                    return;
+    var title = item?item.title:"更改";
+    bootbox.confirm("确定要"+title+"该商品吗？",function(flag){
+        if(flag){
+            $.ajax({ 
+                url:controller_path+"/saveInformOneField/r="+new Date().getTime(), 
+                type:"post", 
+                data:{id:id,column:column,value:value},
+                async:false,
+                dataType:"json",
+                success:function(data){
+                        if(data.retval == 'ok'){
+                            location.reload();
+                        } else {
+                            alert(data.retinfo);
+                            return;
+                        }
                 }
-	}
+            });
+        }
     });
 }
 {/literal}

@@ -37,9 +37,9 @@
 									<td>
                                                                             <a href="{$smarty.const.__CONTROLLER__}/assignAuth/role_id/{$v.role_id}" class="btn btn-success">分配权限</a>
                                                                             {if $v.valid_flag eq '1'}
-                                                                            <a href="javascript:void(0);" class="btn btn-warning" onclick="saveData({$v.role_id}, 'valid_flag', 0)">禁用</a>
+                                                                            <a href="javascript:void(0);" class="btn btn-warning" onclick="saveData({$v.role_id}, 'valid_flag', '0',this)" title="禁用">禁用</a>
                                                                             {else}
-                                                                            <a href="javascript:void(0);" class="btn btn-info" onclick="saveData({$v.role_id}, 'valid_flag', 1)">启用</a>
+                                                                            <a href="javascript:void(0);" class="btn btn-info" onclick="saveData({$v.role_id}, 'valid_flag', '1',this)" title="启用">启用</a>
                                                                             {/if}
                                                                         </td>
 								</tr>
@@ -106,23 +106,28 @@ function tdClick(){
     td.unbind("click");
 }
 
-function saveData(id, column, value) {
-    if(!/^\d{4}$/.test(id)||!/^[A-Za-z_]+$/.test(name))
+function saveData(id, column, value, item) {
+    if(!/^\d{4}$/.test(id)||!/^[A-Za-z_]+$/.test(column))
         return;
-    $.ajax({ 
-	url:controller_path+"/saveRole/r="+new Date().getTime(), 
-	type:"post", 
-	data:{id:id,column:column,value:value},
-	async:false,
-	dataType:"json",
-	success:function(data){
-		if(data.retval == 'ok'){
-                    location.reload();
-		} else {
-                    alert(data.retinfo);
-                    return;
+    var title = item?item.title:"更改";
+    bootbox.confirm("确定要"+title+"该商品吗？",function(flag){
+        if(flag){
+            $.ajax({ 
+                url:controller_path+"/saveRole/r="+new Date().getTime(), 
+                type:"post", 
+                data:{id:id,column:column,value:value},
+                async:false,
+                dataType:"json",
+                success:function(data){
+                        if(data.retval == 'ok'){
+                            location.reload();
+                        } else {
+                            alert(data.retinfo);
+                            return;
+                        }
                 }
-	}
+            });
+        }
     });
 }
 {/literal}
