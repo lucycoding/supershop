@@ -3,6 +3,16 @@ namespace Tools;
 use Tools\CommonController;
 
 class AdminController extends CommonController {
+    /**
+     * 初始化控制器时
+     */
+    public function _initialize(){
+        if (parent::ismobile()) {
+            //设置默认默认主题为 Mobile
+            //C('DEFAULT_V_LAYER','Mobile');
+            C('DEFAULT_THEME','Mobile');
+        }
+    }    
     
     public function __construct() {
         parent::__construct();
