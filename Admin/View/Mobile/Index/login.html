@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>{$smarty.session.lang.INDEX_TITLE}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+                {include file="../inc/cssall_mobile.html"}
+
+		<style>
+			/* Prevent FOUC */
+			body { opacity: 0; }
+		</style>
+
+	</head>
+	<body>
+
+		<div data-role="page" class="nd2-no-menu-swipe">
+
+			<div data-role="header" data-position="fixed" class="wow fadeIn" id="header_id">
+				<a href="javascript:;" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s'><i class="zmdi zmdi-smartphone-android"></i></a>
+				<h1 class="wow fadeIn" data-wow-delay='0.4s'>{$smarty.session.lang.WEB_NAME}</h1>
+			</div>
+
+               <div class="wow fadeIn align-center" data-wow-delay='0.4s' style="background-color:#CCDDBB;font-color:#719A4F;">
+				{if $reterr}
+                                        {$reterr}
+				{else}
+					{$smarty.session.lang.LOGIN_INFO}
+				{/if}
+                </div>
+			<div role="main" class="ui-content wow fadeIn" data-inset="false" data-wow-delay="0.2s">
+                            <form action="{$smarty.const.__CONTROLLER__}/login" method="post" name="form" id="form">
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-md-4">
+						<div class="box">
+						<label for="name">用户名:</label>
+                        <input type="text" name="name" id="name" data-clear-btn="true" placeholder="{$smarty.session.lang.LOGIN_NAME}" value = "{$name}"/>
+						<label for="password">密码:</label>
+                        <input type="password" name="password" id="password" value="" data-clear-btn="true" placeholder="{$smarty.session.lang.LOGIN_PWD}"/>
+                        
+						<label for="vcode">验证码:</label>
+                        <input type="text" name="vcode" id="vcode" value="" data-clear-btn="true" placeholder="{$smarty.session.lang.LOGIN_CODE}"/>
+                                              
+                        <img src="{$smarty.const.__CONTROLLER__}/getVerifyImg" onclick="this.src='{$smarty.const.__CONTROLLER__}/getVerifyImg/'+Math.random()"/></br></br>
+                        <button type="submit" class="ui-btn ui-btn-raised clr-primary waves-effect waves-button waves-effect waves-button">{$smarty.session.lang.LOGIN_BUTTON}</button>
+                        </div>
+
+                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    
+			<div id="footer_id" data-role="footer" data-position="fixed">
+
+				<div class="row center-xs">
+                        <p align="center">{$smarty.session.lang.COPYRIGHT_INFO}</p>
+				</div>
+
+
+			</div>  
+		</div>
+
+                {include file="../inc/jsall_mobile.html"}
+
+	</body>
+</html>
+

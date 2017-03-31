@@ -5,6 +5,16 @@ use Tools\CommonController;
  * 前台公共controller
  */
 class HomeController extends CommonController {
+    /**
+     * 初始化控制器时
+     */
+    public function _initialize(){
+        if (parent::ismobile()) {
+            //设置默认默认主题为 Mobile
+            //C('DEFAULT_V_LAYER','Mobile');
+            C('DEFAULT_THEME','Mobile');
+        }
+    }   
     // 购物车
     protected $cart = null;
     /**

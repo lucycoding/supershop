@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>{$smarty.session.lang.INDEX_TITLE}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+                {include file="../inc/cssall_mobile.html"}
+
+		<style>
+			/* Prevent FOUC */
+			body { opacity: 0; }
+		</style>
+
+	</head>
+        <body onload="changeFrameHeight()">
+
+		<div data-role="page" class="nd2-no-menu-swipe">
+
+			<!-- panel left 左边导航面板-->
+			<div data-role="panel" id="leftpanel" data-display="overlay" data-position-fixed="true" >
+
+				<div class='nd2-sidepanel-profile wow fadeInDown'>
+					<img class='profile-background' src="{$smarty.const.PUBLIC_URL}Mobile/css/images/thumb_bg.png"/>
+					<div class="row">
+						<div class='col-xs-4 center-xs'>
+							<div class='box'>
+                                                            {if $smarty.session.admin.admin_logo_url}
+								<img class="profile-thumbnail" src="{$smarty.session.admin.admin_logo_url}"/>
+                                                            {else}
+                                                                <i class="zmdi zmdi-account-circle zmd-3x"></i>
+                                                                {/if}
+							</div>
+						</div>
+						<div class='col-xs-8'>
+							<div class='box profile-text'>
+								<strong>{$smarty.session.admin.admin_name}</strong>
+								<span class='subline'>{$smarty.session.admin.admin_nickname}</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+<!--				<ul data-role="listview" data-inset="false">
+					<li data-role="list-divider">操作导航</li>
+				</ul>-->
+                        {foreach $auth_infoA as $k=>$v}
+				<div data-role="collapsible" data-collapsed="false" data-inset="false"  data-collapsed-icon="carat-d" data-expanded-icon="carat-d" data-iconpos="right">
+					<h3>{$v.auth_name}</h3>
+					<ul data-role="listview" data-inset="false" data-icon="false">
+                                                {foreach $auth_infoB as $kk=>$vv}
+                                                    {if $vv.auth_pid == $v.auth_id}
+						<li><a href="{$smarty.const.__MODULE__}/{$vv.auth_c}/{$vv.auth_a}" target="contentIframe" data-ajax='false' data-icon="false">{$vv.auth_name}</a></li>
+                                                    {/if}
+                                                {/foreach}
+					</ul>
+				</div>
+			{/foreach}	
+			</div>
+			<!-- /panel left -->
+
+
+			<div data-role="header" data-position="fixed" class="wow fadeIn" id="header_id" data-wow-delay='0.8s'>
+				<a href="#leftpanel" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s'><i class="zmdi zmdi-menu"></i></a>
+                                <a href="#" data-wow-delay='0.8s' onclick="javascript:confirm('确定要退出吗？')?location.href='{$smarty.const.__CONTROLLER__}/logout':''"><i class="zmdi zmdi-power-off zmd-fw"></i></a>
+				<h1 class="wow fadeIn" data-wow-delay='0.4s'>{$smarty.session.lang.WEB_NAME}</h1>
+			</div>
+
+			<div role="main" class="ui-content wow fadeIn" data-inset="false" data-wow-delay="0.8s">
+                            <iframe id="iframepage" name="contentIframe" scrolling="auto" frameborder="0" width="100%" height="400px" onload="changeFrameHeight()" src="{$smarty.const.__CONTROLLER__}/defaultPage"></iframe>		
+                        </div>
+                        
+
+			<div id="footer_id" data-role="footer" data-position="fixed" data-wow-delay='0.8s'>
+
+				<div class="row center-xs">
+                        <p align="center">{$smarty.session.lang.COPYRIGHT_INFO}</p>
+				</div>
+
+
+			</div>                        
+		</div>
+
+                {include file="../inc/jsall_mobile.html"}
+
+	</body>
+</html>
+{literal}
+<script>
+function changeFrameHeight(){
+    var ifm = document.getElementById("iframepage"); 
+    var hdHeight = document.getElementById("header_id").offsetHeight; 
+    var ftHeight = document.getElementById("footer_id").offsetHeight; 
+    var cHeight = document.documentElement.clientHeight;
+    ifm.height = cHeight - hdHeight - ftHeight;
+    //alert(hdHeight + " " +ifm.height +" "+cHeight);
+}
+window.onresize=function(){  
+     changeFrameHeight();  
+} 
+</script>
+{/literal}
+

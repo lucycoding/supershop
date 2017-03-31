@@ -1,0 +1,1245 @@
+[ 2017-03-31T09:02:05+08:00 ] 127.0.0.1 /supershop/Admin/Index/index.html
+ERR: SQLSTATE[HY000] [2002] ����Ŀ�����������ܾ����޷����ӡ�
+
+
+[ 2017-03-31T09:03:27+08:00 ] 127.0.0.1 /supershop/Admin/Index/index.html
+ERR: 模板不存在:D:/wnmp/www/supershop/Admin/View/Mobile/Index/index.html
+
+[ 2017-03-31T09:05:44+08:00 ] 127.0.0.1 /supershop/Admin/Index/index.html
+ERR: Unable to load template file '../inc/cssall.html' in 'Index/index.html'
+
+[ 2017-03-31T14:09:45+08:00 ] 127.0.0.1 /supershop/Admin/ManageUser/userList
+ERR: 模板不存在:D:/wnmp/www/supershop/Admin/View/Mobile/ManageUser/userList.html
+
+[ 2017-03-31T14:11:13+08:00 ] 127.0.0.1 /supershop/Admin/ManageUser/userList
+ERR: 模板不存在:D:/wnmp/www/supershop/Admin/View/Mobile/ManageUser/userList.html
+
+[ 2017-03-31T15:14:48+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000597s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000992s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000417s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002464s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015143s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015190s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000304s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000335s ]
+
+[ 2017-03-31T15:14:52+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000707s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001930s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000615s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003801s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014111s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014175s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000445s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000489s ]
+
+[ 2017-03-31T15:35:06+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001556s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.002299s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000433s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005261s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019204s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019295s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000765s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000808s ]
+
+[ 2017-03-31T15:35:08+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001014s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001511s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000586s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003852s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018120s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018190s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000455s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000501s ]
+
+[ 2017-03-31T15:35:10+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000839s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001130s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000571s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003191s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018075s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018149s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000452s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000504s ]
+
+[ 2017-03-31T15:35:12+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000652s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001013s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000416s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002726s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016397s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016454s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000410s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000453s ]
+
+[ 2017-03-31T15:35:22+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000578s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000981s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000416s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002438s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013568s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013623s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001363s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001421s ]
+
+[ 2017-03-31T15:39:25+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000933s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001766s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000722s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004094s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019662s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019734s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000839s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000899s ]
+
+[ 2017-03-31T15:39:37+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000890s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001152s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000420s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003141s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `tb_admin` [ RunTime:0.0206s ]
+SQL: SELECT * FROM `tb_admin` WHERE ( `admin_name` = 'suadmin' OR `admin_phone` = 'suadmin' OR `admin_email` = 'suadmin' ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: UPDATE `tb_admin` SET `last_login_time`='2017-03-31 15:39:37',`last_login_ip`='127.0.0.1' WHERE `admin_id` = '100000' [ RunTime:0.0910s ]
+SQL: UPDATE `tb_admin` SET `login_count`=login_count+1 WHERE `admin_id` = '100000' [ RunTime:0.0323s ]
+SQL: SHOW COLUMNS FROM `tb_admin_log` [ RunTime:0.0189s ]
+SQL: INSERT INTO `tb_admin_log` (`admin_id`,`admin_name`,`login_time`,`login_ip`) VALUES ('100000','suadmin','2017-03-31 15:39:37','127.0.0.1') [ RunTime:0.0401s ]
+
+[ 2017-03-31T15:39:39+08:00 ] 127.0.0.1 /supershop/Admin/Index/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000582s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000980s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000415s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002430s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `tb_admin` [ RunTime:0.0173s ]
+SQL: SELECT * FROM `tb_admin` WHERE `admin_id` = '100000' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `tb_auth` [ RunTime:0.0137s ]
+SQL: SELECT * FROM `tb_auth` WHERE `valid_flag` = 1 AND `auth_level` = 0  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `tb_auth` WHERE `valid_flag` = 1 AND `auth_level` = 1  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.312466s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.312531s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002142s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002198s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001193s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001256s ]
+
+[ 2017-03-31T16:20:25+08:00 ] 127.0.0.1 /supershop/Admin/Index/login.html
+ERR: Syntax Error in template "D:/wnmp/www/supershop/Admin/View/Mobile\Index\login.html"  on line 74 ""  - Unexpected "
+
+"
+
+[ 2017-03-31T16:22:29+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000766s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001395s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000463s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003131s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015614s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015677s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000487s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000534s ]
+
+[ 2017-03-31T16:22:31+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000971s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001461s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000600s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003709s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016449s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016520s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000441s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000491s ]
+
+[ 2017-03-31T16:22:33+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000830s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001600s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000711s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003768s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017814s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017875s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000430s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000476s ]
+
+[ 2017-03-31T16:22:35+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000878s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001570s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000820s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003997s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017608s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017670s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000403s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000447s ]
+
+[ 2017-03-31T16:22:38+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000834s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001533s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000581s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003566s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015315s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015380s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000341s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000371s ]
+
+[ 2017-03-31T16:25:27+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000891s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001507s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000697s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003666s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015254s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015304s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000334s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000367s ]
+
+[ 2017-03-31T16:25:29+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000585s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001050s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000721s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002849s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018118s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018177s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000433s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000480s ]
+
+[ 2017-03-31T16:25:31+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000822s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001619s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000755s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003721s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018362s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018427s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000443s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000494s ]
+
+[ 2017-03-31T16:25:32+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000942s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001424s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000597s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003703s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017939s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018012s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000459s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000511s ]
+
+[ 2017-03-31T16:25:34+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000857s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001422s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000541s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003423s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013376s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013438s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000316s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000348s ]
+
+[ 2017-03-31T16:25:35+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000749s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001013s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000408s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002843s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015909s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015957s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000312s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000344s ]
+
+[ 2017-03-31T16:27:22+08:00 ] 127.0.0.1 /supershop/Admin/Mobile/Index/login
+ERR: 无法加载控制器:Mobile
+
+[ 2017-03-31T16:28:46+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000778s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001416s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000422s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003106s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015174s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015228s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000314s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000345s ]
+
+[ 2017-03-31T16:29:36+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000819s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001192s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000418s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002987s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.142818s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.142895s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001360s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001412s ]
+
+[ 2017-03-31T16:31:26+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001020s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001631s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000672s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004092s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018042s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018118s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000378s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000414s ]
+
+[ 2017-03-31T16:31:33+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000649s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001044s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000424s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002772s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012905s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012968s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000315s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000346s ]
+
+[ 2017-03-31T16:33:37+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000573s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001549s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000478s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003098s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013368s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013424s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000332s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000363s ]
+
+[ 2017-03-31T16:33:41+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000892s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001457s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000622s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003664s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013697s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013746s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000783s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000858s ]
+
+[ 2017-03-31T16:33:43+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000844s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001129s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000444s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003069s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018326s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018409s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000570s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000628s ]
+
+[ 2017-03-31T16:33:44+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000610s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001275s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000634s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003132s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016078s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000624s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000681s ]
+
+[ 2017-03-31T16:33:47+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000585s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000993s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000428s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002463s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014621s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014684s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000386s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000429s ]
+
+[ 2017-03-31T16:34:52+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000581s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000988s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000439s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002459s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013549s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013604s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000317s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000348s ]
+
+[ 2017-03-31T16:34:54+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000855s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001474s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000660s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003508s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015563s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015634s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000459s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000504s ]
+
+[ 2017-03-31T16:35:37+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000833s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001258s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000540s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003280s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018277s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018346s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000526s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000579s ]
+
+[ 2017-03-31T16:38:08+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000810s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001177s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000537s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003141s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015128s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015175s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000308s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000339s ]
+
+[ 2017-03-31T16:38:12+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000815s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001312s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000574s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003290s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015410s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015459s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000433s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000482s ]
+
+[ 2017-03-31T16:39:08+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000864s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001495s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000501s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003523s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014731s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014779s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000332s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000367s ]
+
+[ 2017-03-31T16:39:10+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000590s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001004s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000518s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002574s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018633s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018700s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000453s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000500s ]
+
+[ 2017-03-31T16:39:12+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000983s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001506s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000564s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003788s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014075s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000589s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000645s ]
+
+[ 2017-03-31T16:39:38+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000574s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001277s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000618s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002981s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013388s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013437s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000309s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000340s ]
+
+[ 2017-03-31T16:41:05+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000600s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001110s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000418s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002580s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016462s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016538s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000651s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000710s ]
+
+[ 2017-03-31T16:41:08+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000844s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001043s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000446s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002991s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015899s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015969s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000509s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000563s ]
+
+[ 2017-03-31T16:41:25+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000858s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001530s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001089s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004164s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017867s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017949s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000579s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000636s ]
+
+[ 2017-03-31T16:42:55+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000806s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001402s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000650s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003507s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016587s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016655s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000499s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000548s ]
+
+[ 2017-03-31T16:43:09+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000747s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001054s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000454s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002931s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013811s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013859s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000310s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000342s ]
+
+[ 2017-03-31T16:43:30+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000589s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000994s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000586s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002659s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016013s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016074s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000511s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000563s ]
+
+[ 2017-03-31T16:44:09+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000598s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001009s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000468s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002558s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016833s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016883s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000314s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000345s ]
+
+[ 2017-03-31T16:44:11+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000994s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001803s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000589s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004107s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018944s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019022s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000489s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000537s ]
+
+[ 2017-03-31T16:45:36+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000943s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001154s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000590s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003256s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016795s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016875s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000672s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000732s ]
+
+[ 2017-03-31T16:45:46+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000983s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001628s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000640s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004037s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013949s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014006s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000475s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000532s ]
+
+[ 2017-03-31T16:45:49+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000875s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001893s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000698s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004183s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017064s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017135s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000455s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000504s ]
+
+[ 2017-03-31T16:45:51+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000580s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001333s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000778s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003208s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016830s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016885s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000392s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000439s ]
+
+[ 2017-03-31T16:46:46+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000595s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000993s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000428s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002478s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014892s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014953s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000444s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000491s ]
+
+[ 2017-03-31T16:46:47+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000717s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001365s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000622s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003223s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019222s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019296s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000464s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000510s ]
+
+[ 2017-03-31T16:46:50+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000873s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001425s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000582s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003682s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013085s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013146s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000363s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000396s ]
+
+[ 2017-03-31T16:47:09+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000600s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001091s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000432s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002637s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.131721s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.131780s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001249s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001303s ]
+
+[ 2017-03-31T16:48:42+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000842s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001542s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003656s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018945s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019014s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000517s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000566s ]
+
+[ 2017-03-31T17:01:16+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000870s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001450s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000634s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003612s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019900s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019982s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000564s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000622s ]
+
+[ 2017-03-31T17:01:18+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000813s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001414s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000656s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003531s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016956s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017019s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000394s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000441s ]
+
+[ 2017-03-31T17:01:35+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000840s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001355s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000428s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003115s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017650s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017716s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000482s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000531s ]
+
+[ 2017-03-31T17:01:54+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000765s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001111s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000423s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002879s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018393s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018466s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000516s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000573s ]
+
+[ 2017-03-31T17:01:56+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000848s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001405s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000566s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003507s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014275s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014345s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000435s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000478s ]
+
+[ 2017-03-31T17:02:47+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000957s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001454s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000590s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003709s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014562s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014619s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000402s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000445s ]
+
+[ 2017-03-31T17:03:55+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000891s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001904s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000828s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004349s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019109s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019181s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000412s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000457s ]
+
+[ 2017-03-31T17:10:57+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000936s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001801s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000802s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004318s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `tb_admin` [ RunTime:0.0433s ]
+SQL: SELECT * FROM `tb_admin` WHERE ( `admin_name` = 'suadmin' OR `admin_phone` = 'suadmin' OR `admin_email` = 'suadmin' ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: UPDATE `tb_admin` SET `last_login_time`='2017-03-31 17:10:57',`last_login_ip`='127.0.0.1' WHERE `admin_id` = '100000' [ RunTime:0.0378s ]
+SQL: UPDATE `tb_admin` SET `login_count`=login_count+1 WHERE `admin_id` = '100000' [ RunTime:0.0327s ]
+SQL: SHOW COLUMNS FROM `tb_admin_log` [ RunTime:0.0159s ]
+SQL: INSERT INTO `tb_admin_log` (`admin_id`,`admin_name`,`login_time`,`login_ip`) VALUES ('100000','suadmin','2017-03-31 17:10:57','127.0.0.1') [ RunTime:0.0506s ]
+
+[ 2017-03-31T17:10:58+08:00 ] 127.0.0.1 /supershop/Admin/Index/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000581s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000990s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000419s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002446s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `tb_admin` [ RunTime:0.0188s ]
+SQL: SELECT * FROM `tb_admin` WHERE `admin_id` = '100000' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `tb_auth` [ RunTime:0.0295s ]
+SQL: SELECT * FROM `tb_auth` WHERE `valid_flag` = 1 AND `auth_level` = 0  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `tb_auth` WHERE `valid_flag` = 1 AND `auth_level` = 1  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] filemtime(): stat failed for D:/wnmp/www/supershop/Runtime/Cache\6a5d84a85ec4d2f00535bc62bb98cbd39af0954a.file.index.html.php D:\wnmp\www\ThinkPHP\Library\Vendor\Smarty\sysplugins\smarty_resource.php 第 683 行.
+NOTIC: [2] unlink(D:/wnmp/www/supershop/Runtime/Cache\6a5d84a85ec4d2f00535bc62bb98cbd39af0954a.file.index.html.php): No such file or directory D:\wnmp\www\ThinkPHP\Library\Vendor\Smarty\sysplugins\smarty_internal_write_file.php 第 49 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.178658s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.178725s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001141s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001186s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000988s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001052s ]
+
+[ 2017-03-31T17:12:50+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000574s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000966s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000406s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002483s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `tb_admin` [ RunTime:0.0216s ]
+SQL: SELECT * FROM `tb_admin` WHERE ( `admin_name` = 'suadmin' OR `admin_phone` = 'suadmin' OR `admin_email` = 'suadmin' ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: UPDATE `tb_admin` SET `last_login_time`='2017-03-31 17:12:50',`last_login_ip`='127.0.0.1' WHERE `admin_id` = '100000' [ RunTime:0.0749s ]
+SQL: UPDATE `tb_admin` SET `login_count`=login_count+1 WHERE `admin_id` = '100000' [ RunTime:0.0336s ]
+SQL: SHOW COLUMNS FROM `tb_admin_log` [ RunTime:0.0189s ]
+SQL: INSERT INTO `tb_admin_log` (`admin_id`,`admin_name`,`login_time`,`login_ip`) VALUES ('100000','suadmin','2017-03-31 17:12:50','127.0.0.1') [ RunTime:0.0384s ]
+
+[ 2017-03-31T17:12:52+08:00 ] 127.0.0.1 /supershop/Admin/Index/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000569s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001088s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000433s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002637s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `tb_admin` [ RunTime:0.0166s ]
+SQL: SELECT * FROM `tb_admin` WHERE `admin_id` = '100000' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `tb_auth` [ RunTime:0.0152s ]
+SQL: SELECT * FROM `tb_auth` WHERE `valid_flag` = 1 AND `auth_level` = 0  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `tb_auth` WHERE `valid_flag` = 1 AND `auth_level` = 1  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.165981s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.166032s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000928s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000965s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001292s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001357s ]
+
+[ 2017-03-31T17:13:57+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000577s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000983s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000436s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002454s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `tb_admin` [ RunTime:0.0187s ]
+SQL: SELECT * FROM `tb_admin` WHERE ( `admin_name` = 'suadmin' OR `admin_phone` = 'suadmin' OR `admin_email` = 'suadmin' ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: UPDATE `tb_admin` SET `last_login_time`='2017-03-31 17:13:56',`last_login_ip`='127.0.0.1' WHERE `admin_id` = '100000' [ RunTime:0.0976s ]
+SQL: UPDATE `tb_admin` SET `login_count`=login_count+1 WHERE `admin_id` = '100000' [ RunTime:0.0335s ]
+SQL: SHOW COLUMNS FROM `tb_admin_log` [ RunTime:0.0192s ]
+SQL: INSERT INTO `tb_admin_log` (`admin_id`,`admin_name`,`login_time`,`login_ip`) VALUES ('100000','suadmin','2017-03-31 17:13:56','127.0.0.1') [ RunTime:0.0354s ]
+
+[ 2017-03-31T17:13:58+08:00 ] 127.0.0.1 /supershop/Admin/Index/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000707s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000998s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000423s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002706s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `tb_admin` [ RunTime:0.0199s ]
+SQL: SELECT * FROM `tb_admin` WHERE `admin_id` = '100000' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `tb_auth` [ RunTime:0.0164s ]
+SQL: SELECT * FROM `tb_auth` WHERE `valid_flag` = 1 AND `auth_level` = 0  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `tb_auth` WHERE `valid_flag` = 1 AND `auth_level` = 1  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014393s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014440s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000340s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000373s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000890s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000951s ]
+
+[ 2017-03-31T17:14:48+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000831s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001367s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000569s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003415s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `tb_admin` [ RunTime:0.0214s ]
+SQL: SELECT * FROM `tb_admin` WHERE ( `admin_name` = 'suadmin' OR `admin_phone` = 'suadmin' OR `admin_email` = 'suadmin' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `tb_admin` SET `last_login_time`='2017-03-31 17:14:48',`last_login_ip`='127.0.0.1' WHERE `admin_id` = '100000' [ RunTime:0.0770s ]
+SQL: UPDATE `tb_admin` SET `login_count`=login_count+1 WHERE `admin_id` = '100000' [ RunTime:0.0335s ]
+SQL: SHOW COLUMNS FROM `tb_admin_log` [ RunTime:0.0154s ]
+SQL: INSERT INTO `tb_admin_log` (`admin_id`,`admin_name`,`login_time`,`login_ip`) VALUES ('100000','suadmin','2017-03-31 17:14:48','127.0.0.1') [ RunTime:0.0532s ]
+
+[ 2017-03-31T17:14:50+08:00 ] 127.0.0.1 /supershop/Admin/Index/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000963s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001225s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000445s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003282s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `tb_admin` [ RunTime:0.0177s ]
+SQL: SELECT * FROM `tb_admin` WHERE `admin_id` = '100000' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `tb_auth` [ RunTime:0.0153s ]
+SQL: SELECT * FROM `tb_auth` WHERE `valid_flag` = 1 AND `auth_level` = 0  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `tb_auth` WHERE `valid_flag` = 1 AND `auth_level` = 1  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.176055s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.176133s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001180s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001234s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001496s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001565s ]
+
+[ 2017-03-31T17:16:08+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000818s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001498s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000613s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003705s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `tb_admin` [ RunTime:0.0192s ]
+SQL: SELECT * FROM `tb_admin` WHERE ( `admin_name` = 'suadmin' OR `admin_phone` = 'suadmin' OR `admin_email` = 'suadmin' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `tb_admin` SET `last_login_time`='2017-03-31 17:16:07',`last_login_ip`='127.0.0.1' WHERE `admin_id` = '100000' [ RunTime:0.0889s ]
+SQL: UPDATE `tb_admin` SET `login_count`=login_count+1 WHERE `admin_id` = '100000' [ RunTime:0.0335s ]
+SQL: SHOW COLUMNS FROM `tb_admin_log` [ RunTime:0.0202s ]
+SQL: INSERT INTO `tb_admin_log` (`admin_id`,`admin_name`,`login_time`,`login_ip`) VALUES ('100000','suadmin','2017-03-31 17:16:07','127.0.0.1') [ RunTime:0.0339s ]
+
+[ 2017-03-31T17:16:09+08:00 ] 127.0.0.1 /supershop/Admin/Index/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000592s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000991s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000404s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002548s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `tb_admin` [ RunTime:0.0183s ]
+SQL: SELECT * FROM `tb_admin` WHERE `admin_id` = '100000' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `tb_auth` [ RunTime:0.0152s ]
+SQL: SELECT * FROM `tb_auth` WHERE `valid_flag` = 1 AND `auth_level` = 0  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `tb_auth` WHERE `valid_flag` = 1 AND `auth_level` = 1  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.174224s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.174269s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000988s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001031s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001201s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001261s ]
+
+[ 2017-03-31T17:17:42+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000727s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001748s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000736s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004088s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `tb_admin` [ RunTime:0.0216s ]
+SQL: SELECT * FROM `tb_admin` WHERE ( `admin_name` = 'suadmin' OR `admin_phone` = 'suadmin' OR `admin_email` = 'suadmin' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `tb_admin` SET `last_login_time`='2017-03-31 17:17:42',`last_login_ip`='127.0.0.1' WHERE `admin_id` = '100000' [ RunTime:0.1344s ]
+SQL: UPDATE `tb_admin` SET `login_count`=login_count+1 WHERE `admin_id` = '100000' [ RunTime:0.0367s ]
+SQL: SHOW COLUMNS FROM `tb_admin_log` [ RunTime:0.0160s ]
+SQL: INSERT INTO `tb_admin_log` (`admin_id`,`admin_name`,`login_time`,`login_ip`) VALUES ('100000','suadmin','2017-03-31 17:17:42','127.0.0.1') [ RunTime:0.0386s ]
+
+[ 2017-03-31T17:17:44+08:00 ] 127.0.0.1 /supershop/Admin/Index/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000812s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001329s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000650s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003510s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `tb_admin` [ RunTime:0.0166s ]
+SQL: SELECT * FROM `tb_admin` WHERE `admin_id` = '100000' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `tb_auth` [ RunTime:0.0138s ]
+SQL: SELECT * FROM `tb_auth` WHERE `valid_flag` = 1 AND `auth_level` = 0  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `tb_auth` WHERE `valid_flag` = 1 AND `auth_level` = 1  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.205739s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.205784s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000884s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000920s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001233s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001295s ]
+
+[ 2017-03-31T17:19:38+08:00 ] 127.0.0.1 /supershop/Admin/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000585s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001362s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000556s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002998s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `tb_admin` [ RunTime:0.0220s ]
+SQL: SELECT * FROM `tb_admin` WHERE ( `admin_name` = 'suadmin' OR `admin_phone` = 'suadmin' OR `admin_email` = 'suadmin' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `tb_admin` SET `last_login_time`='2017-03-31 17:19:38',`last_login_ip`='127.0.0.1' WHERE `admin_id` = '100000' [ RunTime:0.0983s ]
+SQL: UPDATE `tb_admin` SET `login_count`=login_count+1 WHERE `admin_id` = '100000' [ RunTime:0.0392s ]
+SQL: SHOW COLUMNS FROM `tb_admin_log` [ RunTime:0.0157s ]
+SQL: INSERT INTO `tb_admin_log` (`admin_id`,`admin_name`,`login_time`,`login_ip`) VALUES ('100000','suadmin','2017-03-31 17:19:38','127.0.0.1') [ RunTime:0.0388s ]
+
+[ 2017-03-31T17:19:39+08:00 ] 127.0.0.1 /supershop/Admin/Index/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000829s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.001517s ]
+NOTIC: [8] Constant LANG_SET already defined D:\wnmp\www\supershop\Common\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000790s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003756s ]
+NOTIC: [8] Undefined index: l D:\wnmp\www\supershop\Tools\AdminController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `tb_admin` [ RunTime:0.0172s ]
+SQL: SELECT * FROM `tb_admin` WHERE `admin_id` = '100000' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `tb_auth` [ RunTime:0.0151s ]
+SQL: SELECT * FROM `tb_auth` WHERE `valid_flag` = 1 AND `auth_level` = 0  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `tb_auth` WHERE `valid_flag` = 1 AND `auth_level` = 1  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016472s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016526s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000442s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000486s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000894s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000962s ]
+
