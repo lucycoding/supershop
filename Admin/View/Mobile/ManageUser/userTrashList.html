@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>普通用户</title>
+    <link rel="shortcut icon" href="favicon.ico">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+                {include file="../inc/cssall_mobile.html"}
+  </head>
+  
+  <body>
+                                       
+                                        <div>
+                                                <i class="zmdi zmdi-account"></i>用户管理/<a href="{$smarty.const.__MODULE__}/ManageUser/userList">普通用户</a>
+                                                <a class="align-right ui-btn ui-mini ui-btn-inline ui-btn-icon-left waves-effect waves-button waves-effect waves-button" href="{$smarty.const.__MODULE__}/ManageUser/userTrashList"><i class="zmdi zmdi-delete"></i>回收站</a>
+                                        </div>
+<!--					<div class="box-header well" data-original-title>
+						<h2><i class="icon-user"></i>用户管理/<a href="{$smarty.const.__MODULE__}/ManageUser/userList">普通用户</a></h2>
+                                                <a class="pull-right">回收站</a>						
+					</div>
+					<br/>-->
+ {if $uinfo|@count eq 0}   
+        <p>暂无记录！</p>
+ {else}  
+<div data-role="collapsibleset">     
+    {foreach $uinfo as $k=>$v}
+      <div data-role="collapsible">
+        <h3>序号：{$v.user_id} 用户名：{$v.user_name}</h3>
+<pre>昵称:{$v.user_nickname}
+手机:{$v.user_phone}
+邮箱:{$v.user_email}
+真名:{$v.user_truename}
+操作
+<a href="###"  class="ui-btn ui-btn-inline clr-primary" title="删除"><i class='zmdi zmdi-edit'></i>删除</a><a href="javascript:void(0);" class="ui-btn ui-btn-inline clr-green" title="还原" onclick="saveData('{$v.user_id}','valid_flag','1')"><i class='zmdi zmdi-refresh'></i>还原</a>
+</pre>
+      </div>
+    {/foreach}
+</div>
+ {/if}
+                {include file="../inc/jsall_mobile.html"}
+<script>
+    var controller_path = '{$smarty.const.__CONTROLLER__}';
+{literal}
+function saveData(id, column, value) {
+    if(!/^\d{6}$/.test(id)||!/^[A-Za-z_]+$/.test(column))
+        return;
+    $.ajax({ 
+	url:controller_path+"/saveUserOneField/r="+new Date().getTime(), 
+	type:"post", 
+	data:{id:id,column:column,value:value},
+	async:false,
+	dataType:"json",
+	success:function(data){
+		if(data.retval == 'ok'){
+                    location.reload();
+		} else {
+                    malert(data.retinfo);
+                    return;
+                }
+	}
+    });
+}
+{/literal}
+</script>
+  </body>
+</html>

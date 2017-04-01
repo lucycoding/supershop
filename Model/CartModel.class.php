@@ -14,7 +14,8 @@ class CartModel extends Model {
 
     public function __construct($cookieName = "shopcart") {
         $this->cookieName = $cookieName;
-        if (empty(cookie($this->cookieName))) {
+        $length = strlen(cookie($this->cookieName));
+        if ($length<=0) {
             cookie($this->cookieName,'');
         }
     }

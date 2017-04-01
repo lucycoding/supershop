@@ -11,7 +11,11 @@ class ManageUserController extends AdminController {
         $map['valid_flag'] = 1; // 传入的查询条件
         $User   = D('User'); // 实例化Auth对象
         $count  = $User->where($map)->count();// 查询满足要求的总记录数
-        $Page   = new \Tools\Page($count,8);// 实例化分页类 传入总记录数和每页显示的记录数(25)
+        if(parent::ismobile()) {
+            $Page   = new \Tools\PageMobile($count,8);// 实例化分页类 传入总记录数和每页显示的记录数(25)
+        }else{
+            $Page   = new \Tools\Page($count,8);// 实例化分页类 传入总记录数和每页显示的记录数(25)
+        }
         $show   = $Page->show();// 分页显示输出
         // 进行分页数据查询 注意limit方法的参数要使用Page类的属性
         $list = $User->where($map)->order('user_id')->limit($Page->firstRow.','.$Page->listRows)->select();
@@ -26,7 +30,11 @@ class ManageUserController extends AdminController {
         $map['valid_flag'] = 0; // 传入的查询条件
         $User   = D('User'); // 实例化Auth对象
         $count  = $User->where($map)->count();// 查询满足要求的总记录数
-        $Page   = new \Tools\Page($count,8);// 实例化分页类 传入总记录数和每页显示的记录数(25)
+        if(parent::ismobile()) {
+            $Page   = new \Tools\PageMobile($count,8);// 实例化分页类 传入总记录数和每页显示的记录数(25)
+        }else{
+            $Page   = new \Tools\Page($count,8);// 实例化分页类 传入总记录数和每页显示的记录数(25)
+        }
         $show   = $Page->show();// 分页显示输出
         // 进行分页数据查询 注意limit方法的参数要使用Page类的属性
         $list = $User->where($map)->order('user_id')->limit($Page->firstRow.','.$Page->listRows)->select();

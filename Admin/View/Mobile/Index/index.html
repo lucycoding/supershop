@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>{$smarty.session.lang.INDEX_TITLE}</title>
+    <link rel="shortcut icon" href="favicon.ico">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
                 {include file="../inc/cssall_mobile.html"}
@@ -60,10 +61,10 @@
 			<!-- /panel left -->
 
 
-			<div data-role="header" data-position="fixed" class="wow fadeIn" id="header_id" data-wow-delay='0.8s'>
-				<a href="#leftpanel" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s'><i class="zmdi zmdi-menu"></i></a>
-                                <a href="#" data-wow-delay='0.8s' onclick="javascript:confirm('确定要退出吗？')?location.href='{$smarty.const.__CONTROLLER__}/logout':''"><i class="zmdi zmdi-power-off zmd-fw"></i></a>
-				<h1 class="wow fadeIn" data-wow-delay='0.4s'>{$smarty.session.lang.WEB_NAME}</h1>
+			<div data-role="header" data-position="fixed" class="wow fadeIn" id="header_id" data-wow-delay='0.6s'>
+				<a href="#leftpanel" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.6s'><i class="zmdi zmdi-menu"></i></a>
+                                <a href="#" data-wow-delay='0.6s' onclick="javascript:confirm('确定要退出吗？')?location.href='{$smarty.const.__CONTROLLER__}/logout':''"><i class="zmdi zmdi-power-off zmd-fw"></i></a>
+				<h1 class="wow fadeIn" data-wow-delay='0.6s'>{$smarty.session.lang.WEB_NAME}</h1>
 			</div>
 
 			<div role="main" class="ui-content wow fadeIn" data-inset="false" data-wow-delay="0.8s">
@@ -71,13 +72,10 @@
                         </div>
                         
 
-			<div id="footer_id" data-role="footer" data-position="fixed" data-wow-delay='0.8s'>
-
+			<div id="footer_id" data-role="footer" data-tap-toggle="false" data-position="fixed" data-wow-delay='0.6s'>
 				<div class="row center-xs">
-                        <p align="center">{$smarty.session.lang.COPYRIGHT_INFO}</p>
+                                    <p>{$smarty.session.lang.COPYRIGHT_INFO}</p>
 				</div>
-
-
 			</div>                        
 		</div>
 
