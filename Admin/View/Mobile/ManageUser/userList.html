@@ -54,9 +54,9 @@
 	<fieldset>
 			<div class="box">
 						<label for="name">用户名:</label>
-                        <input type="text" id="tr-username" data-clear-btn="true"/><font color="red">*字母数字下划线，长度不超过32</font>
+                        <input type="text" id="tr-username" /><font color="red">*字母数字下划线，长度不超过32</font>
 						<label for="password">密码:</label>
-                        <input type="password" id="tr-userpwd" data-clear-btn="true"/><font color="red">*密码不少于6位</font>
+                        <input type="password" id="tr-userpwd" /><font color="red">*密码不少于6位</font>
                                               
                         </div>
 	</fieldset>
@@ -127,7 +127,6 @@ function tdClick(){
 }
 
 function saveData(id, column, value) {
-    alert(id+column+value);
     if(!/^\d{6}$/.test(id))
         return;
     $.ajax({ 
@@ -140,27 +139,21 @@ function saveData(id, column, value) {
 		if(data.retval == 'ok'){
                     location.reload();
 		} else {
-                    malert(data.retinfo);
+                    alert(data.retinfo);
                     return;
                 }
-	},
-        beforeSend:function(){
-            $.mobile.loading("show");
-        }
+	}
     });
 }
 function add_user() {
-            $.mobile.loading('show');
-            setTimeOut(loadhide(),3000);
-            return;
     var name = $('#tr-username').val();
     var pwd = $('#tr-userpwd').val();
     if( !/^\w{1,32}$/.test(name) ) {
-        malert('用户名格式错误！');
+        alert('用户名格式错误！');
         return;
     }
     if( pwd.length <6 ) {
-        malert('密码不能少于6位！');
+        alert('密码不能少于6位！');
         return;
     }
     $.ajax({ 
@@ -173,7 +166,7 @@ function add_user() {
 		if(data.retval == 'ok'){
                     location.reload();
 		} else {
-                    malert(data.retinfo);
+                    alert(data.retinfo);
                     return;
                 }
 	}

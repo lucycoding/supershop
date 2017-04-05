@@ -53,7 +53,7 @@ function saveData(id, column, value) {
 		if(data.retval == 'ok'){
                     location.reload();
 		} else {
-                    malert(data.retinfo);
+                    alert(data.retinfo);
                     return;
                 }
 	}
