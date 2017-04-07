@@ -11,30 +11,29 @@
                                        
                                         <div>
                                                 <i class="zmdi zmdi-account"></i>用户管理/<a href="{$smarty.const.__MODULE__}/ManageUser/userList">普通用户</a>
-                                                <a class="align-right ui-btn ui-mini ui-btn-inline ui-btn-icon-left waves-effect waves-button waves-effect waves-button" href="{$smarty.const.__MODULE__}/ManageUser/userTrashList"><i class="zmdi zmdi-delete"></i>回收站</a>
+                                                /<a href="{$smarty.const.__MODULE__}/ManageUser/userTrashList">回收站</a>
                                         </div>
-<!--					<div class="box-header well" data-original-title>
-						<h2><i class="icon-user"></i>用户管理/<a href="{$smarty.const.__MODULE__}/ManageUser/userList">普通用户</a></h2>
-                                                <a class="pull-right">回收站</a>						
-					</div>
-					<br/>-->
  {if $uinfo|@count eq 0}   
         <p>暂无记录！</p>
- {else}  
-<div data-role="collapsibleset">     
-    {foreach $uinfo as $k=>$v}
-      <div data-role="collapsible">
-        <h3>序号：{$v.user_id} 用户名：{$v.user_name}</h3>
-<pre>昵称:{$v.user_nickname}
-手机:{$v.user_phone}
-邮箱:{$v.user_email}
-真名:{$v.user_truename}
-操作
-<a href="###"  class="ui-btn ui-btn-inline clr-primary" title="删除"><i class='zmdi zmdi-edit'></i>删除</a><a href="javascript:void(0);" class="ui-btn ui-btn-inline clr-green" title="还原" onclick="saveData('{$v.user_id}','valid_flag','1')"><i class='zmdi zmdi-refresh'></i>还原</a>
-</pre>
-      </div>
+ {else}     
+ {$page}
+    {foreach $uinfo as $k=>$v}<hr>
+    <div class="mobile-table">
+        <h1 class="nd2-title2 mobile-tr">序号：{$v.user_id}  用户名：{$v.user_name}</h1>
+        <div class="mobile-tr-tds">
+            <table>
+                <tr><td>昵称:</td><td>{$v.user_nickname}</td></tr>
+                <tr><td>手机:</td><td>{$v.user_phone}</td></tr>
+                <tr><td>邮箱:</td><td>{$v.user_email}</td></tr>
+                <tr><td>真名:</td><td>{$v.user_truename}</td></tr>
+                <tr><td>操作</td><td>
+                        <a href="###"  class="ui-btn ui-btn-inline clr-primary" title="删除"><i class='zmdi zmdi-edit'></i>删除</a>
+                        <a href="javascript:void(0);" class="ui-btn ui-btn-inline clr-green" title="还原" onclick="saveData('{$v.user_id}','valid_flag','1')"><i class='zmdi zmdi-refresh'></i>还原</a>
+                    </td></tr>
+            </table>
+        </div>
+    </div>
     {/foreach}
-</div>
  {/if}
                 {include file="../inc/jsall_mobile.html"}
 <script>

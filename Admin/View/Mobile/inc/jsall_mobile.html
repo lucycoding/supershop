@@ -7,3 +7,19 @@
         <script src="{$smarty.const.PUBLIC_URL}Mobile/vendor/wow/wow.min.js"></script>
         <script src="{$smarty.const.PUBLIC_URL}Mobile/js/nativedroid2.js"></script>
         <script src="{$smarty.const.PUBLIC_URL}Mobile/js/nd2settings.js"></script>
+        <script>
+        {literal}
+        $(document).ready(function(){
+            $(".mobile-tr-tds").hide();
+            $(document).on("touchend",".mobile-tr",function(){
+                var tr = $(this);
+                var tds = tr.parent(".mobile-table").find(".mobile-tr-tds");
+                if(tds.is(":hidden")){
+                    tds.show();
+                }else{
+                    tds.hide();
+                }
+            });
+        });
+        {/literal}
+        </script>

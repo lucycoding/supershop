@@ -24,22 +24,26 @@
  {else}  
  {$page}
     {foreach $uinfo as $k=>$v}<hr>
-    <div>
-        <h6 class="nd2-title">序号：{$v.user_id} 用户名：{$v.user_name}</h6>
-                <span class="nd2-subhead">昵称:<span class="enable-edit" data-ret-id="{$v.user_id}" date-ret-column="user_nickname">{$v.user_nickname}</span></span>
-                <span class="nd2-subhead">手机:<span>{$v.user_phone}</span></span>
-                <span class="nd2-subhead">邮箱:<span>{$v.user_email}</span></span>
-                <span class="nd2-subhead">真名:<span class="enable-edit" data-ret-id="{$v.user_id}" date-ret-column="user_truename">{$v.user_truename}</span></span>
-                <span class="nd2-subhead">创建时间:{$v.create_time}</span>
-                <span class="nd2-subhead">上次登录:{$v.last_login_time}</span>
-                <span class="nd2-subhead">上次登录IP:{$v.last_login_ip}</span>
-                <span class="nd2-subhead">状态:{$v.status|replace:'1':'正常'|replace:'0':'禁用'}
+    <div class="mobile-table">
+        <h1 class="nd2-title2 mobile-tr">序号：{$v.user_id}  用户名：{$v.user_name}</h1>
+        <div class="mobile-tr-tds">
+            <table>
+                <tr><td>昵称:</td><td class="enable-edit" data-ret-id="{$v.user_id}" date-ret-column="user_nickname">{$v.user_nickname}</td></tr>
+                <tr><td>手机:</td><td>{$v.user_phone}</td></tr>
+                <tr><td>邮箱:</td><td>{$v.user_email}</td></tr>
+                <tr><td>真名:</td><td class="enable-edit" data-ret-id="{$v.user_id}" date-ret-column="user_truename">{$v.user_truename}</td></tr>
+                <tr><td>创建时间:</td><td>{$v.create_time}</td></tr>
+                <tr><td>上次登录:</td><td>{$v.last_login_time}</td></tr>
+                <tr><td>上次登录IP:</td><td>{$v.last_login_ip}</td></tr>
+                <tr><td>状态:</td><td>{$v.status|replace:'1':'正常'|replace:'0':'禁用'}
                 {if $v.status == 1}
                 <a href="javascript:void(0);"  class="ui-btn ui-btn-inline clr-btn-accent-orange" title="禁用" onclick="saveData('{$v.user_id}','status','0')"><i class="zmdi zmdi-save"></i>禁用</a>
                 {elseif $v.status == 0}
                 <a href="javascript:void(0);"  class="ui-btn ui-btn-inline clr-btn-accent-green" title="启用" onclick="saveData('{$v.user_id}','status','1')"><i class="zmdi zmdi-account"></i>启用</a>
-                {/if}</span>
-                操作<a href="###"  class="ui-btn ui-btn-inline clr-btn-accent-blue-grey" title="编辑"><i class='zmdi zmdi-edit'></i>编辑</a><a href="javascript:void(0);" class="ui-btn ui-btn-inline clr-btn-accent-red" title="回收" onclick="saveData('{$v.user_id}','valid_flag','0')"><i class='zmdi zmdi-delete'></i>回收</a>
+                {/if}</td></tr>
+                <tr><td>操作</td><td><a href="###"  class="ui-btn ui-btn-inline clr-btn-accent-blue-grey" title="编辑"><i class='zmdi zmdi-edit'></i>编辑</a><a href="javascript:void(0);" class="ui-btn ui-btn-inline clr-btn-accent-red" title="回收" onclick="saveData('{$v.user_id}','valid_flag','0')"><i class='zmdi zmdi-delete'></i>回收</a></td></tr>
+            </table>
+        </div>
     </div>
     {/foreach}
  {/if}
@@ -75,7 +79,7 @@
     var controller_path = '{$smarty.const.__CONTROLLER__}';
 {literal}
 $(document).ready(function(){
-    $('span[class="enable-edit"]').click(tdClick);
+    $('td[class="enable-edit"]').click(tdClick);
     $('#submit-user-add').click(add_user);
 });
 
@@ -90,6 +94,7 @@ function tdClick(){
     var input = $("<input class='input-block-level'>");
     //将保存的文本内容赋值给输入框
     input.attr("value",tdText);
+    input.attr("tmpvalue",tdText);
     //将输入框添加到td中
     td.append(input);
     //给输入框注册事件，当失去焦点时就可以将文本保存起来
@@ -97,11 +102,17 @@ function tdClick(){
         //将输入框的文本保存
         var input = $(this);
         var inputText = input.val();
+        var oldText = input.attr("tmpvalue");
         //将td的内容，即输入框去掉,然后给td赋值
-        var td = input.parent("span");
+        var td = input.parent("td");
+        // 如果数据无变化则
+        if(oldText == inputText) {
+            alert("数据未改变");
+        }else{
         // 保存数据
         saveData(td.attr('data-ret-id'), td.attr('date-ret-column'), inputText);
-        td.html(inputText);
+        }
+        td.text(inputText);
         
         //让td重新拥有点击事件
         td.click(tdClick);

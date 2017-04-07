@@ -83,6 +83,7 @@ p { font-size: 16px; line-height: 1.2em; }
 .nd2-headline { font-size: 24px; line-height: 1.2em; font-weight: 400; display: block; }
 .nd2-title { font-size: 20px; line-height: 1.2em; font-weight: 500; display: block; }
 .nd2-subhead { font-size: 16px; line-height: 1.2em; font-weight: 400; display: block; }
+.nd2-title2 { font-size: 16px; line-height: 1.2em; font-weight: 500; display: block; }
 
 blockquote {
 	position: relative;
