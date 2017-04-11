@@ -8,11 +8,11 @@
   </head>
   
   <body>
-                                       
-                                        <div>
-                                                <i class="zmdi zmdi-account"></i>用户管理/<a href="{$smarty.const.__MODULE__}/ManageUser/userList">普通用户</a>
-                                                /<a href="{$smarty.const.__MODULE__}/ManageUser/userTrashList">回收站</a>
-                                        </div>
+      <div data-role="page" >      
+          <div data-role="main" >                                       
+                                        <div data-role="content">
+                                                <i class="zmdi zmdi-account"></i>用户管理/<a href="{$smarty.const.__MODULE__}/ManageUser/userList" data-ajax='false'>普通用户</a>
+                                                /<a href="{$smarty.const.__MODULE__}/ManageUser/userTrashList" data-ajax='false'>回收站</a>
  {if $uinfo|@count eq 0}   
         <p>暂无记录！</p>
  {else}     
@@ -35,6 +35,8 @@
     </div>
     {/foreach}
  {/if}
+                                        </div>
+          </div>
                 {include file="../inc/jsall_mobile.html"}
 <script>
     var controller_path = '{$smarty.const.__CONTROLLER__}';
@@ -60,5 +62,6 @@ function saveData(id, column, value) {
 }
 {/literal}
 </script>
+      </div>
   </body>
 </html>

@@ -9,6 +9,7 @@
   </head>
   
   <body>
+      <div data-role="page">
       <div>当前位置：登录成功页</br>
           <img src="{$smarty.const.PUBLIC_URL}/img/lock.png" height="80px" width="80px"/>
         {$smarty.session.admin_name} 欢迎进入网站管理中心
@@ -22,6 +23,7 @@
           <div>创建时间：{$smarty.session.admin.create_time}</div>
           <div>上次登录：{$smarty.session.admin.last_login_time}</div>
           <div>上次登录ip：{$smarty.session.admin.last_login_ip}</div>
+      </div>
       </div>
   </body>
 </html>

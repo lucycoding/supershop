@@ -9,15 +9,15 @@
         <script src="{$smarty.const.PUBLIC_URL}Mobile/js/nd2settings.js"></script>
         <script>
         {literal}
-        $(document).ready(function(){
-            $(".mobile-tr-tds").hide();
+        $(document).on("pageinit",function(event){
+            $(".mobile-tr-tds").css("display","none");
             $(document).on("touchend",".mobile-tr",function(){
                 var tr = $(this);
                 var tds = tr.parent(".mobile-table").find(".mobile-tr-tds");
-                if(tds.is(":hidden")){
-                    tds.show();
+                if(tds.is(":hidden") || !tds.is(':visible') || tds.css("display")=='none' ){
+                    tds.css("display","block");
                 }else{
-                    tds.hide();
+                    tds.css("display","none");
                 }
             });
         });

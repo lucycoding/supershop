@@ -21,6 +21,6 @@ define('DIR_SECURE_CONTENT', 'deney Access!');
 // 项目名称
 define('WEB_NAME', '小鹿网上商城');
 // 项目域名
-define('WEB_URL', 'http://127.0.0.1/supershop/');
+define('WEB_URL', 'http://192.168.3.9/supershop/');
 
 include('../ThinkPHP/ThinkPHP.php');

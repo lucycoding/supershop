@@ -8,17 +8,13 @@
   </head>
   
   <body>
-                                       
-                                        <div>
-                                                <i class="zmdi zmdi-account"></i>用户管理/<a href="{$smarty.const.__MODULE__}/ManageUser/userList">普通用户</a>
-                                                <a class="align-right ui-btn ui-mini ui-btn-inline ui-btn-icon-left waves-effect waves-button waves-effect waves-button" href="{$smarty.const.__MODULE__}/ManageUser/userTrashList"><i class="zmdi zmdi-delete"></i>回收站</a>
+      <div data-role="page" >      
+          <div data-role="main" >
+                                        <div data-role="content">
+                                                <i class="zmdi zmdi-account"></i>用户管理/<a href="{$smarty.const.__MODULE__}/ManageUser/userList" data-ajax='false'>普通用户</a>
+                                                <a class="align-right ui-btn ui-mini ui-btn-inline ui-btn-icon-left waves-effect waves-button waves-effect waves-button" href="{$smarty.const.__MODULE__}/ManageUser/userTrashList" data-ajax='false'><i class="zmdi zmdi-delete"></i>回收站</a>
                                                 <a class="align-right ui-btn ui-mini ui-btn-inline ui-btn-icon-left waves-effect waves-button waves-effect waves-button" href="#modal-user-add" data-rel="popup" data-position-to="origin" data-role="button" data-inline="true" data-transition="pop"><i class="zmdi zmdi-accounts-add"></i>添加</a>
-                                        </div>
-<!--					<div class="box-header well" data-original-title>
-						<h2><i class="icon-user"></i>用户管理/<a href="{$smarty.const.__MODULE__}/ManageUser/userList">普通用户</a></h2>
-                                                <a class="pull-right">回收站</a>						
-					</div>
-					<br/>-->
+                                        
  {if $uinfo|@count eq 0}   
         <p>暂无记录！</p>
  {else}  
@@ -47,6 +43,7 @@
     </div>
     {/foreach}
  {/if}
+                                        </div>
 <!-- add user -->
 <div id="modal-user-add"  data-role="popup">
     <div data-role="header">
@@ -73,6 +70,7 @@
     
 	</form>
 </div>
+          </div>
 			<!--/#content.span9-->
                 {include file="../inc/jsall_mobile.html"}
 <script>
@@ -186,6 +184,7 @@ function add_user() {
 }
 {/literal}
 </script>
+      </div>
   </body>
 </html>
 

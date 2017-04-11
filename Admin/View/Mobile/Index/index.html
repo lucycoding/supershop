@@ -13,15 +13,15 @@
 		</style>
 
 	</head>
-        <body onload="changeFrameHeight()">
+        <body>
 
 		<div data-role="page" class="nd2-no-menu-swipe">
 
 			<!-- panel left 左边导航面板-->
 			<div data-role="panel" id="leftpanel" data-display="overlay" data-position-fixed="true" >
 
-				<div class='nd2-sidepanel-profile wow fadeInDown'>
-					<img class='profile-background' src="{$smarty.const.PUBLIC_URL}Mobile/css/images/thumb_bg.png"/>
+				<div class='nd2-sidepanel-profile wow fadeInDown' style="margin-bottom:0">
+					<img class='profile-background' src="{$smarty.const.WEB_URL}Public/Mobile/css/images/thumb_bg.png"/>
 					<div class="row">
 						<div class='col-xs-4 center-xs'>
 							<div class='box'>
@@ -33,10 +33,12 @@
 							</div>
 						</div>
 						<div class='col-xs-8'>
+                                                    <a href="{$smarty.const.__CONTROLLER__}/defaultPage" target="contentIframe" data-ajax='false'>
 							<div class='box profile-text'>
 								<strong>{$smarty.session.admin.admin_name}</strong>
 								<span class='subline'>{$smarty.session.admin.admin_nickname}</span>
 							</div>
+                                                    </a>
 						</div>
 					</div>
 				</div>
@@ -46,7 +48,7 @@
 					<li data-role="list-divider">操作导航</li>
 				</ul>-->
                         {foreach $auth_infoA as $k=>$v}
-				<div data-role="collapsible" data-collapsed="false" data-inset="false"  data-collapsed-icon="carat-d" data-expanded-icon="carat-d" data-iconpos="right">
+				<div data-role="collapsible" data-inset="false"  data-collapsed-icon="carat-d" data-expanded-icon="carat-d" data-iconpos="right">
 					<h3>{$v.auth_name}</h3>
 					<ul data-role="listview" data-inset="false" data-icon="false">
                                                 {foreach $auth_infoB as $kk=>$vv}
@@ -67,35 +69,32 @@
 				<h1 class="wow fadeIn" data-wow-delay='0.6s'>{$smarty.session.lang.WEB_NAME}</h1>
 			</div>
 
-			<div role="main" class="ui-content wow fadeIn" data-inset="false" data-wow-delay="0.8s">
-                            <iframe id="iframepage" name="contentIframe" scrolling="auto" frameborder="0" width="100%" min-height="400px" onload="changeFrameHeight()" src="{$smarty.const.__CONTROLLER__}/defaultPage"></iframe>		
+			<div role="main" class="ui-content wow fadeIn" data-inset="false" data-wow-delay='0.8s'>
+                            <iframe id="iframepage" name="contentIframe" scrolling="auto" frameborder="0" width="100%" min-height="25em" onload="changeFrameHeight()" src="{$smarty.const.__CONTROLLER__}/defaultPage"></iframe>		
                         </div>
                         
-
-			<div id="footer_id" data-role="footer" data-tap-toggle="false" data-position="fixed" data-wow-delay='0.6s'>
-				<div class="row center-xs">
-                                    <p>{$smarty.session.lang.COPYRIGHT_INFO}</p>
-				</div>
-			</div>                        
-		</div>
-
                 {include file="../inc/jsall_mobile.html"}
-
-	</body>
-</html>
 {literal}
 <script>
 function changeFrameHeight(){
     var ifm = document.getElementById("iframepage"); 
     var hdHeight = document.getElementById("header_id").offsetHeight; 
-    var ftHeight = document.getElementById("footer_id").offsetHeight; 
+    //var ftHeight = document.getElementById("footer_id").offsetHeight; 
     var cHeight = document.documentElement.clientHeight;
-    ifm.height = cHeight - hdHeight - ftHeight;
+    ifm.height = cHeight - hdHeight ;//- ftHeight;
     //alert(hdHeight + " " +ifm.height +" "+cHeight);
 }
 window.onresize=function(){  
      changeFrameHeight();  
 } 
+$(document).on("pageload",function(){
+  changeFrameHeight();
+});
 </script>
-{/literal}
+{/literal}                    
+		</div>
+
+
+	</body>
+</html>
 
