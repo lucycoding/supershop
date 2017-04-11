@@ -1,6 +1,14 @@
 
         <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="http://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+        <script>
+        {literal}
+        $(document).bind("mobileinit", function() {
+                       //全局禁用ajax提交无刷新效果
+                       $.mobile.ajaxEnabled=false
+               });
+        {/literal}
+        </script>
         <script src="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <!--        <script src="{$smarty.const.PUBLIC_URL}Mobile/js/jquery.mobile-1.4.5.min.js"></script>-->
         <script src="{$smarty.const.PUBLIC_URL}Mobile/vendor/waves/waves.min.js"></script>

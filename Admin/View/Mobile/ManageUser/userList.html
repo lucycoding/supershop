@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML>
 <html>
   <head>
     <title>普通用户</title>
@@ -136,7 +136,7 @@ function tdClick(){
 }
 
 function saveData(id, column, value) {
-    if(!/^\d{6}$/.test(id))
+    if(!/^\d{6}$/.test(id)||!/^[A-Za-z_]+$/.test(column))
         return;
     $.ajax({ 
 	url:controller_path+"/saveUserOneField/r="+new Date().getTime(), 

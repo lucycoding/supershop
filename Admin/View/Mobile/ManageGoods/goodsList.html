@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML>
 <html>
   <head>
     <title>查看商品</title>
@@ -21,27 +21,27 @@
  {$page}
     {foreach $ginfo as $k=>$v}<hr>
     <div class="mobile-table">
-        <h1 class="nd2-title2 mobile-tr">序号：{$v.goods_id}  商品名：{$v.goods_name}</h1>
+        <h1 class="nd2-title2 mobile-tr">序号：{$v.goods_id}<br>商品名：{$v.goods_name}</h1>
         <div class="mobile-tr-tds">
             <table>
-                <tr><td>缩略图:</td><td><img src="{$smarty.const.WEB_URL}{$v.goods_thumb_url}" alt='pic'/></td></tr>
-                <tr><td>商品名称:</td><td class="enable-edit" data-ret-id="{$v.goods_id}" data-ret-column="goods_name" style="max-width: 15em">{$v.goods_name}</td></tr>
-                <tr><td>原价:</td><td class="enable-edit" data-ret-id="{$v.goods_id}" data-ret-column="goods_old_price">{$v.goods_old_price}</td></tr>
-                <tr><td>现价:</td><td class="enable-edit" data-ret-id="{$v.goods_id}" data-ret-column="goods_now_price">{$v.goods_now_price}</td></tr>
-                <tr><td>产地:</td><td class="enable-edit" data-ret-id="{$v.goods_id}" data-ret-column="goods_produce_place">{$v.goods_produce_place}</td></tr>
-                <tr><td>品牌:</td><td class="enable-edit" data-ret-id="{$v.goods_id}" data-ret-column="goods_brand">{$v.goods_brand}</td></tr>
-                <tr><td>库存:</td><td class="enable-edit" data-ret-id="{$v.goods_id}" data-ret-column="goods_num">{$v.goods_num}</td></tr>
-                <tr><td>状态:</td><td>{$v.status|replace:'1':'显示'|replace:'0':'下架'}
+                <tr><td width="25%">缩略图:</td><td><img src="{$smarty.const.WEB_URL}{$v.goods_thumb_url}" alt='pic'/></td></tr>
+                <tr><td width="25%">商品名称:</td><td class="enable-edit" data-ret-id="{$v.goods_id}" data-ret-column="goods_name" style="max-width: 15em">{$v.goods_name}</td></tr>
+                <tr><td width="25%">原价:</td><td class="enable-edit" data-ret-id="{$v.goods_id}" data-ret-column="goods_old_price">{$v.goods_old_price}</td></tr>
+                <tr><td width="25%">现价:</td><td class="enable-edit" data-ret-id="{$v.goods_id}" data-ret-column="goods_now_price">{$v.goods_now_price}</td></tr>
+                <tr><td width="25%">产地:</td><td class="enable-edit" data-ret-id="{$v.goods_id}" data-ret-column="goods_produce_place">{$v.goods_produce_place}</td></tr>
+                <tr><td width="25%">品牌:</td><td class="enable-edit" data-ret-id="{$v.goods_id}" data-ret-column="goods_brand">{$v.goods_brand}</td></tr>
+                <tr><td width="25%">库存:</td><td class="enable-edit" data-ret-id="{$v.goods_id}" data-ret-column="goods_num">{$v.goods_num}</td></tr>
+                <tr><td width="25%">状态:</td><td>{$v.status|replace:'1':'显示'|replace:'0':'下架'}
                     {if $v.status == 1}
                     <a href="javascript:void(0);"  class="ui-btn ui-btn-inline clr-btn-accent-orange" title="下架" onclick="saveData('{$v.goods_id}','status','0')"><i class="zmdi zmdi-save"></i>下架</a>
                     {elseif $v.status == 0}
                     <a href="javascript:void(0);"  class="ui-btn ui-btn-inline clr-btn-accent-green" title="显示" onclick="saveData('{$v.goods_id}','status','1')"><i class="zmdi zmdi-account"></i>显示</a>
                     {/if}
                     </td></tr>
-                <tr><td>生产日期:</td><td>{$v.goods_produce_date}</td></tr>
-                <tr><td>创建时间:</td><td>{$v.create_time}</td></tr>
-                <tr><td>上次更新:</td><td>{$v.last_update_time}</td></tr>
-                <tr><td>操作</td><td><a href="###"  class="ui-btn ui-btn-inline clr-btn-accent-blue-grey" title="编辑"><i class='zmdi zmdi-edit'></i>编辑</a><a href="javascript:void(0);" class="ui-btn ui-btn-inline clr-btn-accent-red" title="回收" onclick="saveData('{$v.goods_id}','valid_flag','0')"><i class='zmdi zmdi-delete'></i>回收</a></td></tr>
+                <tr><td width="25%">生产日期:</td><td>{$v.goods_produce_date}</td></tr>
+                <tr><td width="25%">创建时间:</td><td>{$v.create_time}</td></tr>
+                <tr><td width="25%">上次更新:</td><td>{$v.last_update_time}</td></tr>
+                <tr><td width="25%">操作</td><td><a href="###"  class="ui-btn ui-btn-inline clr-btn-accent-blue-grey" title="编辑"><i class='zmdi zmdi-edit'></i>编辑</a><a href="javascript:void(0);" class="ui-btn ui-btn-inline clr-btn-accent-red" title="回收" onclick="saveData('{$v.goods_id}','valid_flag','0')"><i class='zmdi zmdi-delete'></i>回收</a></td></tr>
             </table>
         </div>
     </div>
@@ -97,6 +97,7 @@
 	
     <div class="align-center">
                     <button type="reset" data-role="button" data-inline="true" class="ui-btn ui-btn-primary ui-btn-inline"><i class='zmdi zmdi-refresh'></i> 重置</button>
+                    <!--<button type="submit" data-role="button" data-inline="true" class="ui-btn ui-btn-success ui-btn-inline"><i class='zmdi zmdi-save'></i> 保存</button>-->
                     <a id="submit-goods-add" href="javascript:void(0);" data-role="button" data-inline="true" class="ui-btn ui-btn-success ui-btn-inline"><i class='zmdi zmdi-save'></i> 保存</a>
     </div>
     </div>
@@ -177,7 +178,7 @@ function tdClick(){
 }
 
 function saveData(id, column, value) {
-    if(!/^\d{6}$/.test(id))
+    if(!/^\d{7}$/.test(id)||!/^[A-Za-z_]+$/.test(column))
         return;
     $.ajax({ 
 	url:controller_path+"/saveGoodsOneField/r="+new Date().getTime(), 
@@ -206,7 +207,22 @@ function add_goods() {
 //        alert('密码不能少于6位！');
 //        return;
 //    }
-    $("#form-add-goods").submit();
+//    $.ajax({ 
+//	url:controller_path+"/addGoods/r="+new Date().getTime(), 
+//	type:"post", 
+//	data:$("#form-add-goods").serialize(),
+//	async:false,
+//	dataType:"json",
+//	success:function(data){
+//		if(data.retval == 'ok'){
+//                    location.reload();
+//		} else {
+//                    alert(data.retinfo);
+//                    return;
+//                }
+//	}
+//    });
+$("#form-add-goods").submit();
 }
 {/literal}
 </script>

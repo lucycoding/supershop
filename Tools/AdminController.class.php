@@ -35,7 +35,7 @@ class AdminController extends CommonController {
                 if($is_ajax) {
                     die($this->retAjaxInfo(false, '未登录！'));
                 }
-                die($this->retScriptErr('parent.location.href="Index/login";', true));
+                die($this->retScriptErr('parent.location.href="'.ADMIN_URL.'/login";', true));
             }
         } elseif($now_ac === 'Index-login') { // 登录页
             if(!empty($admin_id) && !empty($admin_name)) { // session有用户数据,跳转至index页
