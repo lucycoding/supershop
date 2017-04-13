@@ -25,7 +25,7 @@ class ManageAdminController extends AdminController {
         $map['a.admin_name'] = array('neq','suadmin');
         $Admin   = D('Admin'); // 实例化Auth对象
         $count  = $Admin->alias('a')->where($map)->count();// 查询满足要求的总记录数
-        $Page   = new \Tools\Page($count,8);// 实例化分页类 传入总记录数和每页显示的记录数(25)
+        $Page   = parent::getPage($count,8);// 获取分页 传入总记录数和每页显示的记录数
         $show   = $Page->show();// 分页显示输出
         // 进行分页数据查询 注意limit方法的参数要使用Page类的属性
 //        $list = $Admin->alias('a')->where($map)->order('a.admin_id')->limit($Page->firstRow.','.$Page->listRows)->select();
@@ -48,7 +48,7 @@ class ManageAdminController extends AdminController {
         $map['a.admin_name'] = array('neq','suadmin');
         $Admin   = D('Admin'); // 实例化Auth对象
         $count  = $Admin->alias('a')->where($map)->count();// 查询满足要求的总记录数
-        $Page   = new \Tools\Page($count,8);// 实例化分页类 传入总记录数和每页显示的记录数(25)
+        $Page   = parent::getPage($count,8);// 获取分页 传入总记录数和每页显示的记录数
         $show   = $Page->show();// 分页显示输出
         // 进行分页数据查询 注意limit方法的参数要使用Page类的属性
 //        $list = $Admin->alias('a')->where($map)->order('admin_id')->limit($Page->firstRow.','.$Page->listRows)->select();

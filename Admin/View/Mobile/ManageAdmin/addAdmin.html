@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>添加管理员</title>
+    <link rel="shortcut icon" href="favicon.ico">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	{include file="../inc/cssall_mobile.html"}
+  </head>
+
+  <body>
+      <div data-role="page" >      
+          <div data-role="main" >
+            <i class="zmdi zmdi-account"></i>ADMIN管理/<a href="{$smarty.const.__CONTROLLER__}/addAdmin" data-ajax='false'>添加管理员</a>
+    
+	<form name="addAdmin_form" method="post" action="{$smarty.const.__SELF__}">
+    <div  data-role="content">
+	<fieldset>
+			<div class="box">
+                                <label for="select">角色:</label>
+                                <select  name="role">
+                                    <option value="0">--选择角色--</option>
+                                    {foreach $rinfo as $k=>$v}
+                                    <option value="{$v.role_id}">{$v.role_name}</option>
+                                    {/foreach}
+                                </select>
+                                
+                                <label for="loginname">登录名:</label>
+                                <input type="text" name="loginname" />
+                                
+                                <label for="loginname">登录密码:</label>
+                                <input type="password" name="loginpwd" />
+                                
+                        </div>
+	</fieldset>
+	
+    <div class="align-center">
+                    <button type="reset" data-role="button" data-inline="true" class="ui-btn ui-btn-primary ui-btn-inline"><i class='zmdi zmdi-refresh'></i> 重置</button>
+                    <button type="submit" data-role="button" data-inline="true" class="ui-btn ui-btn-success ui-btn-inline"><i class='zmdi zmdi-save'></i> 保存</button>
+                    <!--<a href="javascript:void(0);" data-role="button" data-inline="true" class="ui-btn ui-btn-success ui-btn-inline"><i class='zmdi zmdi-save'></i> 保存</a>-->
+    </div>
+    </div>
+    
+	</form>
+          </div>
+        {include file="../inc/jsall_mobile.html"}
+        <script>
+{literal}
+$(document).ready(function(){
+});
+{/literal}
+            </script>
+      </div>
+  </body>
+</html>    	
+    	
+    	
+    	
+    	
+    	

@@ -11,7 +11,7 @@ class ManageGoodsTypeController extends AdminController {
         $map['valid_flag'] = 1; // 传入的查询条件
         $Category   = D('Category'); // 实例化Auth对象
         $count  = $Category->where($map)->count();// 查询满足要求的总记录数
-        $Page   = new \Tools\Page($count,8);// 实例化分页类 传入总记录数和每页显示的记录数(25)
+        $Page   = parent::getPage($count,8);// 获取分页 传入总记录数和每页显示的记录数
         $show   = $Page->show();// 分页显示输出
         // 进行分页数据查询 注意limit方法的参数要使用Page类的属性
         $list = $Category->where($map)->order('type_path')->limit($Page->firstRow.','.$Page->listRows)->select();

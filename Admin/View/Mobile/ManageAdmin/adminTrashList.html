@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>回收站</title>
+    <link rel="shortcut icon" href="favicon.ico">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	{include file="../inc/cssall_mobile.html"}
+  </head>
+
+  <body>
+      <div data-role="page" >      
+          <div data-role="main" >
+                                        <div data-role="content">
+                                                <i class="zmdi zmdi-account"></i>ADMIN管理/<a href="{$smarty.const.__CONTROLLER__}/adminList" data-ajax='false'>所有管理员</a>/<a href="{$smarty.const.__CONTROLLER__}/adminTrashList" data-ajax='false'>回收站</a>
+                                        
+ {if $ainfo|@count eq 0}   
+        <p>暂无记录！</p>
+ {else}  
+ {$page}
+    {foreach $ainfo as $k=>$v}<hr>
+    <div class="mobile-table">
+        <h1 class="nd2-title2 mobile-tr">序号：{$v.admin_id}<br>用户名：{$v.admin_name}</h1>
+        <div class="mobile-tr-tds">
+            <table style="border:1px solid #DCDCDC;">
+                <tr><td width="25%">用户名:</td><td>{$v.admin_name}</td></tr>
+                <tr><td width="25%">昵称:</td><td>{$v.admin_nickname}</td></tr>
+                <tr><td width="25%">电话:</td><td>{$v.admin_phone}</td></tr>
+                <tr><td width="25%">邮箱:</td><td>{$v.admin_email}</td></tr>
+                <tr><td width="25%">创建时间:</td><td>{$v.create_time}</td></tr>
+                <tr><td width="25%">上次登录:</td><td>{$v.last_login_time}</td></tr>
+                <tr><td width="25%">上次登录IP:</td><td>{$v.last_login_ip}</td></tr>
+                <tr><td width="25%">登录次数:</td><td>{$v.login_count}</td></tr>
+                <tr><td width="25%">角色名称:</td><td>{$v.role_name}</td></tr>
+                <tr><td width="25%">操作</td><td>
+                        <a href="###"  class="ui-btn ui-btn-inline clr-primary" title="删除"><i class='zmdi zmdi-edit'></i>删除</a>
+                        <a href="javascript:void(0);" class="ui-btn ui-btn-inline clr-green" title="还原" onclick="saveData('{$v.admin_id}','valid_flag','0')"><i class='zmdi zmdi-refresh'></i>还原</a>
+                    </td></tr>
+            </table>
+        </div>
+    </div>
+    {/foreach}
+ {/if}
+                                        </div>
+          </div>
+			<!--/#content.span9-->
+                {include file="../inc/jsall_mobile.html"}
+<script>
+    var controller_path = '{$smarty.const.__CONTROLLER__}';
+{literal}
+$(document).ready(function(){
+});
+
+function saveData(id, column, item) {
+    if(!/^\d{6}$/.test(id)||!/^[A-Za-z_]+$/.test(column))
+        return;
+    var title = item?item.title:"更改";
+    bootbox.confirm("确定要"+title+"该管理员吗？",function(flag){
+        if(flag){
+            $.ajax({ 
+                url:controller_path+"/saveAdminOneInfo/r="+new Date().getTime(), 
+                type:"post", 
+                data:{id:id,column:column,value:value},
+                async:false,
+                dataType:"json",
+                success:function(data){
+                        if(data.retval == 'ok'){
+                            location.reload();
+                        } else {
+                            alert(data.retinfo);
+                            return;
+                        }
+                }
+            });
+        }
+    });
+}
+{/literal}
+</script>
+      </div>
+  </body>
+</html>    	
+    	
+    	

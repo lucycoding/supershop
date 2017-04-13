@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>添加分类</title>
+    <link rel="shortcut icon" href="favicon.ico">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	{include file="../inc/cssall_mobile.html"}
+  </head>
+
+  <body>
+      <div data-role="page" >      
+          <div data-role="main" >
+            <i class="zmdi zmdi-account"></i>商品管理/<a href="{$smarty.const.__CONTROLLER__}/goodsTypeList" data-ajax='false'>类别管理</a>/添加商品
+    
+	<form name="addGoodsType_form" method="post" action="{$smarty.const.__SELF__}">
+    <div  data-role="content">
+	<fieldset>
+			<div class="box">
+                                <label for="goodsTypeName">类别名称:</label>
+                                <input type="text" id="goodsTypeName" name="type_name" />
+                                
+                                <label for="select">类别父级:</label>
+                                <select id="goodsTypePid" name="type_pid">
+                                    <option value="0">请选择(默认顶级)</option>
+                                    {foreach $tinfo as $k=>$v}
+                                    <option value="{$v.type_id}">{$v.type_name|indent:$v.type_level:'-/'}</option>
+                                    {/foreach}
+                                </select>
+                                
+                        </div>
+	</fieldset>
+	
+    <div class="align-center">
+                    <button type="reset" data-role="button" data-inline="true" class="ui-btn ui-btn-primary ui-btn-inline"><i class='zmdi zmdi-refresh'></i> 重置</button>
+                    <button type="submit" data-role="button" data-inline="true" class="ui-btn ui-btn-success ui-btn-inline"><i class='zmdi zmdi-save'></i> 保存</button>
+                    <!--<a href="javascript:void(0);" data-role="button" data-inline="true" class="ui-btn ui-btn-success ui-btn-inline"><i class='zmdi zmdi-save'></i> 保存</a>-->
+    </div>
+    </div>
+    
+	</form>
+          </div>
+        {include file="../inc/jsall_mobile.html"}
+        <script>
+{literal}
+$(document).ready(function(){
+});
+{/literal}
+            </script>
+      </div>
+  </body>
+</html>    	
+    	
+    	
+    	
+    	
+    	

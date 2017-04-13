@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>添加商品</title>
+    <link rel="shortcut icon" href="favicon.ico">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	{include file="../inc/cssall_mobile.html"}
+  </head>
+
+  <body>
+      <div data-role="page" >      
+          <div data-role="main" >
+            <i class="zmdi zmdi-account"></i>商品管理/<a href="{$smarty.const.__CONTROLLER__}/goodsList" data-ajax='false'>查看商品</a>/添加商品
+    
+	<form id="form-add-goods" action="{$smarty.const.__SELF__}" method="post" enctype="multipart/form-data">
+    <div  data-role="content">
+	<fieldset>
+			<div class="box">
+                            <label for="select">类别:</label>
+                            <span id="gtype"><select name="goods_type[]">
+                                    <option value="0">--选择类别--</option>
+                                    {foreach $tinfo as $k=>$v}
+                                    <option value="{$v.type_id}">{$v.type_name|indent:$v.type_level:'-/'}</option>
+                                    {/foreach}
+                                </select></span><i class="zmdi zmdi-plus-circle addtype" style="cursor: pointer"></i>
+                                <label for="goodsName">商品名:</label>
+                                <input type="text" id="goodsName" name="goods_name" />
+
+                                <label for="goodsInfo">商品介绍:</label>
+                                <textarea rows="8" cols="40" id="goodsInfo" name="goods_info"></textarea>
+
+                                <label for="goodsProducePlace">产地:</label>
+                                <input type="text" id="goodsProducePlace" name="goods_produce_place" />
+
+                                <label for="goodsProduceDate">商品介绍:</label>
+                                <input type="text" id="goodsProduceDate" name="goods_produce_date"/>
+
+                                <label for="goodsBrand">品牌:</label>
+                                <input type="text" id="goodsBrand" name="goods_brand" />
+
+                                <label for="goodsOldPrice">原价:</label>
+                                <input type="text" id="goodsOldPrice" name="goods_old_price" />
+
+                                <label for="goodsNowPrice">现价:</label>
+                                <input type="text" id="goodsNowPrice" name="goods_now_price" />
+                                
+                                <label for="goodsImageUrl">图片:</label>
+				<input type="file" id="goodsImageUrl" name="goods_img"/>
+                                
+                                <label for="goodsNowPrice">数量:</label>
+                                <input type="text" id="goodsNum" name="goods_num"/>
+                                              
+                        </div>
+	</fieldset>
+	
+    <div class="align-center">
+                    <button type="reset" data-role="button" data-inline="true" class="ui-btn ui-btn-primary ui-btn-inline"><i class='zmdi zmdi-refresh'></i> 重置</button>
+                    <button type="submit" data-role="button" data-inline="true" class="ui-btn ui-btn-success ui-btn-inline"><i class='zmdi zmdi-save'></i> 保存</button>
+                    <!--<a id="submit-goods-add" href="javascript:void(0);" data-role="button" data-inline="true" class="ui-btn ui-btn-success ui-btn-inline"><i class='zmdi zmdi-save'></i> 保存</a>-->
+    </div>
+    </div>
+    
+	</form>
+          </div>
+        {include file="../inc/jsall_mobile.html"}
+        <script>
+{literal}
+$(document).ready(function(){
+    var html = $('#gtype').html();
+    $(document).on('touchend', '.addtype', function(){
+        var select = '<span></br>　　　　&nbsp;&nbsp;' + html + '<i class="zmdi zmdi-minus-circle removetype" style="cursor: pointer"></i></span>';
+         $(this).after(select);
+    });
+    $(document).on('touchend', '.removetype', function(){
+        $(this).parent().remove();
+    });
+});
+{/literal}
+            </script>
+      </div>
+  </body>
+</html>    	
+    	
+    	
+    	
+    	
+    	

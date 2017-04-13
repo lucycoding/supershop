@@ -12,18 +12,12 @@ class ManageGoodsController extends AdminController {
         $Goods   = D('Goods'); // 实例化Auth对象
         $Category = D('Category');
         $count  = $Goods->where($map)->count();// 查询满足要求的总记录数
-        if(parent::ismobile()) {
-            $Page   = new \Tools\PageMobile($count,8);// 实例化分页类 传入总记录数和每页显示的记录数(25)
-        }else{
-            $Page   = new \Tools\Page($count,8);// 实例化分页类 传入总记录数和每页显示的记录数(25)
-        }
+        $Page   = parent::getPage($count,8);// 获取分页 传入总记录数和每页显示的记录数
         $show   = $Page->show();// 分页显示输出
         // 进行分页数据查询 注意limit方法的参数要使用Page类的属性
         $list = $Goods->where($map)->order('goods_id')->limit($Page->firstRow.','.$Page->listRows)->select();
         $this->assign('ginfo',$list);// 赋值数据集
         $this->assign('page',$show);// 赋值分页输出
-        $tinfo = $Category->where($map)->order('type_path')->select();
-        $this->assign('tinfo', $tinfo);
         $this->display(); // 输出模板
     }
     /**
@@ -33,7 +27,7 @@ class ManageGoodsController extends AdminController {
         $map['valid_flag'] = 0; // 传入的查询条件
         $Goods   = D('Goods'); // 实例化Auth对象
         $count  = $Goods->where($map)->count();// 查询满足要求的总记录数
-        $Page   = new \Tools\Page($count,8);// 实例化分页类 传入总记录数和每页显示的记录数(25)
+        $Page   = parent::getPage($count,8);// 获取分页 传入总记录数和每页显示的记录数
         $show   = $Page->show();// 分页显示输出
         // 进行分页数据查询 注意limit方法的参数要使用Page类的属性
         $list = $Goods->where($map)->order('goods_id')->limit($Page->firstRow.','.$Page->listRows)->select();

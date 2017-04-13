@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>查看公告</title>
+    <link rel="shortcut icon" href="favicon.ico">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+                {include file="../inc/cssall_mobile.html"}
+  </head>
+  
+  <body>
+      <div data-role="page" >      
+          <div data-role="main" >
+                                        <div data-role="content">
+                                                <i class="zmdi zmdi-account"></i>公告管理/<a href="{$smarty.const.__CONTROLLER__}/informList" data-ajax='false'>查看公告</a>
+                                                <a class="align-right ui-btn ui-mini ui-btn-inline ui-btn-icon-left waves-effect waves-button waves-effect waves-button" href="{$smarty.const.__CONTROLLER__}/informTrashList" data-ajax='false'><i class="zmdi zmdi-delete"></i>回收站</a>
+                                                <a class="align-right ui-btn ui-mini ui-btn-inline ui-btn-icon-left waves-effect waves-button waves-effect waves-button" href="#modal-inform-add" data-rel="popup" data-position-to="origin" data-role="button" data-inline="true" data-transition="pop"><i class="zmdi zmdi-accounts-add"></i>添加</a>
+                                        
+ {if $minfo|@count eq 0}   
+        <p>暂无记录！</p>
+ {else}  
+ {$page}
+    {foreach $minfo as $k=>$v}<hr>
+    <div class="mobile-table">
+        <h1 class="nd2-title2 mobile-tr">标题：{$v.inform_title}</h1>
+        <div class="mobile-tr-tds">
+            <table>
+                <tr><td>公告标题:</td><td class="enable-edit" data-ret-id="{$v.inform_id}" date-ret-column="inform_title">{$v.inform_title}</td></tr>
+                <tr><td>公告内容:</td><td class="enable-edit" data-ret-id="{$v.inform_id}" date-ret-column="inform_content">{$v.inform_content}</td></tr>
+                <tr><td>创建时间:</td><td>{$v.create_time}</td></tr>
+                <tr><td>操作</td><td>
+                        <a href="javascript:void(0);" class="ui-btn ui-btn-inline clr-btn-accent-red" title="回收" onclick="saveData('{$v.inform_id}','valid_flag','0')"><i class='zmdi zmdi-delete'></i>回收</a>
+                    </td></tr>
+            </table>
+        </div>
+    </div>
+    {/foreach}
+ {/if}
+                                        </div>
+<!-- add user -->
+<div id="modal-inform-add"  data-role="popup">
+    <div data-role="header">
+        <h1 class='nd-title'>添加公告</h1>
+    </div>    
+    
+	<form id="inform-form-add" class="form-horizontal">
+    <div  data-role="content">
+	<fieldset>
+			<div class="box">
+						<label for="title">标题:</label>
+                        <input type="text" id="tr-title" /><font color="red">*长度不超过32</font>
+						<label for="content">内容:</label>
+                        <textarea rows="8" cols="40" id="tr-content"/></textarea><font color="red">*长度不超过128</font>
+                                              
+                        </div>
+	</fieldset>
+	
+    <div class="align-center">
+                    <button type="reset" data-role="button" data-inline="true" class="ui-btn ui-btn-primary ui-btn-inline"><i class='zmdi zmdi-refresh'></i> 重置</button>
+                    <a id="submit-inform-add" href="javascript:void(0);" data-role="button" data-inline="true" class="ui-btn ui-btn-success ui-btn-inline"><i class='zmdi zmdi-save'></i> 保存</a>
+    </div>
+    </div>
+    
+	</form>
+</div>
+          </div>
+			<!--/#content.span9-->
+                {include file="../inc/jsall_mobile.html"}
+<script>
+    var controller_path = '{$smarty.const.__CONTROLLER__}';
+{literal}
+$(document).ready(function(){
+    $('td[class="enable-edit"]').click(tdClick);
+    $('#submit-inform-add').click(add_inform);
+});
+
+//td的点击事件
+function tdClick(){
+    //将td的文本内容保存
+    var td = $(this);
+    var tdText = td.text();
+    //将td的内容清空
+    td.empty();
+    //新建一个输入框
+    var input = $("<input class='input-block-level'>");
+    //将保存的文本内容赋值给输入框
+    input.attr("value",tdText);
+    input.attr("tmpvalue",tdText);
+    //将输入框添加到td中
+    td.append(input);
+    //给输入框注册事件，当失去焦点时就可以将文本保存起来
+    input.blur(function(){
+        //将输入框的文本保存
+        var input = $(this);
+        var inputText = input.val();
+        var oldText = input.attr("tmpvalue");
+        //将td的内容，即输入框去掉,然后给td赋值
+        var td = input.parent("td");
+        // 如果数据无变化则
+        if(oldText == inputText) {
+            alert("数据未改变");
+        }else{
+        // 保存数据
+        saveData(td.attr('data-ret-id'), td.attr('date-ret-column'), inputText);
+        }
+        td.text(inputText);
+        
+        //让td重新拥有点击事件
+        td.click(tdClick);
+    });
+    input.keyup(function(event){
+        //1.获取当前用户按下的键值
+              //解决不同浏览器获得事件对象的差异,
+             // IE用自动提供window.event，而其他浏览器必须显示的提供，即在方法参数中加上event
+           var myEvent = event || window.event;
+           var keyCode = myEvent.keyCode;
+           //2.判断是否是ESC键按下
+           if(keyCode == 27){
+               //将input输入框的值还原成修改之前的值
+               input.val(tdText);
+           }
+    });
+    //将输入框中的文本高亮选中
+    //将jquery对象转化为DOM对象
+    var inputDom = input.get(0);
+    inputDom.select();
+    //将td的点击事件移除
+    td.unbind("click");
+}
+
+function saveData(id, column, value) {
+    if(!/^\d{5}$/.test(id)||!/^[A-Za-z_]+$/.test(column))
+        return;
+    $.ajax({ 
+	url:controller_path+"/saveInformOneField/r="+new Date().getTime(), 
+	type:"post", 
+	data:{id:id,column:column,value:value},
+	async:false,
+	dataType:"json",
+	success:function(data){
+		if(data.retval == 'ok'){
+                    location.reload();
+		} else {
+                    alert(data.retinfo);
+                    return;
+                }
+	}
+    });
+}
+function add_inform() {
+    var title = $('#tr-title').val();
+    var content = $('#tr-content').val();
+    if( title == '' || title.length > 32 ) {
+        alert('标题不能为空且长度不能超过32！');
+        return;
+    }
+    if( content == '' || content.length > 128 ) {
+        alert('标题不能为空且长度不能超过128！');
+        return;
+    }
+    $.ajax({ 
+	url:controller_path+"/addInform/r="+new Date().getTime(), 
+	type:"post", 
+	data:{title:title,content:content},
+	async:false,
+	dataType:"json",
+	success:function(data){
+		if(data.retval == 'ok'){
+                    location.reload();
+		} else {
+                    alert(data.retinfo);
+                    return;
+                }
+	}
+    });
+    
+}
+{/literal}
+</script>
+      </div>
+  </body>
+</html>
+
+    	
+    	
+    	
+    	

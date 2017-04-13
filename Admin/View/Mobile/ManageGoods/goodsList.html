@@ -13,7 +13,7 @@
                                         <div data-role="content">
                                                 <i class="zmdi zmdi-account"></i>商品管理/<a href="{$smarty.const.__CONTROLLER__}/goodsList" data-ajax='false'>查看商品</a>
                                                 <a class="align-right ui-btn ui-mini ui-btn-inline ui-btn-icon-left waves-effect waves-button waves-effect waves-button" href="{$smarty.const.__CONTROLLER__}/goodsTrashList" data-ajax='false'><i class="zmdi zmdi-delete"></i>回收站</a>
-                                                <a class="align-right ui-btn ui-mini ui-btn-inline ui-btn-icon-left waves-effect waves-button waves-effect waves-button" href="#modal-goods-add" data-rel="popup" data-position-to="origin" data-role="button" data-inline="true" data-transition="pop"><i class="zmdi zmdi-accounts-add"></i>添加</a>
+                                                <a class="align-right ui-btn ui-mini ui-btn-inline ui-btn-icon-left waves-effect waves-button waves-effect waves-button" href="{$smarty.const.__CONTROLLER__}/addGoods" data-ajax='false'><i class="zmdi zmdi-accounts-add"></i>添加</a>
                                         
  {if $ginfo|@count eq 0}   
         <p>暂无记录！</p>
@@ -23,7 +23,7 @@
     <div class="mobile-table">
         <h1 class="nd2-title2 mobile-tr">序号：{$v.goods_id}<br>商品名：{$v.goods_name}</h1>
         <div class="mobile-tr-tds">
-            <table>
+            <table style="border:1px solid #DCDCDC;">
                 <tr><td width="25%">缩略图:</td><td><img src="{$smarty.const.WEB_URL}{$v.goods_thumb_url}" alt='pic'/></td></tr>
                 <tr><td width="25%">商品名称:</td><td class="enable-edit" data-ret-id="{$v.goods_id}" data-ret-column="goods_name" style="max-width: 15em">{$v.goods_name}</td></tr>
                 <tr><td width="25%">原价:</td><td class="enable-edit" data-ret-id="{$v.goods_id}" data-ret-column="goods_old_price">{$v.goods_old_price}</td></tr>
@@ -48,62 +48,6 @@
     {/foreach}
  {/if}
                                         </div>
-<!-- add user -->
-<div id="modal-goods-add"  data-role="popup">
-    <div data-role="header">
-        <h1 class='nd-title'>添加商品</h1>
-    </div>    
-    
-	<form id="form-add-goods" action="{$smarty.const.__CONTROLLER__}/addGoods" method="post" enctype="multipart/form-data">
-    <div  data-role="content">
-	<fieldset>
-			<div class="box">
-                            <label for="select">类别:</label>
-                            <span id="gtype"><select style="width: 100px" name="goods_type[]">
-                                    <option value="0">--选择类别--</option>
-                                    {foreach $tinfo as $k=>$v}
-                                    <option value="{$v.type_id}">{$v.type_name|indent:$v.type_level:'-/'}</option>
-                                    {/foreach}
-                                </select></span><i class="zmdi zmdi-plus-circle addtype" style="cursor: pointer"></i>
-                                <label for="goodsName">商品名:</label>
-                                <input type="text" id="goodsName" name="goods_name" />
-
-                                <label for="goodsInfo">商品介绍:</label>
-                                <textarea rows="8" cols="40" id="goodsInfo" name="goods_info"></textarea>
-
-                                <label for="goodsProducePlace">产地:</label>
-                                <input type="text" id="goodsProducePlace" name="goods_produce_place" />
-
-                                <label for="goodsProduceDate">商品介绍:</label>
-                                <input type="text" id="goodsProduceDate" name="goods_produce_date"/>
-
-                                <label for="goodsBrand">品牌:</label>
-                                <input type="text" id="goodsBrand" name="goods_brand" />
-
-                                <label for="goodsOldPrice">原价:</label>
-                                <input type="text" id="goodsOldPrice" name="goods_old_price" />
-
-                                <label for="goodsNowPrice">现价:</label>
-                                <input type="text" id="goodsNowPrice" name="goods_now_price" />
-                                
-                                <label for="goodsImageUrl">图片:</label>
-				<input type="file" id="goodsImageUrl" name="goods_img"/>
-                                
-                                <label for="goodsNowPrice">数量:</label>
-                                <input type="text" id="goodsNum" name="goods_num"/>
-                                              
-                        </div>
-	</fieldset>
-	
-    <div class="align-center">
-                    <button type="reset" data-role="button" data-inline="true" class="ui-btn ui-btn-primary ui-btn-inline"><i class='zmdi zmdi-refresh'></i> 重置</button>
-                    <!--<button type="submit" data-role="button" data-inline="true" class="ui-btn ui-btn-success ui-btn-inline"><i class='zmdi zmdi-save'></i> 保存</button>-->
-                    <a id="submit-goods-add" href="javascript:void(0);" data-role="button" data-inline="true" class="ui-btn ui-btn-success ui-btn-inline"><i class='zmdi zmdi-save'></i> 保存</a>
-    </div>
-    </div>
-    
-	</form>
-</div>
           </div>
 			<!--/#content.span9-->
                 {include file="../inc/jsall_mobile.html"}
@@ -113,15 +57,6 @@
 $(document).ready(function(){
     $('td[class="enable-edit"]').click(tdClick);
     $('#submit-goods-add').click(add_goods);
-    
-    var html = $('#gtype').html();
-    $(document).on('touchend', '.addtype', function(){
-        var select = '<span></br>　　　　&nbsp;&nbsp;' + html + '<i class="zmdi zmdi-minus-circle removetype" style="cursor: pointer"></i></span>';
-         $(this).after(select);
-    });
-    $(document).on('touchend', '.removetype', function(){
-        $(this).parent().remove();
-    });
 });
 //td的点击事件
 function tdClick(){
@@ -195,34 +130,6 @@ function saveData(id, column, value) {
                 }
 	}
     });
-}
-function add_goods() {
-//    var name = $('#tr-username').val();
-//    var pwd = $('#tr-userpwd').val();
-//    if( !/^\w{1,32}$/.test(name) ) {
-//        alert('用户名格式错误！');
-//        return;
-//    }
-//    if( pwd.length <6 ) {
-//        alert('密码不能少于6位！');
-//        return;
-//    }
-//    $.ajax({ 
-//	url:controller_path+"/addGoods/r="+new Date().getTime(), 
-//	type:"post", 
-//	data:$("#form-add-goods").serialize(),
-//	async:false,
-//	dataType:"json",
-//	success:function(data){
-//		if(data.retval == 'ok'){
-//                    location.reload();
-//		} else {
-//                    alert(data.retinfo);
-//                    return;
-//                }
-//	}
-//    });
-$("#form-add-goods").submit();
 }
 {/literal}
 </script>

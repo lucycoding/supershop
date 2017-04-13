@@ -60,4 +60,17 @@ class AdminController extends CommonController {
         }
     }
     
+    /**
+     * 获取分页
+     * @param type $count
+     * @param type $row
+     */
+    public function getPage($count,$row){
+        if(parent::ismobile()) {
+            $Page   = new \Tools\PageMobile($count,$row);// 实例化分页类 传入总记录数和每页显示的记录数
+        }else{
+            $Page   = new \Tools\Page($count,$row);
+        }
+        return $Page;
+    }
 }

@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>类别列表</title>
+    <link rel="shortcut icon" href="favicon.ico">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+                {include file="../inc/cssall_mobile.html"}
+  </head>
+  
+  <body>
+      <div data-role="page" >      
+          <div data-role="main" >
+                                        <div data-role="content">
+                                                <i class="zmdi zmdi-account"></i>商品管理/<a href="{$smarty.const.__MODULE__}/ManageGoodsType/goodsTypeList" data-ajax='false'>类别管理</a>
+                                                <a class="align-right ui-btn ui-mini ui-btn-inline ui-btn-icon-left waves-effect waves-button waves-effect waves-button" href="{$smarty.const.__MODULE__}/ManageGoodsType/addGoodsType" data-ajax='false'><i class="zmdi zmdi-accounts-add"></i>添加</a>
+                                        
+ {if $tinfo|@count eq 0}   
+        <p>暂无记录！</p>
+ {else}  
+ {$page}
+    {foreach $tinfo as $k=>$v}<hr>
+    <div class="mobile-table">
+        <h1 class="nd2-title2 mobile-tr">序号：{$v.type_id}  类别名：{$v.type_name|indent:$v.type_level:"--/"}</h1>
+        <div class="mobile-tr-tds">
+            <table>
+                <tr><td>父级id:</td><td>{$v.type_pid}</td></tr>
+                <tr><td>全路径:</td><td>{$v.type_path}</td></tr>
+                <tr><td>创建时间:</td><td>{$v.create_time}</td></tr>
+                <tr><td>等级:</td><td>{$v.type_level}</td></tr>
+                <tr><td>操作</td>
+                    <td>
+                        <a href="###"  class="ui-btn ui-btn-inline clr-btn-accent-blue-grey" title="编辑"><i class='zmdi zmdi-edit'></i>编辑</a>
+                        <a href="javascript:void(0);" class="ui-btn ui-btn-inline clr-btn-accent-red" title="删除"><i class='zmdi zmdi-delete'></i>删除</a>
+                    </td></tr>
+            </table>
+        </div>
+    </div>
+    {/foreach}
+ {/if}
+                                        </div>
+          </div>
+			<!--/#content.span9-->
+                {include file="../inc/jsall_mobile.html"}
+<script>
+    var controller_path = '{$smarty.const.__CONTROLLER__}';
+{literal}
+$(document).ready(function(){
+});
+{/literal}
+</script>
+      </div>
+  </body>
+</html>
+
+    	
+    	
+    	
+    	

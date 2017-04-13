@@ -91,4 +91,10 @@ class IndexController extends Tools\AdminController {
         $verify->entry();
     }
 
+    /**
+     * 演示页面
+     */
+    public function demo(){
+        $this->display();
+    }
 }

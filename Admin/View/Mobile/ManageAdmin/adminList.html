@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>所有管理员</title>
+    <link rel="shortcut icon" href="favicon.ico">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	{include file="../inc/cssall_mobile.html"}
+  </head>
+
+  <body>
+      <div data-role="page" >      
+          <div data-role="main" >
+                                        <div data-role="content">
+                                                <i class="zmdi zmdi-account"></i>ADMIN管理/<a href="{$smarty.const.__CONTROLLER__}/adminList" data-ajax='false'>所有管理员</a>
+                                                <a class="align-right ui-btn ui-mini ui-btn-inline ui-btn-icon-left waves-effect waves-button waves-effect waves-button" href="{$smarty.const.__CONTROLLER__}/adminTrashList" data-ajax='false'><i class="zmdi zmdi-delete"></i>回收站</a>
+                                                <a class="align-right ui-btn ui-mini ui-btn-inline ui-btn-icon-left waves-effect waves-button waves-effect waves-button" href="{$smarty.const.__CONTROLLER__}/addAdmin" data-ajax='false'><i class="zmdi zmdi-accounts-add"></i>添加</a>
+                                        
+ {if $ainfo|@count eq 0}   
+        <p>暂无记录！</p>
+ {else}  
+ {$page}
+    {foreach $ainfo as $k=>$v}<hr>
+    <div class="mobile-table">
+        <h1 class="nd2-title2 mobile-tr">序号：{$v.admin_id}<br>用户名：{$v.admin_name}</h1>
+        <div class="mobile-tr-tds">
+            <table style="border:1px solid #DCDCDC;">
+                <tr><td width="25%">用户名:</td><td>{$v.admin_name}</td></tr>
+                <tr><td width="25%">昵称:</td><td class="enable-edit" data-ret-id="{$v.admin_id}" data-ret-column="admin_nickname">{$v.admin_nickname}</td></tr>
+                <tr><td width="25%">电话:</td><td class="enable-edit" data-ret-id="{$v.admin_id}" data-ret-column="admin_phone">{$v.admin_phone}</td></tr>
+                <tr><td width="25%">邮箱:</td><td class="enable-edit" data-ret-id="{$v.admin_id}" data-ret-column="admin_email">{$v.admin_email}</td></tr>
+                <tr><td width="25%">创建时间:</td><td>{$v.create_time}</td></tr>
+                <tr><td width="25%">上次登录:</td><td>{$v.last_login_time}</td></tr>
+                <tr><td width="25%">上次登录IP:</td><td>{$v.last_login_ip}</td></tr>
+                <tr><td width="25%">登录次数:</td><td>{$v.login_count}</td></tr>
+                <tr><td width="25%">角色名称:</td><td>{$v.role_name}</td></tr>
+                <tr><td width="25%">操作</td><td><a href="javascript:void(0);" class="ui-btn ui-btn-inline clr-btn-accent-red" title="回收" onclick="saveData('{$v.admin_id}','valid_flag','0')"><i class='zmdi zmdi-delete'></i>回收</a></td></tr>
+            </table>
+        </div>
+    </div>
+    {/foreach}
+ {/if}
+                                        </div>
+          </div>
+			<!--/#content.span9-->
+                {include file="../inc/jsall_mobile.html"}
+<script>
+    var controller_path = '{$smarty.const.__CONTROLLER__}';
+{literal}
+$(document).ready(function(){
+    $('td[class="enable-edit"]').click(tdClick);
+});
+//td的点击事件
+function tdClick(){
+    //将td的文本内容保存
+    var td = $(this);
+    var tdText = td.text();
+    //将td的内容清空
+    td.empty();
+    //新建一个输入框
+    var input = $("<input class='input-block-level'>");
+    //将保存的文本内容赋值给输入框
+    input.attr("value",tdText);
+    input.attr("tmpvalue",tdText);
+    //将输入框添加到td中
+    td.append(input);
+    //给输入框注册事件，当失去焦点时就可以将文本保存起来
+    input.blur(function(){
+        //将输入框的文本保存
+        var input = $(this);
+        var inputText = input.val();
+        var oldText = input.attr("tmpvalue");
+        //将td的内容，即输入框去掉,然后给td赋值
+        var td = input.parent("td");
+        // 如果数据无变化则
+        if(oldText == inputText) {
+            alert("数据未改变");
+        }else{
+        // 保存数据
+        saveData(td.attr('data-ret-id'), td.attr('date-ret-column'), inputText);
+        }
+        td.text(inputText);
+        
+        //让td重新拥有点击事件
+        td.click(tdClick);
+    });
+    input.keyup(function(event){
+        //1.获取当前用户按下的键值
+              //解决不同浏览器获得事件对象的差异,
+             // IE用自动提供window.event，而其他浏览器必须显示的提供，即在方法参数中加上event
+           var myEvent = event || window.event;
+           var keyCode = myEvent.keyCode;
+           //2.判断是否是ESC键按下
+           if(keyCode == 27){
+               //将input输入框的值还原成修改之前的值
+               input.val(tdText);
+           }
+    });
+    //将输入框中的文本高亮选中
+    //将jquery对象转化为DOM对象
+    var inputDom = input.get(0);
+    inputDom.select();
+    //将td的点击事件移除
+    td.unbind("click");
+}
+
+function saveData(id, column, item) {
+    if(!/^\d{6}$/.test(id)||!/^[A-Za-z_]+$/.test(column))
+        return;
+    var title = item?item.title:"更改";
+    bootbox.confirm("确定要"+title+"该管理员吗？",function(flag){
+        if(flag){
+            $.ajax({ 
+                url:controller_path+"/saveAdminOneInfo/r="+new Date().getTime(), 
+                type:"post", 
+                data:{id:id,column:column,value:value},
+                async:false,
+                dataType:"json",
+                success:function(data){
+                        if(data.retval == 'ok'){
+                            location.reload();
+                        } else {
+                            alert(data.retinfo);
+                            return;
+                        }
+                }
+            });
+        }
+    });
+}
+{/literal}
+</script>
+      </div>
+  </body>
+</html>    	
+    	
+    	
