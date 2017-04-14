@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html>
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <title>填写订单信息</title>
+
+  <link rel="shortcut icon" href="{$smarty.const.PUBLIC_URL}favicon.ico">
+  <link href="{$smarty.const.PUBLIC_URL}css/style.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="{$smarty.const.PUBLIC_URL}css/grid.css" media="screen" rel="stylesheet" type="text/css">
+ 
+  <script src="{$smarty.const.PUBLIC_URL}js/jquery-1.7.2.min.js" ></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/html5.js" ></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/jflow.plus.js"></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/jquery.carouFredSel-5.2.2-packed.js"></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/checkbox.js"></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/radio.js"></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/selectBox.js"></script>
+
+  <script src="{$smarty.const.PUBLIC_URL}custom/submitOrder.js"></script>
+</head>
+<body>
+{include file="../inc/header.html"}
+  
+  <section id="main" class="entire_width">
+    <div class="container_12">      
+       <div id="content">
+		<div class="grid_12">
+			<h1 class="page_title">填写订单信息</h1>
+		</div><!-- .grid_12 -->
+		
+		<div class="grid_12">
+        	<form class="registed" name="submitOrder_form" method="post" action="{$smarty.const.__CONTROLLER__}/addOrder">   
+{$user = $smarty.session.user}
+				<div>			
+					<div class="email">
+						<strong>用户名:　</strong>
+						<input type="text" value="{$user.user_name }" disabled="disabled"/>
+					</div><!-- .email -->
+								
+					<div class="email">
+						<strong>收货人:　</strong>
+						<input type="text" id="recvName" name="recv_name" class="contact_input" onblur="checkRN()" value="{$user.user_truename}"/>
+						<span id="remindRN">　　　　　　　</span>
+						<strong style="margin-left: 5px">邮编:　　</strong>
+						<input type="text" id="postcode" name="recv_postcode" class="contact_input" onblur="isPostalCode()" value="{$user.user_postcode}"/>
+						<span id="remindPostCode"></span>
+					</div><!-- .password -->
+					
+					<div class="email">
+						<strong>收货地址:</strong>
+						<input type="text" id="address" name="recv_address" class="contact_input" onblur="checkAddr()" value="{$user.user_address}"/>
+						<span id="remindAddr">　　　　　　　</span>
+						<strong style="margin-left: 5px">手机:　　</strong>
+						<input type="text" id="mphone" name="recv_phone" class="contact_input" onblur="checkMPhone()" value="{$user.user_phone}" />
+						<span id="checkMphone"></span>
+					</div><!-- .email -->
+				</div>
+		       <table class="cart_product">
+			      <tr>
+				     <th class="img">缩略图</th>
+				     <th class="bg name" style="text-align: center;">商品名称</th>
+				     <th class="price">单价</th>
+				     <th class="bg qty">数量</th>
+				     <th class="subtotal">总价</th>
+			      </tr>
+			      {foreach $cartList as $k=>$v}
+								<tr style="font-weight: bold">
+									<td><img src="{$smarty.const.WEB_URL}{$v.goods_thumb_url}" alt="商品图"/></td>
+									<td>{$v.goods_name}</td>
+									<td>￥{$v.goods_now_price}</td>
+									<td>{$v.count}</td>
+									<td>￥{$v.amount}</td>
+								</tr>
+				{/foreach}
+                                {if $cartTotalPrice >0}
+				 <tr style="font-weight: bold">
+				 <td colspan="3"></td>
+                <td><span style="color: red">合计金额:</span></td>
+    	 	   			  <td>￥{$cartTotalPrice}</td>             
+                </tr>
+    	 	   		{else}
+				<tr style="font-weight: bold">
+				<td colspan="7">
+				<font color="red">购物车无商品，无法下单！请返回继续购物！</font>
+			     </td>
+			     </tr>
+				{/if}
+                <tr>
+			     <td colspan="7">
+			     </td>
+		      </tr> 
+		      <tr>
+		      <td><a href="{$smarty.const.__MODULE__}/Goods/cart" ><b>←返回购物车</b></a></td>
+			     <td colspan="6" class="cart_but">
+			     {if $cartTotalPrice >0}
+				    <button class="update" type="button" onclick="checkAll()" ><b>下订单</b></button>
+    	 	   		{/if}
+			     </td>
+		      </tr>  
+				 </table>
+			</form><!-- .registed -->
+         </div><!-- .grid_6 -->
+       </div><!-- #content -->
+       
+      <div class="clear"></div>
+    </div><!-- .container_12 -->
+  </section><!-- #main -->
+  
+  <div class="clear"></div>
+    
+{include file="../inc/footer.html"}
+ 
+</body>
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+</html>

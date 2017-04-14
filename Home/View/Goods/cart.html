@@ -66,9 +66,9 @@
               <tr><td colspan='6'><font color='red'>购物车中还没有商品，请继续购物！</font></td></tr>
               {else}
               {foreach $cartList as $k=>$v}
-			<form action="{$smarty.const.__MODULE__}/Goods/updateCart/id/{$v.goods_id}" method="post" name="cartForm" id="cartForm{$v.goods_id}">
+			<form action="{$smarty.const.__MODULE__}/Goods/updateCartCount/id/{$v.goods_id}" method="post" name="cartForm" id="cartForm{$v.goods_id}">
 		      <tr>
-			     <td class="img"><a href="{$smarty.const.__MODULE__}/Goods/details/id/{$v.goods_id}"><img src="{$smarty.const.WEB_URL}{$v.goods_thumb_url}" alt="Product 6"></a></td>
+			     <td class="img"><a href="{$smarty.const.__MODULE__}/Goods/details/id/{$v.goods_id}"><img src="{$smarty.const.WEB_URL}{$v.goods_thumb_url}" alt="商品图"></a></td>
 			     <td class="bg name">{$v.goods_name}</td>
 			     <td class="price">￥{$v.goods_now_price}</td>
 			     <td class="bg qty"><input type="text" name="count" value="{$v.count}" size="4" /><a title="Edit" href="#" onclick="$('#cartForm{$v.goods_id}').submit();return false">修改</a></td>
@@ -99,7 +99,7 @@
 			    <td>应付金额</td><td class="price">￥{$cartTotalPrice}</td>
 		     </tr>
 	      </table>
-	    <button class="checkout" onclick="window.location.href='submitOrder.jsp'">提交订单</button>
+	    <button class="checkout" onclick="window.location.href='{$smarty.const.__MODULE__}/Order/submitOrder'">提交订单</button>
           </div><!-- .total -->
         </div><!-- .grid_4 -->
         {/if}

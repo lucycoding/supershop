@@ -139,4 +139,8 @@ class HomeController extends CommonController {
         $this->assign("cartList", $this->cart->getCartList());
         $this->assign("cartTotalPrice", $this->cart->totalPrice);
     }
+    
+    protected function getCurrUser() {
+        return session("user");
+    }
 }

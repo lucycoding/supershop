@@ -56,6 +56,17 @@ class GoodsController extends HomeController {
     public function cart() {
         $this->display();
     }
+    /**
+     * 更新购物车商品数量
+     * @param type $id
+     */
+    public function updateCartCount($id = '', $count) {
+        if(!is_numeric($id) || !is_numeric($count)){
+            $this->error('参数错误！');
+        }
+        $this->cart->update_cart($id, $count);
+        $this->redirect('cart');
+    }
     
     /**
      * 获取分类 手机端

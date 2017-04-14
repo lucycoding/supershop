@@ -117,8 +117,8 @@ function MoveBox(obj,goodsId,orderType) {
                 {/foreach}
               
 		      <li class="no_border">
-			<a href="cart.jsp" class="view_cart">查看购物车</a>
-			<a href="submitOrder.jsp" class="checkout">提交订单</a>
+			<a href="{$smarty.const.__MODULE__}/Goods/cart" class="view_cart">查看购物车</a>
+			<a href="{$smarty.const.__MODULE__}/Order/submitOrder" class="checkout">提交订单</a>
 		      </li>
               {/if}
             </ul>

@@ -104,15 +104,29 @@ class CartModel extends Model {
     }
 
     //清空购物车
-    public function emptycart() {
-        cookie($this->cookieName, '');
+    public function clearCart() {
+        cookie($this->cookieName, null);
     }
 
     //修改购物车货品数量   
     public function update_cart($up_id, $up_num) {
         //回复序列化的数组
-        $cur_goods_array = unserialize(cookie($this->cookieName));
-        $cur_goods_array[$up_id]["num"] = $up_num;
-        cookie($this->cookieName, serialize($cur_goods_array));
+        $cur_cart_array = unserialize(cookie($this->cookieName));
+            //返回数组键名倒序取最大
+        $ar_keys = array_keys($cur_cart_array);
+        $len = count($ar_keys);
+        $max_array_keyid = $ar_keys[$len - 1] + 1;
+        //遍历当前的购物车数组
+        //遍历每个商品信息数组的0值，如果键值为0且货号相同则购物车该商品已经添加
+        $is_exist = $this->isexist($up_id, $up_num, $cur_cart_array);
+            if ($is_exist == false) {
+                $cur_cart_array[$max_array_keyid]["id"] = $up_id;
+                $cur_cart_array[$max_array_keyid]["num"] = $up_num;
+            } else {
+                $arr_exist = explode("/", $is_exist);
+                $id = $arr_exist[0];
+                $cur_cart_array[$id]["num"] = $up_num;
+            }
+        cookie($this->cookieName, serialize($cur_cart_array));
     }
 }
