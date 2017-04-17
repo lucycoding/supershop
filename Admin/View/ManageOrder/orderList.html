@@ -138,7 +138,7 @@ function tdClick(){
 }
 
 function saveData(id, column, value) {
-    if(!/^\d{7}$/.test(id)||!/^[A-Za-z_]+$/.test(name))
+    if(!/^\d{1,}$/.test(id)||!/^[A-Za-z_]+$/.test(name))
         return;
     $.ajax({ 
 	url:controller_path+"/saveOrderOneField/r="+new Date().getTime(), 

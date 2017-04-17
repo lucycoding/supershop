@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>订单管理</title>
+        <link rel="shortcut icon" href="favicon.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        {include file="../inc/cssall_mobile.html"}
+    </head>
+
+    <body>
+        <div data-role="page" >      
+            <div data-role="main" >
+                <div data-role="content">
+                    <i class="zmdi zmdi-account"></i>订单管理/<a href="{$smarty.const.__SELF__}">{$smarty.get.type|default:'全部'|replace:'0':'未发货'|replace:'1':'已发货'|replace:'2':'已确认收货'}订单</a><br/>
+                    <a href="{$smarty.const.__SELF__}/type/0">未发货订单</a>｜
+                    <a href="{$smarty.const.__SELF__}/type/1">已发货订单</a>｜
+                    <a href="{$smarty.const.__SELF__}/type/2">已确认收货订单</a>
+
+                    {if $oinfo|@count eq 0}   
+                    <p>暂无记录！</p>
+                    {else}  
+                    {$page}
+                    {foreach $oinfo as $k=>$v}<hr>
+                    <div class="mobile-table">
+                        <h1 class="nd2-title2 mobile-tr">订单号:{$v.order_id}  用户名:{$v.user_name}</h1>
+                        <div class="mobile-tr-tds">
+                            <table>
+                                <tr><td>收货人:</td><td>{$v.recv_name}</td></tr>
+                                <tr><td>收货地址:</td><td>{$v.recv_address}</td></tr>
+                                <tr><td>邮编:</td><td>{$v.recv_postcode}</td></tr>
+                                <tr><td>联系电话:</td><td>{$v.recv_phone}</td></tr>
+                                <tr><td>快递费用:</td><td>￥{$v.express_price}</td></tr>
+                                <tr><td>实际支付:</td><td>￥{$v.pay_price}</td></tr>
+                                <tr><td>订单备注:</td><td>{$v.order_remark}</td></tr>
+                                <tr><td>状态:</td><td>{$v.status|replace:'0':'未发货'|replace:'1':'已发货'|replace:'2':'已确认收货'}
+                                        {if $v.status == 0}
+                                        <a href="javascript:void(0);" title="发货" onclick="saveData('{$v.order_id}', 'status', '1')">发货</a>
+                                        {/if}</td></tr>
+                                <tr><td>下单时间:</td><td>{$v.create_time}</td></tr>
+                                <tr><td>上次修改:</td><td>{$v.last_update_time}</td></tr>
+                                <tr><td>操作</td><td>
+                                        <a href="###" class="ui-btn ui-btn-inline clr-btn-accent-blue" title="详细信息">详细信息</a>
+                                        <a href="javascript:void(0);" class="ui-btn ui-btn-inline clr-btn-accent-red" title="删除" onclick="saveData('{$v.note_id}', 'valid_flag', '0')"><i class='zmdi zmdi-delete'></i>删除</a>
+                                    </td></tr>
+                            </table>
+                        </div>
+                    </div>
+                    {/foreach}
+                    {/if}
+                </div>
+            </div>
+            <!--/#content.span9-->
+            {include file="../inc/jsall_mobile.html"}
+            <script>
+                        var controller_path = '{$smarty.const.__CONTROLLER__}';
+                        {literal}
+                $(document).ready(function(){
+                });
+                        function saveData(id, column, value) {
+                        if (!/^\d{1,}$/.test(id) || !/^[A-Za-z_]+$/.test(column))
+                                return;
+                                $.ajax({
+                                url:controller_path + "/saveOrderOneField/r=" + new Date().getTime(),
+                                        type:"post",
+                                        data:{id:id, column:column, value:value},
+                                        async:false,
+                                        dataType:"json",
+                                        success:function(data){
+                                        if (data.retval == 'ok'){
+                                        location.reload();
+                                        } else {
+                                        alert(data.retinfo);
+                                                return;
+                                        }
+                                        }
+                                });
+                                }
+                {/literal}
+            </script>
+        </div>
+    </body>
+</html>
+
+
+
+
+

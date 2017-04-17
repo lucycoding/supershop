@@ -12,27 +12,26 @@ class OrderController extends HomeController {
     }
     
     /**
-     * 进入订单信息填写页面
-     */
-    public function submitOrder(){
-        $this->display();
-    }
-    /**
      * 创建订单
      */
     public function addOrder() {
-        if (empty($_POST) || empty($this->getCurrUser()) ) {
+        $post = I('post.'); // 获取post中所有数据
+        if (is_null($post) || is_null($this->getCurrUser()) ) {
             die($this->error());
         }
+        // 获取购物车数据
         $cartList = $this->cart->getCartList();
         $cartTotalPrice = $this->cart->totalPrice;
-        if(empty($cartList) || $cartTotalPrice < 0) {
+        if(is_null($cartList) || $cartTotalPrice < 0) {
             die($this->error());
         }
+        // 获取session用户数据
         $user = $this->getCurrUser();
-        $_POST["user_id"] = $user["user_id"];
-        $_POST["user_name"] = $user["user_name"];
-        $_POST["pay_price"] = $cartTotalPrice;
+        // 封装到post中create
+        $post["user_id"] = $user["user_id"];
+        $post["user_name"] = $user["user_name"];
+        $post["pay_price"] = $cartTotalPrice;
+        $post["valid_flag"] = '1';
         // 订单表开启事务
         $Order = D('Order');
         $Order->startTrans();
@@ -41,8 +40,8 @@ class OrderController extends HomeController {
         $OrderItem->startTrans();
         
         $flag=true;
-        $data = $Order->create();
-        $orderId = $Order ->add($data);
+        // 插入数据到订单表
+        $orderId = $Order ->add($post);
         if($orderId){
             foreach($cartList as $v) {
                 $map["order_id"] = $orderId;
@@ -63,10 +62,11 @@ class OrderController extends HomeController {
         }
         $Order->commit();
         $OrderItem->commit();
-        $data["order_id"] = $orderId;
-        //情空购物车
+        $post["order_id"] = $orderId;
+        //清空购物车
         $this->cart->clearCart();
-        $this->assign("data",$data);
+        // 将数据传入下一个页面
+        $this->assign("data",$post);
         $this->display("orderSuccess");
     }
 }
