@@ -128,7 +128,7 @@ function MoveBox(obj,goodsId,orderType) {
 
         <nav class="private">
           <ul>
-            <li><a href="pageNoteServlet">商城论坛</a></li>
+            <li><a href="{$smarty.const.__MODULE__}/Note/notePage">商城论坛</a></li>
      {if isset($user)}
         <li class="separator">|</li>
             <li class="curent"><a href="{$smarty.const.__MODULE__}/User/personalCenter">个人中心</a></li>
@@ -147,23 +147,24 @@ function MoveBox(obj,goodsId,orderType) {
     <div class="container_12">
       <div class="grid_12">
         <nav class="primary">
-          <ul>
-            <li {if !isset($type)} class="curent" {/if} ><a href="{$smarty.const.ROOT_URL}">首页</a></li>
             {$types = $smarty.session.typeList}
-            {foreach $types as $v}
-                {if $v.type_pid eq 0}
+            {function printtype level=0}
+            {foreach $data as $v}
+            {if $pid eq $v.type_pid}
                     <li {if $smarty.get.type == $v.type_id} class="curent" {/if} >
-                        <a href="###">{$v.type_name}</a>
+                        <a href="{$smarty.const.__MODULE__}/Goods/page/type/{$v.type_id}">{$v.type_name}</a>
                         <ul class="sub">
-                        {foreach $types as $vv}
-                            {if $vv.type_pid eq $v.type_id}
-                                <li><a href="###">{$vv.type_name}</a></li>
-                            {/if}
-                        {/foreach}
+                            {call printtype data=$data pid=$v.type_id level=$level+1}
                         </ul>
                     </li>
-                {/if}
+            {else}
+            {continue}
+            {/if}
             {/foreach}
+            {/function}
+          <ul>
+            <li {if !isset($smarty.get.type)} class="curent" {/if} ><a href="{$smarty.const.ROOT_URL}">首页</a></li>
+            {call printtype data=$types pid=0 level=0}
             {*
             <li {if $type===0} class="curent" {/if} ><a href="page?type=0">所有商品</a></li>
             <li>

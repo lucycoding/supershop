@@ -643,8 +643,8 @@ nav.private ul li a:hover{
 .primary ul li:hover > ul.sub{display: block;}
 .primary ul ul.sub{
 	position: absolute;
-	top: 48px;
-	left: 0;
+	top: 35px;
+	left: 18px;
 	z-index: 999;
 	background: #fff;
 	border: 1px solid #e0e0e0;

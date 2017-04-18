@@ -35,9 +35,25 @@
        <div id="sidebar" class="grid_3">
 	      <aside id="categories_nav">
 		    <h3>商品类库</h3>
+            {$types = $smarty.session.typeList}
+            {function printtypeleft level=0}
+            {foreach $data as $v}
+            {if $pid eq $v.type_pid}
+                    <li {if $smarty.get.type == $v.type_id} class="curent" {/if} >
+                        <a href="{$smarty.const.__MODULE__}/Goods/page/type/{$v.type_id}">{$v.type_name|indent:$v.type_level:'-/'}</a>
+                    </li>
+                            {call printtypeleft data=$data pid=$v.type_id level=$level+1}
+            {else}
+            {continue}
+            {/if}
+            {/foreach}
+            {/function}
 		     
 		     <nav class="left_menu">
 			    <ul>
+                                <li><a href="{$smarty.const.__MODULE__}/Goods/page">所有商品</a></li>
+                                {call printtypeleft data=$types pid=0 level=0}
+                                {*
                     {$types = $smarty.session.typeList}
                     {foreach $types as $v}
                         {if $v.type_pid eq 0}
@@ -51,6 +67,7 @@
                             {/foreach}
                         {/if}
                     {/foreach}
+                    *}
 			    </ul>
 		     </nav><!-- .left_menu -->
 	      </aside><!-- #categories_nav -->

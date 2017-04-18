@@ -26,6 +26,43 @@ class GoodsController extends HomeController {
         
         $this->display();
     }
+    
+    /**
+     * 商品分类page
+     */
+    public function page($type = '') {
+        $map = array();
+        $cateName = '所有商品';
+        if(is_numeric($type)) {
+            $Cate = D('Category');
+            $catedata = $Cate->getByType_id($type);
+            if($catedata) {
+                $map['gc.type_id'] = $type;
+                $cateName = $catedata['type_name'];
+            }
+        }
+        $Goods = D('Goods');
+        $map['g.valid_flag'] = '1';
+        $count = $Goods ->alias('g')
+                ->join('tb_goods_cate gc ON g.goods_id = gc.goods_id','LEFT')
+                ->join('tb_category c ON c.type_id = gc.type_id','LEFT')
+                ->where($map)
+                ->count();
+        $Page = new \Tools\PageDesk($count,6);
+        $show   = $Page->show();// 分页显示输出
+        $list = $Goods ->alias('g')
+                ->join('tb_goods_cate gc ON g.goods_id = gc.goods_id')
+                ->join('tb_category c ON c.type_id = gc.type_id')
+                ->where($map)
+                ->order('g.goods_id desc')
+                ->limit($Page->firstRow.','.$Page->listRows)
+                ->select();
+        $this->assign('glist',$list);// 赋值数据集
+        $this->assign('page',$show);// 赋值分页输出
+        $this->assign('cateName',$cateName);// 赋值数据集
+        $this->display();
+    }
+    
     /**
      * 加入购物车 ajax
      */

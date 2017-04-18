@@ -69,4 +69,17 @@ class OrderController extends HomeController {
         $this->assign("data",$post);
         $this->display("orderSuccess");
     }
+    
+    /**
+     * 订单成功页
+     */
+    public function orderSuccess(){
+        // 无数据跳转
+        $data = $_REQUEST['data'];
+        if(is_null($data)) {
+            $this->redirect("Index/index");
+        }
+        $this->assign("data",$data);
+        $this->display();
+    }
 }

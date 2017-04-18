@@ -141,6 +141,9 @@ class HomeController extends CommonController {
     }
     
     protected function getCurrUser() {
-        return session("user");
+        if(session("?user")) {
+            return session("user");
+        }
+        return null;
     }
 }

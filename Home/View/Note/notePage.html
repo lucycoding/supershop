@@ -7,9 +7,9 @@
   <meta name="description" content="">
   <meta name="keywords" content="">
 
-  <title>交易成功</title>
+  <title>商城论坛</title>
 
-  <link rel="shortcut icon" href="{$smarty.const.PUBLIC_URL}favicon.ico">
+  <link rel="shortcut icon" href="favicon.ico">
   <link href="{$smarty.const.PUBLIC_URL}css/style.css" media="screen" rel="stylesheet" type="text/css">
   <link href="{$smarty.const.PUBLIC_URL}css/grid.css" media="screen" rel="stylesheet" type="text/css">
  
@@ -32,7 +32,8 @@
 		     $(this).addClass('click')
 	      });             
        })
-  </script>
+       
+  </script> 
 </head>
 <body>
 {include file="../inc/header.html"}
@@ -41,25 +42,48 @@
     <div class="container_12">      
        <div id="content">
 		<div class="grid_12">
-			<h1 class="page_title">下单成功 等待卖家发货</h1>
+			<center><h1 class="page_title" style="color: #0093A4;font-weight: bold;">商城论坛</h1</b></center>
 		</div><!-- .grid_12 -->
 		
 		<div class="grid_12">
-		<pre style="margin-left: 20%;font-size: 15px">
-		<font color="red" size="4">交易成功!</font><br/>
-		订单号：　　<font color="red">{$data.order_id}</font><br/>
-		支付金额：　　　<font color="red">￥{$data.pay_price}</font><br/><br/>
-		收货人：　　<font color="red">{$data.recv_name}</font><br/>
-		收货地址：　<font color="red">{$data.recv_address}</font><br/>
-		邮编：　　　<font color="red">{$data.recv_postcode}</font><br/>
-		手机：　　　<font color="red">{$data.recv_phone}</font><br/><br/>
-<!--       	 <%
-       	 	out.print("　　　6秒后页面将自动跳转到首页！");
-       	 	response.setHeader("refresh","6;url='index'");
-       	  %>-->
-                6秒后页面将自动跳转到首页！<a href="{$smarty.const.__MODULE__}/Index/index">→</a>
-		</pre>
-		</div><!-- .grid_6 -->
+		
+{if $nlist|@count gt 0}
+              {foreach $nlist as $v} 
+					<article class="post">
+						<h2 class="title_article">{$v.note_title}</h2>
+						<div class="content_article">
+							<p>{$v.note_content}</p>
+						</div><!-- .content_article -->
+						<div class="footer_article">
+							<span>时间：{$v.create_time}</span>  |  <span>用户：{$v.user_name }</span>
+						</div>
+					</article>
+              {/foreach}
+			<div>帖子总条数：{$nlist|@count}条 </div>
+{else}
+				<h1>
+					<font color="red">还没有帖子</font>
+				</h1>
+{/if}
+      <br/><br/>
+			<div style="color:#a53d17;">
+				<form action="${smarty.const.__MODULE__}/Note/addNote" method="post" name="ly_form">
+					<div>
+		                 <label class="contact"><strong>帖子标题:</strong></label>
+		                 <input type="text" name="note_title"/>
+	                </div><br/><br/>
+	                <div>
+	                     <div>
+		                 <label class="contact"><strong>帖子内容:</strong></label>
+		                 <textarea rows="5" cols="40" name="note_content" class="contact_input"></textarea> 
+	                   	</div><br/><br/>
+	                   	<div style="margin-left: 40%">
+                    		<input type="submit" class="register" value="发表帖子" />  
+	                   	</div>
+	                </div>
+	             </form>
+			</div><!-- end of messageDiv -->
+         </div><!-- .grid_6 -->
        </div><!-- #content -->
        
       <div class="clear"></div>
@@ -69,13 +93,7 @@
   <div class="clear"></div>
     
 {include file="../inc/footer.html"}
-<script>  
-    var url = '{$smarty.const.__MODULE__}';
-function jumpurl(){  
-  location=url+'/Index/index';  
-}  
-setTimeout('jumpurl()',6000);  
-</script>   
+ 
 </body>
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 </html>

@@ -7,7 +7,7 @@ class CommonController extends Controller {
         parent::__construct();
     }
     /**
-     * 
+     * 返回js错误信息
      * @param type $err 传入的错误信息
      * @param flag 是否为script语句
      * @return type 返回script
