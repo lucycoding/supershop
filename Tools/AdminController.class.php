@@ -3,6 +3,8 @@ namespace Tools;
 use Tools\CommonController;
 
 class AdminController extends CommonController {
+    // 登录页允许的操作方法字符串常量
+    const LOGIN_AC = 'Index-login,Index-getVerifyImg';
     /**
      * 初始化控制器时
      */
@@ -17,20 +19,14 @@ class AdminController extends CommonController {
     public function __construct() {
         parent::__construct();
         // 获取国际化参数
-        $old_lang = session('lang_type');
-        $new_lang = $_GET['l'];
-        if(!session('lang') || $old_lang !== $new_lang) {
-            session('lang', L());
-            session('lang_type', $new_lang);
-        }
+        $this->getLang();
         $now_ac = CONTROLLER_NAME.'-'.ACTION_NAME; //当前控制器-操作方法
         $is_ajax = $this->is_ajax_request();
         
         $admin_id = session('admin_id');
         $admin_name = session('admin_name');
         // 判断是否登录
-        $login_ac = 'Index-login,Index-getVerifyImg';
-        if(strpos($login_ac, $now_ac) === false) { // 非登录页
+        if(strpos($this::LOGIN_AC, $now_ac) === false) { // 非登录页
             if(empty($admin_id) || empty($admin_name)) { // session无用户数据,跳转至登录页
                 if($is_ajax) {
                     die($this->retAjaxInfo(false, '未登录！'));
@@ -73,4 +69,17 @@ class AdminController extends CommonController {
         }
         return $Page;
     }
+    /**
+     * 获取国际化参数
+     */
+    public function getLang() {
+        $old_lang = session('lang_type');
+        $new_lang = $_GET['l'];
+        if(!session('lang') || $old_lang !== $new_lang) {
+            session('lang', L());
+            session('lang_type', $new_lang);
+        }
+    }
+    
+    
 }

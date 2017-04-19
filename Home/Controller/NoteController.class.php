@@ -22,4 +22,18 @@ class NoteController extends HomeController {
         $this->assign('page',$show);// 赋值分页输出
         $this->display(); // 输出模板
     }
+    
+    public function addNote() {
+        if(!empty($_POST)){
+            $user = $this->getCurrUser();
+            if(empty($_POST['note_title']) || empty($_POST['note_content'])) {
+                $this->redirect('notePage');
+            }
+            $_POST['user_id'] = $user['user_id'];
+            $_POST['user_name'] = $user['user_name'];
+            $Note = D('Note');
+            $flag = $Note ->add($_POST);
+        }
+        $this->redirect('notePage');
+    }
 }

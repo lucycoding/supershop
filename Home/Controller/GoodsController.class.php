@@ -10,7 +10,7 @@ class GoodsController extends HomeController {
      * 商品详情页
      */
     public function details($id = '') {
-        if(!$id) {
+        if(!is_numeric($id)) {
             $this->redirect('Index/index');
         }
         $Goods = D('Goods');
