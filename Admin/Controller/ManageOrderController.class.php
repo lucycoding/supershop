@@ -40,7 +40,7 @@ class ManageOrderController extends AdminController {
         // 字符串安全过滤
         $value = $this->str_check($_POST['value']); // 修改的值
         // 允许修改的字段
-        $filter = array('valid_flag');
+        $filter = array('valid_flag','status');
         if(!preg_match('/^\d{1,}$/', $order_id) || 
                 !preg_match('/^[A-Za-z_]+$/', $column) || 
                 !in_array($column,$filter)) {

@@ -47,15 +47,16 @@ class GoodsController extends HomeController {
                 ->join('tb_goods_cate gc ON g.goods_id = gc.goods_id','LEFT')
                 ->join('tb_category c ON c.type_id = gc.type_id','LEFT')
                 ->where($map)
-                ->count();
+                ->count('distinct(g.id)');
         $Page = new \Tools\PageDesk($count,6);
         $show   = $Page->show();// 分页显示输出
         $list = $Goods ->alias('g')
-                ->join('tb_goods_cate gc ON g.goods_id = gc.goods_id')
-                ->join('tb_category c ON c.type_id = gc.type_id')
+                ->join('tb_goods_cate gc ON g.goods_id = gc.goods_id','LEFT')
+                ->join('tb_category c ON c.type_id = gc.type_id','LEFT')
                 ->where($map)
                 ->order('g.goods_id desc')
                 ->limit($Page->firstRow.','.$Page->listRows)
+                ->distinct(true)->field('g.*')
                 ->select();
         $this->assign('glist',$list);// 赋值数据集
         $this->assign('page',$show);// 赋值分页输出

@@ -59,7 +59,7 @@
 						</div>
 					</article>
               {/foreach}
-			<div>帖子总条数：{$nlist|@count}条 </div>
+              {$page}
 {else}
 				<h1>
 					<font color="red">还没有帖子</font>
@@ -70,15 +70,18 @@
 				<form action="{$smarty.const.__MODULE__}/Note/addNote" method="post" name="ly_form">
 					<div>
 		                 <label class="contact"><strong>帖子标题:</strong></label>
-		                 <input type="text" name="note_title"/>
+		                 <input type="text" name="note_title" {if !isset($smarty.session.user)}disabled{/if} />
 	                </div><br/><br/>
 	                <div>
 	                     <div>
 		                 <label class="contact"><strong>帖子内容:</strong></label>
-		                 <textarea rows="5" cols="40" name="note_content" class="contact_input"></textarea> 
-	                   	</div><br/><br/>
+		                 <textarea rows="5" cols="40" name="note_content" class="contact_input" {if !isset($smarty.session.user)}disabled{/if} ></textarea>
+                                    {if !isset($smarty.session.user)}
+                                    <a href="{$smarty.const.__MODULE__}/User/login">请先登录</a>
+                                    {/if} 
+	                   	</div>
 	                   	<div style="margin-left: 40%">
-                    		<input type="submit" class="register" value="发表帖子" />  
+                    		<input type="submit" class="register" value="发表帖子" {if !isset($smarty.session.user)}disabled{/if} />  
 	                   	</div>
 	                </div>
 	             </form>

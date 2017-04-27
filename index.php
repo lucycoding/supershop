@@ -7,6 +7,8 @@ define("APP_DEBUG", true);
 
 //项目根目录
 define('ROOT_URL', '/supershop/index');
+//前台url
+define('HOME_URL', '/supershop/Home');
 //后台url
 define('ADMIN_URL', '/supershop/Admin/index');
 
@@ -21,6 +23,6 @@ define('DIR_SECURE_CONTENT', 'deney Access!');
 // 项目名称
 define('WEB_NAME', '小鹿网上商城');
 // 项目域名
-define('WEB_URL', 'http://192.168.3.9/supershop/');
+define('WEB_URL', 'http://192.168.3.122/supershop/');
 
 include('../ThinkPHP/ThinkPHP.php');

@@ -1,6 +1,7 @@
 <?php
 namespace Home\Controller;
 use Tools\HomeController;
+use Tools\File;
 
 class NoteController extends HomeController {
     public function __construct() {
@@ -26,8 +27,23 @@ class NoteController extends HomeController {
     public function addNote() {
         if(!empty($_POST)){
             $user = $this->getCurrUser();
+            if(empty($user)) {
+                //未登录
+                $this->error('请先登录后再发帖！','/supershop/Home/User/login',3);
+            }
             if(empty($_POST['note_title']) || empty($_POST['note_content'])) {
                 $this->redirect('notePage');
+            }
+            // 过滤
+            $filterTitle = $this->noteFilter($_POST['note_title']);
+            $filterContent = $this->noteFilter($_POST['note_content']);
+            if($_POST['note_title'] != $filterTitle){
+                $_POST['note_old_title'] = $_POST['note_title'];
+                $_POST['note_title'] = $filterTitle;
+            }
+            if($_POST['note_content'] != $filterContent){
+                $_POST['note_old_content'] = $_POST['note_content'];
+                $_POST['note_content'] = $filterContent;
             }
             $_POST['user_id'] = $user['user_id'];
             $_POST['user_name'] = $user['user_name'];
@@ -35,5 +51,26 @@ class NoteController extends HomeController {
             $flag = $Note ->add($_POST);
         }
         $this->redirect('notePage');
+    }
+    /**
+     * 过滤字符
+     * @param type $content
+     * @return type
+     */
+    private function noteFilter($content){
+        $file = new File();
+        $filter = $file->getNoteFilterContent();
+        if(!empty($content)){
+            $contentArr = preg_split('/(?<!^)(?!$)/u', $content );
+            foreach($contentArr as $c) {
+                foreach ($filter as $f){
+                    $strpos = strpos($f, $c);
+                    if($strpos!==false) {
+                        $content = str_replace($c, "*", $content);
+                    }
+                }
+            }
+        }
+        return $content;
     }
 }

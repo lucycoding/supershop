@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <title>更改密码</title>
+
+  <link rel="shortcut icon" href="{$smarty.const.PUBLIC_URL}favicon.ico">
+  <link href="{$smarty.const.PUBLIC_URL}css/style.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="{$smarty.const.PUBLIC_URL}css/grid.css" media="screen" rel="stylesheet" type="text/css">
+ 
+  <script src="{$smarty.const.PUBLIC_URL}js/jquery-1.7.2.min.js" ></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/html5.js" ></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/jflow.plus.js"></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/jquery.carouFredSel-5.2.2-packed.js"></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/checkbox.js"></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/radio.js"></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/selectBox.js"></script>
+
+</head>
+<body style="background: none">
+  
+    <div class="container_12 contact_form">      
+        <form action="{$smarty.const.__CONTROLLER__}/updatePwdByOldpwd" method="post" name="update_form" onsubmit="return checkAll();">
+		<div class="grid_12 adress" style="margin-left: 30%">
+				<br/>
+                                {$user = $smarty.session.user}
+                                <input type="hidden" name="userId" value="{$user.user_id}"/>
+				<span style="font-size: 18px;font-weight: bold;">用&nbsp;户&nbsp;名：</span>
+				　{$user.user_name}<br/><br/>
+				
+				<br/>
+				<span style="font-size: 18px;font-weight: bold;">原&nbsp;密&nbsp;码：</span>
+				　<input type="password" name="password" class="contact" /> <br/><br/>
+				
+				<br/>
+				<span style="font-size: 18px;font-weight: bold;">新&nbsp;密&nbsp;码：</span>
+				　<input input type="password" id="password1" name="newPassword" class="contact"  onfocus="clearPwd()" onblur="checkPassword()"/>
+					<span id="pwdRemind"><font color="#C3293A">*</font>由英文字母和数字(6-16)字符组成</span><br/><br/>
+				
+				<br/>
+				<span style="font-size: 18px;font-weight: bold;">确认密码：</span>
+				&nbsp;<input input type="password" id="password2" name="newPassword2" class="contact" onblur="checkPwd()" />
+					<span id="checkPwd"><font color="#C3293A">*</font>由英文字母和数字(6-16)字符组成</span> <br/><br/><br/>
+       			<div class="submit">					
+					<input type="submit" style="width: 80px;float:left;margin-left: 10%"  value="修改" /><input style="width: 80px;height: 35px;float:left;margin-left: 8px" type="reset" value="重置" />
+				</div><!-- .submit --> 
+        </div><!-- .adress -->
+        </form>
+      <div class="clear"></div>
+    </div><!-- .container_12 -->
+  
+  <div class="clear"></div>
+  {$reterr }
+  <script>
+      {literal}
+	//必须所有信息填写正确才能成功提交信息
+	function checkAll(){
+            if(checkPwd() && checkPassword()){
+                return true;
+            }else{
+                alert("请正确填写密码!");
+                return false;
+            }
+	}
+	//检查密码,只能由6到15位的英文字母和数字组成
+	function checkPassword(){
+		var password1 = document.getElementById("password1");
+		var pwdRemind = document.getElementById("pwdRemind");
+		var patrn=/^[a-z,A-Z,0-9]{6,15}$/;
+		if (!patrn.exec(password1.value)){
+			pwdRemind.style.color="red";
+			pwdRemind.innerHTML="密码格式输入有误!";
+			return false;
+		}else{
+			pwdRemind.style.color="green";
+			pwdRemind.innerHTML="√ 输入正确";
+			return true;
+		}
+	}
+	//确认密码
+	function checkPwd(){
+		var password1 = document.getElementById("password1");
+		var password2 = document.getElementById("password2");
+		var checkPwd = document.getElementById("checkPwd");
+		if(password1.value!=password2.value){
+			checkPwd.style.color="red";
+			checkPwd.innerHTML="两次密码输入不一致!";
+			return false;
+		}else{
+			checkPwd.style.color="green";
+			checkPwd.innerHTML="两次密码输入一致!";
+			return true;
+		}
+	}
+	//清除密码验证错误提示
+	function clearPwd(){
+		var checkPwd = document.getElementById("checkPwd");
+		var pwdRemind = document.getElementById("pwdRemind");
+		checkPwd.style.color="black";
+		pwdRemind.style.color="black";
+		checkPwd.innerHTML="<font color='#C3293A'>*</font>由英文字母和数字(6-16)字符组成";
+		pwdRemind.innerHTML="<font color='#C3293A'>*</font>由英文字母和数字(6-16)字符组成";
+	}
+      {/literal}
+  </script>
+</body>
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+</html>

@@ -82,4 +82,61 @@ class OrderController extends HomeController {
         $this->assign("data",$data);
         $this->display();
     }
+    /**
+     * 当前用户下所有订单列表
+     */
+    public function personalAllOrder() {
+        $user = parent::getCurrUser();
+        if(!empty($user)) {
+            $where['user_id'] = $user['user_id'];
+            $where['valid_flag'] = 1;
+            $Order = D('Order');
+            $list = $Order->where($where)->order('create_time desc')->select();
+            $this->assign("list",$list);
+        }
+        $this->display();
+    }
+    /**
+     * 该订单下商品列表
+     * @param type $orderId
+     */
+    public function personalOrderItems($orderId) {
+        if(!empty($orderId)) {
+            $where['order_id'] = $orderId;
+            $OrderItem = D('Order_item');
+            $list = $OrderItem->where($where)->select();
+            $totalPrice = 0;
+            foreach ($list as $v) {
+                $totalPrice += $v['price'];
+            }
+            $this->assign("totalPrice",$totalPrice);
+            $this->assign("list",$list);
+        }
+        $this->display();
+    }
+    /**
+     * 确认收货，用户操作
+     * @param type $param
+     */
+    public function confirmOrder($id) {
+        $user = parent::getCurrUser();
+        if(!empty($user) && !empty($id)) {
+            $where['order_id'] = $id;
+            $where['user_id'] = $user['user_id'];
+            $data['status'] = 2;
+            $Order = D('Order');
+            $flag = $Order->where($where)->save($data);
+            if($flag){
+                $this->assign("reterr", parent::retScriptErr("确认收货成功！"));
+            }else{
+                $this->assign("reterr", parent::retScriptErr("确认收货失败！"));
+            }
+            //再次获取订单数据
+            $where['valid_flag'] = 1;
+            unset($where['order_id']);
+            $list = $Order->where($where)->order('create_time desc')->select();
+            $this->assign("list",$list);
+        }
+        $this->display('personalAllOrder');
+    }
 }

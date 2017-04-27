@@ -1,22 +1,22 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 127.0.0.1_3306
-Source Server Version : 50622
-Source Host           : 127.0.0.1:3306
+Source Server         : localhost
+Source Server Version : 50525
+Source Host           : localhost:3308
 Source Database       : supershop
 
 Target Server Type    : MYSQL
-Target Server Version : 50622
+Target Server Version : 50525
 File Encoding         : 65001
 
-Date: 2017-03-28 23:29:19
+Date: 2017-04-27 18:15:41
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for `tb_admin`
+-- Table structure for tb_admin
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_admin`;
 CREATE TABLE `tb_admin` (
@@ -41,13 +41,13 @@ CREATE TABLE `tb_admin` (
 -- ----------------------------
 -- Records of tb_admin
 -- ----------------------------
-INSERT INTO `tb_admin` VALUES ('100000', 'suadmin', '商城超级管理员', '', 'admin@supershop.com', '13951755802', '21232f297a57a5a743894a0e4a801fc3', '1', '2016-02-28 22:46:40', '2017-03-24 00:33:03', '未知IP', '30', '0');
+INSERT INTO `tb_admin` VALUES ('100000', 'suadmin', '商城超级管理员', '', 'admin@supershop.com', '13951755802', '21232f297a57a5a743894a0e4a801fc3', '1', '2016-02-28 22:46:40', '2017-04-27 16:35:20', '127.0.0.1', '63', '0');
 INSERT INTO `tb_admin` VALUES ('100001', 'liming', '', '', null, '', '21232f297a57a5a743894a0e4a801fc3', '1', '2016-02-29 16:31:23', '2016-03-03 14:21:47', '127.0.0.1', '10', '1001');
 INSERT INTO `tb_admin` VALUES ('100002', 'lixiang', '', '', null, '', '21232f297a57a5a743894a0e4a801fc3', '1', '2016-02-29 22:03:50', '2016-02-29 22:20:11', '127.0.0.1', '2', '1002');
-INSERT INTO `tb_admin` VALUES ('100005', 'useradmin', '', '', '', '', 'user123456', '1', '2016-03-10 12:31:41', '0000-00-00 00:00:00', '0.0.0.0', '0', '1002');
+INSERT INTO `tb_admin` VALUES ('100005', 'useradmin', '', '', '', '', '21232f297a57a5a743894a0e4a801fc3', '1', '2016-03-10 12:31:41', '2017-03-30 17:20:33', '127.0.0.1', '1', '1002');
 
 -- ----------------------------
--- Table structure for `tb_admin_log`
+-- Table structure for tb_admin_log
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_admin_log`;
 CREATE TABLE `tb_admin_log` (
@@ -58,7 +58,7 @@ CREATE TABLE `tb_admin_log` (
   `login_ip` char(20) NOT NULL DEFAULT '0.0.0.0',
   PRIMARY KEY (`id`),
   KEY `admin_id` (`admin_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tb_admin_log
@@ -106,9 +106,43 @@ INSERT INTO `tb_admin_log` VALUES ('40', '100000', 'suadmin', '2016-03-31 16:45:
 INSERT INTO `tb_admin_log` VALUES ('41', '100000', 'suadmin', '2016-04-03 15:40:45', '127.0.0.1');
 INSERT INTO `tb_admin_log` VALUES ('42', '100000', 'suadmin', '2016-04-20 01:45:49', '127.0.0.1');
 INSERT INTO `tb_admin_log` VALUES ('43', '100000', 'suadmin', '2017-03-24 00:33:03', '未知IP');
+INSERT INTO `tb_admin_log` VALUES ('44', '100000', 'suadmin', '2017-03-30 10:43:29', '127.0.0.1');
+INSERT INTO `tb_admin_log` VALUES ('45', '100000', 'suadmin', '2017-03-30 17:18:58', '127.0.0.1');
+INSERT INTO `tb_admin_log` VALUES ('46', '100005', 'useradmin', '2017-03-30 17:20:33', '127.0.0.1');
+INSERT INTO `tb_admin_log` VALUES ('47', '100000', 'suadmin', '2017-03-30 17:22:35', '127.0.0.1');
+INSERT INTO `tb_admin_log` VALUES ('48', '100000', 'suadmin', '2017-03-31 14:59:58', '127.0.0.1');
+INSERT INTO `tb_admin_log` VALUES ('49', '100000', 'suadmin', '2017-03-31 15:29:46', '127.0.0.1');
+INSERT INTO `tb_admin_log` VALUES ('50', '100000', 'suadmin', '2017-03-31 15:39:37', '127.0.0.1');
+INSERT INTO `tb_admin_log` VALUES ('51', '100000', 'suadmin', '2017-03-31 17:10:57', '127.0.0.1');
+INSERT INTO `tb_admin_log` VALUES ('52', '100000', 'suadmin', '2017-03-31 17:12:50', '127.0.0.1');
+INSERT INTO `tb_admin_log` VALUES ('53', '100000', 'suadmin', '2017-03-31 17:13:56', '127.0.0.1');
+INSERT INTO `tb_admin_log` VALUES ('54', '100000', 'suadmin', '2017-03-31 17:14:48', '127.0.0.1');
+INSERT INTO `tb_admin_log` VALUES ('55', '100000', 'suadmin', '2017-03-31 17:16:07', '127.0.0.1');
+INSERT INTO `tb_admin_log` VALUES ('56', '100000', 'suadmin', '2017-03-31 17:17:42', '127.0.0.1');
+INSERT INTO `tb_admin_log` VALUES ('57', '100000', 'suadmin', '2017-03-31 17:19:38', '127.0.0.1');
+INSERT INTO `tb_admin_log` VALUES ('58', '100000', 'suadmin', '2017-04-01 11:10:43', '127.0.0.1');
+INSERT INTO `tb_admin_log` VALUES ('59', '100000', 'suadmin', '2017-04-01 11:45:47', '192.168.3.165');
+INSERT INTO `tb_admin_log` VALUES ('60', '100000', 'suadmin', '2017-04-01 17:48:05', '192.168.3.165');
+INSERT INTO `tb_admin_log` VALUES ('61', '100000', 'suadmin', '2017-04-02 10:52:40', '127.0.0.1');
+INSERT INTO `tb_admin_log` VALUES ('62', '100000', 'suadmin', '2017-04-02 12:11:22', '127.0.0.1');
+INSERT INTO `tb_admin_log` VALUES ('63', '100000', 'suadmin', '2017-04-05 09:15:49', '192.168.3.165');
+INSERT INTO `tb_admin_log` VALUES ('64', '100000', 'suadmin', '2017-04-07 16:20:47', '192.168.3.165');
+INSERT INTO `tb_admin_log` VALUES ('65', '100000', 'suadmin', '2017-04-10 09:22:49', '127.0.0.1');
+INSERT INTO `tb_admin_log` VALUES ('66', '100000', 'suadmin', '2017-04-10 09:27:25', '192.168.3.165');
+INSERT INTO `tb_admin_log` VALUES ('67', '100000', 'suadmin', '2017-04-11 09:06:22', '192.168.3.165');
+INSERT INTO `tb_admin_log` VALUES ('68', '100000', 'suadmin', '2017-04-11 16:04:16', '192.168.3.5');
+INSERT INTO `tb_admin_log` VALUES ('69', '100000', 'suadmin', '2017-04-11 16:44:40', '127.0.0.1');
+INSERT INTO `tb_admin_log` VALUES ('70', '100000', 'suadmin', '2017-04-12 09:14:45', '192.168.3.5');
+INSERT INTO `tb_admin_log` VALUES ('71', '100000', 'suadmin', '2017-04-13 14:24:03', '192.168.3.5');
+INSERT INTO `tb_admin_log` VALUES ('72', '100000', 'suadmin', '2017-04-14 14:57:50', '127.0.0.1');
+INSERT INTO `tb_admin_log` VALUES ('73', '100000', 'suadmin', '2017-04-17 14:09:51', '127.0.0.1');
+INSERT INTO `tb_admin_log` VALUES ('74', '100000', 'suadmin', '2017-04-17 14:30:09', '192.168.3.5');
+INSERT INTO `tb_admin_log` VALUES ('75', '100000', 'suadmin', '2017-04-17 14:39:03', '127.0.0.1');
+INSERT INTO `tb_admin_log` VALUES ('76', '100000', 'suadmin', '2017-04-17 15:16:21', '127.0.0.1');
+INSERT INTO `tb_admin_log` VALUES ('77', '100000', 'suadmin', '2017-04-27 16:35:20', '127.0.0.1');
 
 -- ----------------------------
--- Table structure for `tb_auth`
+-- Table structure for tb_auth
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_auth`;
 CREATE TABLE `tb_auth` (
@@ -157,7 +191,7 @@ INSERT INTO `tb_auth` VALUES ('10024', '添加权限', 'plus-sign', '10022', 'Ma
 INSERT INTO `tb_auth` VALUES ('10025', '添加类别', 'plus-sign', '10013', 'ManageGoodsType', 'addGoodsType', '10003-10013-10025', '1', '2016-03-04 10:37:12', '2');
 
 -- ----------------------------
--- Table structure for `tb_category`
+-- Table structure for tb_category
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_category`;
 CREATE TABLE `tb_category` (
@@ -170,7 +204,7 @@ CREATE TABLE `tb_category` (
   `type_level` tinyint(4) NOT NULL DEFAULT '0' COMMENT '级别',
   PRIMARY KEY (`type_id`),
   UNIQUE KEY `type_id` (`type_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1014 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1023 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tb_category
@@ -188,9 +222,18 @@ INSERT INTO `tb_category` VALUES ('1010', '化妆', '1001', '1001-1010', '1', '2
 INSERT INTO `tb_category` VALUES ('1011', '零食', '1001', '1001-1011', '1', '2016-03-07 17:32:15', '1');
 INSERT INTO `tb_category` VALUES ('1012', '手机', '1001', '1001-1012', '1', '2016-03-31 17:04:47', '1');
 INSERT INTO `tb_category` VALUES ('1013', '小米', '1012', '1001-1012-1013', '1', '2016-03-31 17:05:04', '2');
+INSERT INTO `tb_category` VALUES ('1014', '车', '0', '1014', '1', '2017-04-13 15:40:43', '0');
+INSERT INTO `tb_category` VALUES ('1015', '汽车', '1014', '1014-1015', '1', '2017-04-13 15:41:48', '1');
+INSERT INTO `tb_category` VALUES ('1016', '自行车', '1014', '1014-1016', '1', '2017-04-13 15:42:17', '1');
+INSERT INTO `tb_category` VALUES ('1017', '电动车', '1014', '1014-1017', '1', '2017-04-13 15:42:34', '1');
+INSERT INTO `tb_category` VALUES ('1018', '电动汽车', '1015', '1014-1015-1018', '1', '2017-04-13 15:42:55', '2');
+INSERT INTO `tb_category` VALUES ('1019', '油电混合汽车', '1015', '1014-1015-1019', '1', '2017-04-13 15:43:36', '2');
+INSERT INTO `tb_category` VALUES ('1020', '普通汽车', '1015', '1014-1015-1020', '1', '2017-04-13 15:44:00', '2');
+INSERT INTO `tb_category` VALUES ('1021', '国产', '1020', '1014-1015-1020-1021', '1', '2017-04-13 15:45:24', '3');
+INSERT INTO `tb_category` VALUES ('1022', '进口', '1020', '1014-1015-1020-1022', '1', '2017-04-13 15:45:40', '3');
 
 -- ----------------------------
--- Table structure for `tb_goods`
+-- Table structure for tb_goods
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_goods`;
 CREATE TABLE `tb_goods` (
@@ -229,12 +272,12 @@ INSERT INTO `tb_goods` VALUES ('1000010', '1000010', 'Meitu/美图MK260 (M2) 美
 INSERT INTO `tb_goods` VALUES ('1000011', '1000011', 'Huawei/华为 H60-L01 02 荣耀6手机 移动 联通4G  ', '华为荣耀6手机 移动 联通4G。 纤薄机身，时尚新宠，全球领先的超薄手机.联保1年，店保3年，四核智能手机。 亲们，如果买了货不对版，支持7天无理由退货，买了不满意一样可以退货，总之一句话你不满意就退货，给亲最好的保障。让亲享受购物的愉快！限购一台哦。', '2399', '1400', 'Public/upload/2016-03-08/56de7cc45a895.jpg', 'Public/upload/2016-03-08/thumb_56de7cc45a895.jpg', '中国深圳', '2015/02/24', '华为/huawei', '100', '0', '1', '1', '2016-03-08 15:18:28', '2016-03-08 15:18:36');
 INSERT INTO `tb_goods` VALUES ('1000012', '1000012', '湾仔码头', '湾仔码头', '22', '18', 'Public/upload/2016-04-20/5716708496deb.png', 'Public/upload/2016-04-20/thumb_5716708496deb.png', '', '', '', '20', '0', '0', '1', '2016-04-20 01:53:08', '0000-00-00 00:00:00');
 INSERT INTO `tb_goods` VALUES ('1000013', '1000013', 'olay化妆品', '', '45', '35', 'Public/upload/2016-04-20/57167229f253e.jpg', 'Public/upload/2016-04-20/thumb_57167229f253e.jpg', '', '', '', '24', '0', '0', '1', '2016-04-20 02:00:10', '0000-00-00 00:00:00');
-INSERT INTO `tb_goods` VALUES ('1000014', '1000014', '程序员T恤', '', '45', '25', 'Public/upload/2016-04-20/5716748bd8163.jpg', 'Public/upload/2016-04-20/thumb_5716748bd8163.jpg', '', '', '', '25', '0', '0', '1', '2016-04-20 02:10:19', '0000-00-00 00:00:00');
+INSERT INTO `tb_goods` VALUES ('1000014', '1000014', '程序员T恤', '', '45', '25', 'Public/upload/2016-04-20/5716748bd8163.jpg', 'Public/upload/2016-04-20/thumb_5716748bd8163.jpg', '', '', '', '25', '0', '0', '1', '2016-04-20 02:10:19', '2017-04-13 14:03:03');
 INSERT INTO `tb_goods` VALUES ('1000015', '1000015', 'chanel唇膏', '', '200', '150', 'Public/upload/2016-04-20/571674efb34a4.jpg', 'Public/upload/2016-04-20/thumb_571674efb34a4.jpg', '', '', '', '50', '0', '0', '1', '2016-04-20 02:11:59', '0000-00-00 00:00:00');
 INSERT INTO `tb_goods` VALUES ('1000016', '1000016', '苏泊尔电饭煲', '', '300', '280', 'Public/upload/2016-04-20/571676e4cda47.jpg', 'Public/upload/2016-04-20/thumb_571676e4cda47.jpg', '', '', '', '50', '0', '0', '1', '2016-04-20 02:20:20', '0000-00-00 00:00:00');
 
 -- ----------------------------
--- Table structure for `tb_goods_cate`
+-- Table structure for tb_goods_cate
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_goods_cate`;
 CREATE TABLE `tb_goods_cate` (
@@ -264,7 +307,7 @@ INSERT INTO `tb_goods_cate` VALUES ('19', '1000016', '1003');
 INSERT INTO `tb_goods_cate` VALUES ('20', '1000016', '1005');
 
 -- ----------------------------
--- Table structure for `tb_goods_log`
+-- Table structure for tb_goods_log
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_goods_log`;
 CREATE TABLE `tb_goods_log` (
@@ -285,7 +328,7 @@ CREATE TABLE `tb_goods_log` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `tb_inform`
+-- Table structure for tb_inform
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_inform`;
 CREATE TABLE `tb_inform` (
@@ -296,7 +339,7 @@ CREATE TABLE `tb_inform` (
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`inform_id`),
   UNIQUE KEY `inform_id` (`inform_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=10006 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10007 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tb_inform
@@ -306,9 +349,10 @@ INSERT INTO `tb_inform` VALUES ('10002', '热烈庆祝网上商城上线', '公�
 INSERT INTO `tb_inform` VALUES ('10003', '迎五一疯狂大促销！', '即日起注册网上商城会员，即可享受打折优惠！', '1', '2015-04-30 14:01:25');
 INSERT INTO `tb_inform` VALUES ('10004', '疯狂开学季，疯狂大回馈！', '公告：迎开学，全场大酬宾！', '1', '2015-05-19 14:04:23');
 INSERT INTO `tb_inform` VALUES ('10005', '商城女人节大活动', '所有女人节特惠产品抢购啦', '1', '2016-03-09 15:49:06');
+INSERT INTO `tb_inform` VALUES ('10006', '2017年最疯狂的活动', '现在来买买买，全场折扣，嗨爆你！', '1', '2017-04-13 16:41:57');
 
 -- ----------------------------
--- Table structure for `tb_note`
+-- Table structure for tb_note
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_note`;
 CREATE TABLE `tb_note` (
@@ -319,19 +363,25 @@ CREATE TABLE `tb_note` (
   `note_content` varchar(128) NOT NULL COMMENT '留言内容',
   `valid_flag` int(1) DEFAULT '0',
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `note_old_title` varchar(20) DEFAULT NULL COMMENT '未过滤的',
+  `note_old_content` varchar(128) DEFAULT NULL COMMENT '未过滤的',
   PRIMARY KEY (`note_id`),
   UNIQUE KEY `note_id` (`note_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1000004 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1000008 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tb_note
 -- ----------------------------
-INSERT INTO `tb_note` VALUES ('1000001', '你好', '100000', 'lucy', '你好', '1', '2015-04-20 17:03:44');
-INSERT INTO `tb_note` VALUES ('1000002', '刚买的手机', '100000', 'lucy', '哇，收到货啦，刚在商城买的小米手机2天就到货啦！', '1', '2015-05-07 22:56:50');
-INSERT INTO `tb_note` VALUES ('1000003', '脏话过滤测试', '100000', 'lucy', '**，什么人啊这是，*！', '1', '2015-05-14 17:48:08');
+INSERT INTO `tb_note` VALUES ('1000001', '你好', '100000', 'lucy', '你好', '1', '2015-04-20 17:03:44', null, null);
+INSERT INTO `tb_note` VALUES ('1000002', '刚买的手机', '100000', 'lucy', '哇，收到货啦，刚在商城买的小米手机2天就到货啦！', '1', '2015-05-07 22:56:50', null, null);
+INSERT INTO `tb_note` VALUES ('1000003', '脏话过滤测试', '100000', 'lucy', '**，什么人啊这是，*！', '1', '2015-05-14 17:48:08', null, null);
+INSERT INTO `tb_note` VALUES ('1000004', '你好', '100000', 'lucy', '你好啊', '1', '2017-04-19 18:27:08', null, null);
+INSERT INTO `tb_note` VALUES ('1000005', '你好', '100000', 'lucy', '你好啊', '1', '2017-04-19 18:28:09', null, null);
+INSERT INTO `tb_note` VALUES ('1000006', '你*啊', '100000', 'lucy', '你****我****他*她**我们*', '1', '2017-04-26 13:35:34', '你fuck我shit他操她妈的我们屎', null);
+INSERT INTO `tb_note` VALUES ('1000007', '你****啊', '100000', 'lucy', '我*你啊*******我', '1', '2017-04-26 13:38:01', '你fuck啊', '我操你啊妈的狗日的狗屎我');
 
 -- ----------------------------
--- Table structure for `tb_order`
+-- Table structure for tb_order
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_order`;
 CREATE TABLE `tb_order` (
@@ -353,14 +403,17 @@ CREATE TABLE `tb_order` (
   UNIQUE KEY `orderid` (`order_id`) USING BTREE,
   KEY `tb_user_ibfk_1` (`user_id`),
   CONSTRAINT `tb_user_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `tb_user` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tb_order
 -- ----------------------------
+INSERT INTO `tb_order` VALUES ('1', '100000', 'lucy', '陆晨阳', '江苏省南京市', '210000', '13951755802', '0', '11197', null, '2', '1', '2017-04-17 15:15:46', '2017-04-27 16:37:53');
+INSERT INTO `tb_order` VALUES ('3', '100000', 'lucy', '陆晨阳', '江苏省南京市', '210000', '13951755802', '0', '2598', null, '0', '1', '2017-04-17 15:36:29', '0000-00-00 00:00:00');
+INSERT INTO `tb_order` VALUES ('4', '100000', 'lucy', '陆晨阳', '江苏省南京市', '210000', '13951755802', '0', '2599', null, '0', '1', '2017-04-18 10:31:58', '0000-00-00 00:00:00');
 
 -- ----------------------------
--- Table structure for `tb_order_item`
+-- Table structure for tb_order_item
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_order_item`;
 CREATE TABLE `tb_order_item` (
@@ -375,14 +428,19 @@ CREATE TABLE `tb_order_item` (
   KEY `order_id` (`order_id`) USING BTREE,
   KEY `book_id` (`goods_id`) USING BTREE,
   CONSTRAINT `tb_order_item_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `tb_order` (`order_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tb_order_item
 -- ----------------------------
+INSERT INTO `tb_order_item` VALUES ('1', '1', '1000011', 'Huawei/华为 H60-L01 02 荣耀6手机 移动 联通4G  ', '1400', '1');
+INSERT INTO `tb_order_item` VALUES ('2', '1', '1000006', '联想一体机电脑 C5030 3558U 4G 1T 2G独显 23寸黑白色 C560升级', '7198', '2');
+INSERT INTO `tb_order_item` VALUES ('3', '1', '1000010', 'Meitu/美图MK260 (M2) 美图手机2 美图秀秀 自拍神器 美图M2 ', '2599', '1');
+INSERT INTO `tb_order_item` VALUES ('5', '3', '1000005', 'Lenovo/联想Y510p-ISE(H)4代i7 15寸游戏笔记本电脑独显2G高清屏 ', '2598', '1');
+INSERT INTO `tb_order_item` VALUES ('6', '4', '1000010', 'Meitu/美图MK260 (M2) 美图手机2 美图秀秀 自拍神器 美图M2 ', '2599', '1');
 
 -- ----------------------------
--- Table structure for `tb_role`
+-- Table structure for tb_role
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_role`;
 CREATE TABLE `tb_role` (
@@ -399,11 +457,11 @@ CREATE TABLE `tb_role` (
 -- ----------------------------
 -- Records of tb_role
 -- ----------------------------
-INSERT INTO `tb_role` VALUES ('1001', '订单主管', '10002,10010,10011,10012,10007,10021,10022', 'ManageOrder-notSendOrder,ManageOrder-sendOrderList,ManageOrder-confirmOrderList,ManageRole-roleList,ManageAuth-authList', '1', '2016-02-29 16:27:33');
+INSERT INTO `tb_role` VALUES ('1001', '订单主管', '10002,10009,10010,10011,10012,10007,10021,10022', 'ManageOrder-orderList,ManageOrder-orderList/type/0,ManageOrder-orderList/type/1,ManageOrder-orderList/type/2,ManageRole-roleList,ManageAuth-authList', '1', '2016-02-29 16:27:33');
 INSERT INTO `tb_role` VALUES ('1002', '用户主管', '10001,10008,10023', 'ManageUser-userList,ManageUser-addUser', '1', '2016-02-29 22:02:54');
 
 -- ----------------------------
--- Table structure for `tb_user`
+-- Table structure for tb_user
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_user`;
 CREATE TABLE `tb_user` (
@@ -411,15 +469,15 @@ CREATE TABLE `tb_user` (
   `user_name` varchar(32) NOT NULL COMMENT '用户名',
   `user_nickname` varchar(32) DEFAULT NULL COMMENT '昵称',
   `user_keyval` varchar(32) NOT NULL,
-  `user_phone` varchar(32) DEFAULT NULL COMMENT '手机',
+  `user_phone` varchar(32) DEFAULT NULL,
   `user_email` varchar(64) DEFAULT NULL COMMENT 'email',
   `user_truename` varchar(32) DEFAULT NULL COMMENT '真名',
   `user_gender` char(16) DEFAULT 'male' COMMENT 'male,female',
   `user_birth` varchar(32) DEFAULT NULL,
   `user_address` varchar(128) DEFAULT NULL,
   `user_postcode` char(16) DEFAULT NULL,
-  `user_office_phone` varchar(16) DEFAULT NULL,
-  `user_home_phone` varchar(16) DEFAULT NULL,
+  `user_office_phone` varchar(32) DEFAULT NULL,
+  `user_home_phone` varchar(32) DEFAULT NULL,
   `safe_question` varchar(32) DEFAULT NULL,
   `safe_answer` varchar(32) DEFAULT NULL,
   `status` tinyint(4) DEFAULT NULL,
@@ -427,23 +485,27 @@ CREATE TABLE `tb_user` (
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `last_login_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '上次登录',
   `last_login_ip` char(16) NOT NULL DEFAULT '0.0.0.0',
+  `token` varchar(255) DEFAULT '',
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `user_id` (`user_id`) USING BTREE,
   UNIQUE KEY `user_name` (`user_name`) USING BTREE,
   UNIQUE KEY `user_phone` (`user_phone`) USING BTREE,
   UNIQUE KEY `user_email` (`user_email`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=100004 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=100007 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tb_user
 -- ----------------------------
-INSERT INTO `tb_user` VALUES ('100000', 'lucy', '根本停不下来的小陆', 'e10adc3949ba59abbe56e057f20f883e', '13951755802', '136055326@qq.com', '陆晨阳', 'male', '1993-11-19', '江苏省南京市', '210000', null, null, '你最爱吃的食物', '肉夹馍', '1', '1', '2016-03-02 09:23:12', '0000-00-00 00:00:00', '0.0.0.0');
-INSERT INTO `tb_user` VALUES ('100001', 'liming', '李明', 'e10adc3949ba59abbe56e057f20f883e', null, null, null, 'male', null, null, null, null, null, null, null, '1', '0', '2016-03-02 09:29:18', '0000-00-00 00:00:00', '0.0.0.0');
-INSERT INTO `tb_user` VALUES ('100002', 'xuyue', '徐月', 'e80806f93a1497b0f1622d6a6312b274', null, null, null, 'male', null, null, null, null, null, null, null, '1', '1', '2016-03-09 11:23:44', '0000-00-00 00:00:00', '0.0.0.0');
-INSERT INTO `tb_user` VALUES ('100003', 'qdms01', 'qdms01', 'e10adc3949ba59abbe56e057f20f883e', null, null, null, 'male', null, null, null, null, null, null, null, '1', '1', '2016-03-09 15:11:41', '0000-00-00 00:00:00', '0.0.0.0');
+INSERT INTO `tb_user` VALUES ('100000', 'lucy', '根本停不下来的小陆', 'e10adc3949ba59abbe56e057f20f883e', '13951755802', '136055326@qq.com', '陆晨阳', 'male', '1993-11-19', '江苏省南京市', '210000', null, null, '你最爱吃的食物', '肉夹馍', '1', '1', '2016-03-02 09:23:12', '0000-00-00 00:00:00', '0.0.0.0', '');
+INSERT INTO `tb_user` VALUES ('100001', 'liming', '李明', 'e10adc3949ba59abbe56e057f20f883e', null, null, null, 'male', null, null, null, null, null, null, null, '1', '1', '2016-03-02 09:29:18', '0000-00-00 00:00:00', '0.0.0.0', '');
+INSERT INTO `tb_user` VALUES ('100002', 'xuyue', '徐月', 'e80806f93a1497b0f1622d6a6312b274', null, null, null, 'male', null, null, null, null, null, null, null, '1', '1', '2016-03-09 11:23:44', '0000-00-00 00:00:00', '0.0.0.0', '');
+INSERT INTO `tb_user` VALUES ('100003', 'qdms01', 'qdms01', 'e10adc3949ba59abbe56e057f20f883e', null, null, null, 'male', null, null, null, null, null, null, null, '1', '1', '2016-03-09 15:11:41', '0000-00-00 00:00:00', '0.0.0.0', '');
+INSERT INTO `tb_user` VALUES ('100004', 'john', 'john', 'e10adc3949ba59abbe56e057f20f883e', null, null, null, 'male', null, null, null, null, null, null, null, '1', '1', '2017-04-02 10:54:52', '0000-00-00 00:00:00', '0.0.0.0', '');
+INSERT INTO `tb_user` VALUES ('100005', 'test1', '测试账号1', 'e10adc3949ba59abbe56e057f20f883e', null, null, null, 'male', null, null, null, null, null, null, null, '1', '1', '2017-04-11 15:53:00', '0000-00-00 00:00:00', '0.0.0.0', '');
+INSERT INTO `tb_user` VALUES ('100006', 'lucy01', null, 'c33367701511b4f6020ec61ded352059', '13900001111', '', '', '', '', '', '', '13900001212', null, null, null, '1', '1', '2017-04-27 11:37:15', '0000-00-00 00:00:00', '0.0.0.0', '');
 
 -- ----------------------------
--- Table structure for `tb_user_log`
+-- Table structure for tb_user_log
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_user_log`;
 CREATE TABLE `tb_user_log` (

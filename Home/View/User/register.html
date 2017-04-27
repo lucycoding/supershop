@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html>
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <title>用户注册</title>
+
+  <link rel="shortcut icon" href="{$smarty.const.PUBLIC_URL}favicon.ico">
+  <link href="{$smarty.const.PUBLIC_URL}css/style.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="{$smarty.const.PUBLIC_URL}css/grid.css" media="screen" rel="stylesheet" type="text/css">
+ 
+  <script src="{$smarty.const.PUBLIC_URL}js/jquery-1.7.2.min.js" ></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/html5.js" ></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/jflow.plus.js"></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/jquery.carouFredSel-5.2.2-packed.js"></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/checkbox.js"></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/radio.js"></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/selectBox.js"></script>
+  
+  <script src="{$smarty.const.PUBLIC_URL}custom/register.js"></script>
+  
+</head>
+<body>
+{include file="../inc/header.html"}
+  
+  <section id="main" class="entire_width">
+    <div class="container_12">      
+       <div id="content">
+		<div class="grid_12">
+			<h1 class="page_title">用户注册</h1>
+		</div><!-- .grid_12 -->
+		
+		<div class="grid_12">
+			<form class="registed" name="register_form" id="register_form" action="{$smarty.const.__CONTROLLER__}/register" method="post" style="border-bottom-color: #ffffff">
+				<div style="margin-left: 15%">			
+				<div class="email">
+					<strong>账号:　　</strong>
+                                        <input type="text" id="name" name="name" onblur="checkNE()" onkeypress="checkName()" onfocus="clearRN()"/>
+					<span id="checkName"><font color="#C3293A">*</font>由英文字母、数字或下划线(4-16)字符组成,且不能以数字开头</span>
+                                        <br/>
+				</div><!-- .email -->
+							
+				<div class="password">
+					<strong>密码:　　</strong>
+					<input type="password" id="password1" name="password" onfocus="clearPwd()" onblur="checkPassword()" />
+					<span id="pwdRemind"><font color="#C3293A">*</font>由英文字母和数字(6-16)字符组成</span>
+				</div><!-- .password -->
+				
+				<div class="password">
+					<strong>确认密码:</strong>
+					<input type="password" id="password2" name="password" onblur="checkPwd()" />
+					<span id="checkPwd"><font color="#C3293A">*</font>由英文字母和数字(6-16)字符组成</span>
+				</div><!-- .password -->
+				
+				<div class="email">
+					<strong>验证码:　</strong>
+					<input type="text" id="code" name="code"  style="width: 50px;" onblur="checkCode()" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{$smarty.const.__CONTROLLER__}/getVerifyImg" id="safeCode" onclick="this.src='{$smarty.const.__CONTROLLER__}/getVerifyImg/'+Math.random()"/>
+					<span id="codeR"></span>
+				</div><!-- .email -->
+				
+				<div style="margin-left: 65px"><input type="checkbox" id="terms" name="terms" onclick="enable()" />我已阅读并同意网站的 <a href="{$smarty.const.__CONTROLLER__}/statement.html" target="_blank">使用条件及隐私声明 </a>。</div>
+				
+				</div>
+			</form><!-- .registed -->
+				<div class="submit" style="border: 1px solid #E0E0E0;border-top-color: #ffffff">		
+					<div style="margin-left: 420px;">						
+						<button class="account" id="register" disabled onclick="checkAll()" style="width: 80px">注册</button><br/>
+					</div>
+				</div><!-- .submit -->
+         </div><!-- .grid_6 -->
+       </div><!-- #content -->
+       
+      <div class="clear"></div>
+    </div><!-- .container_12 -->
+  </section><!-- #main -->
+  
+  <div class="clear"></div>
+    
+{include file="../inc/footer.html"}
+ <script>
+    var controller_path = '{$smarty.const.__CONTROLLER__}';
+    {literal}
+	var name_IsExist = true;
+	var check_code = false;
+	//检查用户名是否存在
+    function checkNE() {
+        var name = $("#name").val();
+        if(checkName()){
+            var check = document.getElementById("checkName");
+            $.ajax({ 
+                url:controller_path+"/checkNameExist/r="+new Date().getTime(), 
+                type:"post", 
+                data:{name:name},
+                dataType:"json",
+                async:false,
+                success:function(data){
+                    if (data.status == 1){
+                             check.style.color="red";
+                             check.innerHTML="×用户名已被占用";
+                             name_IsExist = true;
+                    }else{	
+                             check.style.color="green";
+                             check.innerHTML="√ 用户名可用";
+                             name_IsExist = false;
+                    }
+                }
+            });
+            return true;
+        }else{
+            return false;
+        }
+    }
+	//检查验证码
+    function checkCode() {
+        var code = $("#code").val();
+            var check = document.getElementById("codeR");
+            $.ajax({ 
+                url:controller_path+"/checkRandomCode/r="+new Date().getTime(), 
+                type:"post", 
+                data:{code:code},
+                dataType:"json",
+                async:false,
+                success:function(data){
+                    if (data == 'ok'){
+                             check.style.color="green";
+                             check.innerHTML="√ 正确";
+                             check_code = true;
+                    }else{	
+                             check.style.color="red";
+                             check.innerHTML="× 错误";
+                             check_code = false;
+                    }
+                }
+            });
+    }
+	//必须所有信息填写正确才能成功提交信息
+	function checkAll(){
+            if(!name_IsExist && check_code && checkPwd() && checkPassword() && checkNE() && checkName()){
+                document.register_form.submit();
+            }else{
+                alert("请正确填写资料!");
+                return;
+            }
+	}
+    {/literal}
+</script>
+{$reterr}
+</body>
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+</html>

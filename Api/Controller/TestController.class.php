@@ -2,6 +2,7 @@
 namespace Api\Controller;
 use Tools\CommonController;
 use Think\Exception;
+use Tools\File;
 /**
  * Description of Test
  *
@@ -11,6 +12,11 @@ class TestController extends CommonController{
     
     public function __construct() {
         parent::__construct();
+    }
+    
+    public function test() {
+        $FileOperator = new File();
+        print_r($FileOperator->getNoteFilterContent());
     }
     
     public function testApi() {

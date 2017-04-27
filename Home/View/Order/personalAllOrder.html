@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <title>用户订单信息</title>
+
+  <link rel="shortcut icon" href="{$smarty.const.PUBLIC_URL}favicon.ico">
+  <link href="{$smarty.const.PUBLIC_URL}css/style.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="{$smarty.const.PUBLIC_URL}css/grid.css" media="screen" rel="stylesheet" type="text/css">
+ 
+  <script src="{$smarty.const.PUBLIC_URL}js/jquery-1.7.2.min.js" ></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/html5.js" ></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/jflow.plus.js"></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/jquery.carouFredSel-5.2.2-packed.js"></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/checkbox.js"></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/radio.js"></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/selectBox.js"></script>
+
+</head>
+<body style="background: none">
+  
+    <div class="container_12">      
+
+		<div class="grid_12 adress">
+                    {if $list|@count eq 0}
+                    暂无订单！
+                    {else}
+		<table class="cart_product">
+	      <tr>
+		     <th>订单号</th>
+		     <th class="bg">收货人</th>
+		     <th>手机</th>
+		     <th class="bg">收货地址</th>
+		     <th>邮编</th>
+		     <th class="bg">快递费</th>
+		     <th>支付金额</th>
+		     <th class="bg">发货状态</th>
+		     <th>备注</th>
+		     <th class="bg">更多</th>
+	      </tr>
+              {foreach $list as $k=>$v}
+		 	<tr>
+			<td>{$v.order_id}</td>
+		      	<td>{$v.recv_name}</td>
+		        <td>{$v.recv_phone}</td>
+		        <td>{$v.recv_address}</td>
+		        <td>{$v.recv_postcode}</td> 
+		        <td>{$v.express_price}</td> 
+		        <td>{$v.pay_price}</td> 
+		        <td>{$v.status|replace:'0':'未发货'|replace:'1':'已发货'|replace:'2':'已确认收货'}
+                            {if $v.status == 1}
+                            &nbsp;<a style="background-color: #F7F7F7" href="javascript:void(0);" onclick="confirmOrder({$v.order_id})">确认收货</a>
+                            {/if}
+		        </td>
+		        <td>{$v.order_remark}</td> 
+		        <td><a href="{$smarty.const.__CONTROLLER__}/personalOrderItems/orderId/{$v.order_id}">查看</a></td>
+			</tr>
+              {/foreach}
+	     </table>
+                    {/if}
+        </div><!-- .adress -->
+       
+      <div class="clear"></div>
+    </div><!-- .container_12 -->
+  
+  <div class="clear"></div>
+{$reterr}
+<script>
+    var controller = '{$smarty.const.__CONTROLLER__}';
+    {literal}
+    function confirmOrder(id){
+        if(confirm('是否确认收货？此操作无法回退！')){
+            window.location.href = controller+'/confirmOrder/id/'+id;
+        }
+    }
+    {/literal}
+</script>
+</body>
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+</html>

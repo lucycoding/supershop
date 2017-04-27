@@ -48,7 +48,7 @@
 			<h2>注册账号</h2>
 			<p>通过创建网上商城的帐号，您可以享受更快的购物流程，保存送货地址，在您的个人中心查看和跟踪您的订单。</p>
 			<div class="clear"></div>
-			<button class="account" onclick="window.location='register.jsp'">注册</button>
+			<button class="account" onclick="window.location='{$smarty.const.__CONTROLLER__}/register'">注册</button>
                 </div><!-- .grid_6 -->
 		
 		<div class="grid_6">
@@ -65,7 +65,7 @@
 				<div class="password">
 					<strong>密码:</strong><sup class="surely">*</sup><br/>
 					<input type="password" name="password" />
-					<a class="forgot" href="PwdIndex.jsp">忘记密码？</a>
+					<a class="forgot" href="{$smarty.const.__CONTROLLER__}/retrievePwd">忘记密码？</a>
 				</div><!-- .password -->
 				{if $verflag}		
 				<div class="vcode">

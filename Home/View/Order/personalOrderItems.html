@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <title>用户订单信息--详情</title>
+
+  <link rel="shortcut icon" href="{$smarty.const.PUBLIC_URL}favicon.ico">
+  <link href="{$smarty.const.PUBLIC_URL}css/style.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="{$smarty.const.PUBLIC_URL}css/grid.css" media="screen" rel="stylesheet" type="text/css">
+ 
+  <script src="{$smarty.const.PUBLIC_URL}js/jquery-1.7.2.min.js" ></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/html5.js" ></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/jflow.plus.js"></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/jquery.carouFredSel-5.2.2-packed.js"></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/checkbox.js"></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/radio.js"></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/selectBox.js"></script>
+
+</head>
+<body style="background: none">
+  
+    <div class="container_12">      
+
+		<div class="grid_12 adress">
+                    {if $list|@count eq 0}
+                    该订单下无商品！
+                    {else}
+		<table class="cart_product">
+	      <tr>
+		     <th>订单号</th>
+		     <th class="bg">商品名</th>
+		     <th>数量</th>
+		     <th class="bg">总价</th>
+	      </tr>
+              {foreach $list as $k=>$v}
+		 	<tr>
+				<td>{$v.order_id}</td>
+					<td>{$v.goods_name}</td>
+					<td>{$v.num}</td>
+					<td>{$v.price}</td>
+			</tr>
+              {/foreach}
+		<tr>
+			<td colspan="3"></td>
+			<td><font color="red">合计：</font>{$totalPrice}</td>
+		</tr>
+	     </table>
+                    {/if}
+	     <a href="{$smarty.const.__CONTROLLER__}/personalAllOrder">返回</a>
+        </div><!-- .adress -->
+       
+      <div class="clear"></div>
+    </div><!-- .container_12 -->
+  
+  <div class="clear"></div>
+</body>
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+</html>

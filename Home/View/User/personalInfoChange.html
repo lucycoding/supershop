@@ -37,51 +37,52 @@
     <div class="container_12">      
 		
 		<div class="grid_12 adress">
-   		<form action="{${$smarty.const.__MODULE__}}/updateUserInfo" method="post" id="infoform" name="infoform" >
+   		<form action="{$smarty.const.__CONTROLLER__}/updateUserInfo" method="post" id="infoform" name="infoform" >
 			<div class="grid_5" style="float:left;">
 				<br/>
                                 {$user = $smarty.session.user}
+                                <input type="hidden" name="userId" value="{$user.user_id}"/>
 				<span style="font-size: 18px;font-weight: bold;">用&nbsp;户&nbsp;名：</span>
-				<input type="text" disabled="disabled" value="{$user.user_name}"><br/><br/>
+                                <input type="text" disabled="disabled" readonly="true" value="{$user.user_name}"><br/><br/>
 				
 				<br/>
 				<span style="font-size: 18px;font-weight: bold;">邮　　箱：</span>
-				<input type="text" name="email" id="email" value="{$user.user_email}"  onblur="checkMail()" onfocus="clearMail()" /><span id="checkMail"></span><br/><br/>
+				<input type="text" name="userEmail" id="email" value="{$user.user_email}" onblur="checkMail()" onfocus="clearMail()" /><span id="checkMail"></span><br/><br/>
 				
 				<br/>
 				<span style="font-size: 18px;font-weight: bold;">真　　名：</span>
-				<input type="text" name="trueName" value="{$user.user_truename}"  /><br/><br/>
+				<input type="text" name="userTruename" value="{$user.user_truename}"  /><br/><br/>
 				
 				<br/>
 				<span style="font-size: 18px;font-weight: bold;">性　　别：</span>
-				<input type="radio" name="sex" value="男" {if $user.user_gender == 'male' }checked="checked"{/if} />男
-                <input type="radio" name="sex" value="女" {if $user.user_gender == 'female' }checked="checked"{/if} />女        <br/><br/>
+				<input type="radio" name="userGender" value="男" {if $user.user_gender == 'male' }checked="checked"{/if} />男
+                <input type="radio" name="userGender" value="女" {if $user.user_gender == 'female' }checked="checked"{/if} />女        <br/><br/>
 				
 				<br/>
 				<span style="font-size: 18px;font-weight: bold;">生　　日：</span>
-				<input name="birthday" class="easyui-datebox" data-options="formatter:myformatter,parser:myparser" value="{$user.birthday }"></input><br/><br/>
+				<input name="userBirth" class="easyui-datebox" data-options="formatter:myformatter,parser:myparser" value="{$user.birthday }"></input><br/><br/>
 				<br/><br/>
 			</div>	
 			<div class="grid_5" style="float:left;">
 				<br/>
 				<span style="font-size: 18px;font-weight: bold;">地　址：</span>
-				<input type="text" name="address" value="{$user.user_address}"  /><br/><br/>
+				<input type="text" name="userAddress" value="{$user.user_address}"  /><br/><br/>
 				
 				<br/>
 				<span style="font-size: 18px;font-weight: bold;">邮　编：</span>
-				<input type="text" id="postcode" name="postcode" value="{$user.user_postcode}"  onblur="isPostalCode()" onfocus="clearPostR()" /><span id="remindPostCode"></span><br/><br/>
+				<input type="text" id="postcode" name="userPostcode" value="{$user.user_postcode}"  onblur="isPostalCode()" onfocus="clearPostR()" /><span id="remindPostCode"></span><br/><br/>
 				
 				<br/>
 				<span style="font-size: 18px;font-weight: bold;">固　话：</span>
-				<input type="text" id="phone" name="phone" onblur="checkPhone()" onfocus="clearPhoneR()" value="{$user.user_office_phone}" /><span id="checkPhone"></span><br/><br/>
+				<input type="text" id="phone" name="userOfficePhone" onblur="checkPhone()" onfocus="clearPhoneR()" value="{$user.user_office_phone}" /><span id="checkPhone"></span><br/><br/>
 				
 				<br/>
 				<span style="font-size: 18px;font-weight: bold;">手　机：</span>
-				<input type="text"  id="mphone" name="mphone" onblur="checkMPhone()" onfocus="clearMphoneR()" value="{$user.user_phone}" /><span id="checkMphone"></span><br/><br/>
+				<input type="text"  id="mphone" name="userPhone" onblur="checkMPhone()" onfocus="clearMphoneR()" value="{$user.user_phone}" /><span id="checkMphone"></span><br/><br/>
 				
 				<br/>
 				<span style="font-size: 18px;font-weight: bold;">验证码：</span>
-				<input type="text" id="code" name="code"  style="width: 50px;" onblur="checkCode()" />&nbsp;<image src="{$smarty.const.__CONTROLLER__}/getVerifyImg" onclick="this.src='{$smarty.const.__CONTROLLER__}/getVerifyImg/'+Math.random()"/>
+				<input type="text" id="code"  style="width: 50px;" onblur="checkCode()" />&nbsp;<image src="{$smarty.const.__CONTROLLER__}/getVerifyImg" onclick="this.src='{$smarty.const.__CONTROLLER__}/getVerifyImg/'+Math.random()"/>
 				<span id="codeR"></span><br/><br/>
 			</div>
 		</form>	
@@ -95,7 +96,47 @@
     </div><!-- .container_12 -->
   
   <div class="clear"></div>
- 
+  {$reterr}
+  <script>
+    var controller_path = '{$smarty.const.__CONTROLLER__}';
+    var userPhone = '{$user.user_phone}';
+    var userEmail = '{$user.user_email}';
+	var check_code = false;
+      {literal}
+	//检查验证码
+    function checkCode() {
+        var code = $("#code").val();
+            var check = document.getElementById("codeR");
+            $.ajax({ 
+                url:controller_path+"/checkRandomCode/r="+new Date().getTime(), 
+                type:"post", 
+                data:{code:code},
+                dataType:"json",
+                async:false,
+                success:function(data){
+                    if (data == 'ok'){
+                             check.style.color="green";
+                             check.innerHTML="√ 正确";
+                             check_code = true;
+                    }else{	
+                             check.style.color="red";
+                             check.innerHTML="× 错误";
+                             check_code = false;
+                    }
+                }
+            });
+    }
+	
+	function checkForm(){
+		if( check_code && checkMail() && isPostalCode() && checkPhone() && checkMPhone()){
+			document.infoform.submit();		
+		}else{
+                    alert("请将资料填写完整!");
+                    return;
+		}
+	}
+      {/literal}
+  </script>
 </body>
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 </html>

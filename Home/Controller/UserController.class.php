@@ -116,4 +116,123 @@ class UserController extends Tools\HomeController {
                 die("{\"status\":1,\"token\":\"".date("YmdHis")."\"}");
             }
     }
+    
+    /**
+     * 找回密码
+     */
+    public function retrievePwd($name ="",$answer = "",$newPwd = "") {
+        if(!empty($_POST) && !empty($name) && !empty($answer) && !empty($newPwd)) {
+            $user = new \Model\UserModel();
+            $uinfo = $user->where(array("valid_flag"=>1,"user_name"=>$name))->limit(1)->select();
+            if($uinfo){
+                if($uinfo[0]['safe_answer'] !== $answer){
+                    $this->assign("reterr", parent::retScriptErr("密保答案错误"));
+                    die($this->display());
+                }
+                // 更新密码
+                $flag = $user->updateUserPwd($name, $newPwd);
+                if($flag) {
+                    die($this->success('密码重置成功！','/supershop/Home/User/login',3));
+                }else{
+                    $this->assign("reterr", parent::retScriptErr("密保重置失败"));
+                    die($this->display());
+                }
+            }else{
+                    $this->assign("reterr", parent::retScriptErr("用户名不存在"));
+                    die($this->display());
+            }
+        }
+        $this->display();
+    }
+    /**
+     * 注册用户
+     */
+    public function register($name = "",$password ="") {
+        if(!empty($_POST) && !empty($name) && !empty($password)) {
+            $user = new \Model\UserModel();
+            // 验证用户名是否占用
+            $uinfo = $user->getUinfoByName($name);
+            if($uinfo) {
+                $this->assign("reterr", parent::retScriptErr("用户名已被占用！"));
+                exit($this->display());
+            }
+            // 保存用户
+            if($user->saveUser($name, md5($password))){
+                // 注册成功
+                die($this->success('用户注册成功！用户名：'.$name,'/supershop/Home/User/login',3));
+            }else{
+                $this->assign("reterr", parent::retScriptErr("注册失败！"));
+            }
+        }
+        $this->display();
+    }
+    /**
+     * 更新用户信息
+     * @param type $param
+     */
+    public function updateUserInfo($userId, $userEmail, $userTruename, $userGender="", $userBirth, 
+            $userAddress, $userPostcode, $userOfficePhone, $userPhone) {
+        if(!empty($_POST) && !empty($userId)) {
+            $user = new \Model\UserModel();
+            $data['user_id'] = $userId;
+            $data['user_email'] = $userEmail;
+            $data['user_truename'] = $userTruename;
+            $data['user_gender'] = $userGender;
+            $data['user_birth'] = $userBirth;
+            $data['user_address'] = $userAddress;
+            $data['user_postcode'] = $userPostcode;
+            $data['user_office_phone'] = $userOfficePhone;
+            $data['user_phone'] = $userPhone;
+            if($user->updateUser($data)) {
+                $uinfo = $user->getUinfoById($userId);
+                session("user",$uinfo);
+                $this->assign("reterr", parent::retScriptErr("更新成功！"));
+                die($this->display("personalInfo"));
+            }else{
+                $this->assign("reterr", parent::retScriptErr("更新失败！邮箱或手机号已被使用！"));
+            }
+        }
+        $this->display("personalInfoChange");
+    }
+    /**
+     * 修改密码
+     * @param type $userId
+     * @param type $password
+     * @param type $newPassword
+     */
+    public function updatePwdByOldpwd($userId, $password, $newPassword) {
+        if(!empty($_POST) && !empty($userId) && !empty($password) && !empty($newPassword)) {
+            $user = new \Model\UserModel();
+            $uinfo = $user->where(array("user_id"=>$userId,"user_keyval"=>md5($password)))->limit(1)->select();
+            if($uinfo){
+                // 更新密码
+                $flag = $user->updateUserPwdById($userId, $password, $newPassword);
+                if($flag) {
+                    //清空session
+                    session('user',null);
+                    $this->assign("reterr", parent::retScriptErr("alert('修改成功！');top.location.href='".HOME_URL."/User/login';",true));
+                }else{
+                    $this->assign("reterr", parent::retScriptErr("修改失败！"));
+                }
+            }else{
+                $this->assign("reterr", parent::retScriptErr("原密码不正确！"));
+            }
+        }
+        $this->display("personalPwdChange");
+    }
+    /**
+     * 判断用户名是否存在ajax
+     */
+    public function checkNameExist($name = "") {
+        if(parent::is_ajax_request() && !empty($name)){
+            $user = new \Model\UserModel();
+            $uinfo = $user->getUinfoByName($name);
+            if($uinfo) {
+                $this->ajaxReturn(array("status"=>1,"data"=>$uinfo));
+            }else{
+                $this->ajaxReturn(array("status"=>0,"info"=>"username is not exist"));
+            }
+        }
+        $this->ajaxReturn(array("status"=>0));
+    }
 }
