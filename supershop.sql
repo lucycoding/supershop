@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50525
 File Encoding         : 65001
 
-Date: 2017-04-27 18:15:41
+Date: 2017-05-27 16:56:38
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -41,7 +41,7 @@ CREATE TABLE `tb_admin` (
 -- ----------------------------
 -- Records of tb_admin
 -- ----------------------------
-INSERT INTO `tb_admin` VALUES ('100000', 'suadmin', '商城超级管理员', '', 'admin@supershop.com', '13951755802', '21232f297a57a5a743894a0e4a801fc3', '1', '2016-02-28 22:46:40', '2017-04-27 16:35:20', '127.0.0.1', '63', '0');
+INSERT INTO `tb_admin` VALUES ('100000', 'suadmin', '商城超级管理员', '', 'admin@supershop.com', '13951755802', '21232f297a57a5a743894a0e4a801fc3', '1', '2016-02-28 22:46:40', '2017-05-01 13:51:42', '127.0.0.1', '66', '0');
 INSERT INTO `tb_admin` VALUES ('100001', 'liming', '', '', null, '', '21232f297a57a5a743894a0e4a801fc3', '1', '2016-02-29 16:31:23', '2016-03-03 14:21:47', '127.0.0.1', '10', '1001');
 INSERT INTO `tb_admin` VALUES ('100002', 'lixiang', '', '', null, '', '21232f297a57a5a743894a0e4a801fc3', '1', '2016-02-29 22:03:50', '2016-02-29 22:20:11', '127.0.0.1', '2', '1002');
 INSERT INTO `tb_admin` VALUES ('100005', 'useradmin', '', '', '', '', '21232f297a57a5a743894a0e4a801fc3', '1', '2016-03-10 12:31:41', '2017-03-30 17:20:33', '127.0.0.1', '1', '1002');
@@ -58,7 +58,7 @@ CREATE TABLE `tb_admin_log` (
   `login_ip` char(20) NOT NULL DEFAULT '0.0.0.0',
   PRIMARY KEY (`id`),
   KEY `admin_id` (`admin_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tb_admin_log
@@ -140,6 +140,9 @@ INSERT INTO `tb_admin_log` VALUES ('74', '100000', 'suadmin', '2017-04-17 14:30:
 INSERT INTO `tb_admin_log` VALUES ('75', '100000', 'suadmin', '2017-04-17 14:39:03', '127.0.0.1');
 INSERT INTO `tb_admin_log` VALUES ('76', '100000', 'suadmin', '2017-04-17 15:16:21', '127.0.0.1');
 INSERT INTO `tb_admin_log` VALUES ('77', '100000', 'suadmin', '2017-04-27 16:35:20', '127.0.0.1');
+INSERT INTO `tb_admin_log` VALUES ('78', '100000', 'suadmin', '2017-05-17 02:01:30', '192.168.3.92');
+INSERT INTO `tb_admin_log` VALUES ('79', '100000', 'suadmin', '2017-05-01 13:46:22', '192.168.3.92');
+INSERT INTO `tb_admin_log` VALUES ('80', '100000', 'suadmin', '2017-05-01 13:51:42', '127.0.0.1');
 
 -- ----------------------------
 -- Table structure for tb_auth
@@ -484,8 +487,11 @@ CREATE TABLE `tb_user` (
   `valid_flag` char(1) DEFAULT '0',
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `last_login_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '上次登录',
-  `last_login_ip` char(16) NOT NULL DEFAULT '0.0.0.0',
-  `token` varchar(255) DEFAULT '',
+  `last_login_ip` varchar(15) DEFAULT '',
+  `last_login_lng` varchar(50) DEFAULT '',
+  `last_login_lat` varchar(50) DEFAULT '',
+  `last_login_addr` varchar(255) DEFAULT '',
+  `token` varchar(50) DEFAULT '',
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `user_id` (`user_id`) USING BTREE,
   UNIQUE KEY `user_name` (`user_name`) USING BTREE,
@@ -496,29 +502,38 @@ CREATE TABLE `tb_user` (
 -- ----------------------------
 -- Records of tb_user
 -- ----------------------------
-INSERT INTO `tb_user` VALUES ('100000', 'lucy', '根本停不下来的小陆', 'e10adc3949ba59abbe56e057f20f883e', '13951755802', '136055326@qq.com', '陆晨阳', 'male', '1993-11-19', '江苏省南京市', '210000', null, null, '你最爱吃的食物', '肉夹馍', '1', '1', '2016-03-02 09:23:12', '0000-00-00 00:00:00', '0.0.0.0', '');
-INSERT INTO `tb_user` VALUES ('100001', 'liming', '李明', 'e10adc3949ba59abbe56e057f20f883e', null, null, null, 'male', null, null, null, null, null, null, null, '1', '1', '2016-03-02 09:29:18', '0000-00-00 00:00:00', '0.0.0.0', '');
-INSERT INTO `tb_user` VALUES ('100002', 'xuyue', '徐月', 'e80806f93a1497b0f1622d6a6312b274', null, null, null, 'male', null, null, null, null, null, null, null, '1', '1', '2016-03-09 11:23:44', '0000-00-00 00:00:00', '0.0.0.0', '');
-INSERT INTO `tb_user` VALUES ('100003', 'qdms01', 'qdms01', 'e10adc3949ba59abbe56e057f20f883e', null, null, null, 'male', null, null, null, null, null, null, null, '1', '1', '2016-03-09 15:11:41', '0000-00-00 00:00:00', '0.0.0.0', '');
-INSERT INTO `tb_user` VALUES ('100004', 'john', 'john', 'e10adc3949ba59abbe56e057f20f883e', null, null, null, 'male', null, null, null, null, null, null, null, '1', '1', '2017-04-02 10:54:52', '0000-00-00 00:00:00', '0.0.0.0', '');
-INSERT INTO `tb_user` VALUES ('100005', 'test1', '测试账号1', 'e10adc3949ba59abbe56e057f20f883e', null, null, null, 'male', null, null, null, null, null, null, null, '1', '1', '2017-04-11 15:53:00', '0000-00-00 00:00:00', '0.0.0.0', '');
-INSERT INTO `tb_user` VALUES ('100006', 'lucy01', null, 'c33367701511b4f6020ec61ded352059', '13900001111', '', '', '', '', '', '', '13900001212', null, null, null, '1', '1', '2017-04-27 11:37:15', '0000-00-00 00:00:00', '0.0.0.0', '');
+INSERT INTO `tb_user` VALUES ('100000', 'lucy', '根本停不下来的小陆', 'c33367701511b4f6020ec61ded352059', '13951755802', '136055326@qq.com', '陆晨阳', 'male', '1993-11-19', '江苏省南京市', '210000', null, null, '你最爱吃的食物', '肉夹馍', '1', '1', '2016-03-02 09:23:12', '2017-05-07 20:21:48', '192.168.3.92', '120.349524', '31.507852', '江苏省, 无锡市, 滨湖区, 华运路, ', '20170522140657');
+INSERT INTO `tb_user` VALUES ('100001', 'liming', '李明', 'e10adc3949ba59abbe56e057f20f883e', null, null, null, 'male', null, null, null, null, null, null, null, '1', '1', '2016-03-02 09:29:18', '0000-00-00 00:00:00', '0.0.0.0', '', '', '', '');
+INSERT INTO `tb_user` VALUES ('100002', 'xuyue', '徐月', 'e80806f93a1497b0f1622d6a6312b274', null, null, null, 'male', null, null, null, null, null, null, null, '1', '1', '2016-03-09 11:23:44', '0000-00-00 00:00:00', '0.0.0.0', '', '', '', '');
+INSERT INTO `tb_user` VALUES ('100003', 'qdms01', 'qdms01', 'e10adc3949ba59abbe56e057f20f883e', null, null, null, 'male', null, null, null, null, null, null, null, '1', '1', '2016-03-09 15:11:41', '0000-00-00 00:00:00', '0.0.0.0', '', '', '', '');
+INSERT INTO `tb_user` VALUES ('100004', 'john', 'john', 'e10adc3949ba59abbe56e057f20f883e', null, null, null, 'male', null, null, null, null, null, null, null, '1', '1', '2017-04-02 10:54:52', '0000-00-00 00:00:00', '0.0.0.0', '', '', '', '');
+INSERT INTO `tb_user` VALUES ('100005', 'test1', '测试账号1', 'e10adc3949ba59abbe56e057f20f883e', null, null, null, 'male', null, null, null, null, null, null, null, '1', '1', '2017-04-11 15:53:00', '0000-00-00 00:00:00', '0.0.0.0', '', '', '', '');
+INSERT INTO `tb_user` VALUES ('100006', 'lucy01', null, 'c33367701511b4f6020ec61ded352059', '13900001111', '', '', '', '', '', '', '13900001212', null, null, null, '1', '1', '2017-04-27 11:37:15', '0000-00-00 00:00:00', '0.0.0.0', '', '', '', '');
 
 -- ----------------------------
--- Table structure for tb_user_log
+-- Table structure for tb_user_login_log
 -- ----------------------------
-DROP TABLE IF EXISTS `tb_user_log`;
-CREATE TABLE `tb_user_log` (
+DROP TABLE IF EXISTS `tb_user_login_log`;
+CREATE TABLE `tb_user_login_log` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `user_id` char(20) NOT NULL,
-  `reg_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '用户注册时间',
-  `login_count` bigint(20) NOT NULL DEFAULT '0' COMMENT '用户登录次数',
-  `pay_count` bigint(20) NOT NULL DEFAULT '0' COMMENT '购买次数',
-  `scan_goods_count` bigint(20) NOT NULL DEFAULT '0' COMMENT '浏览商品次数',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `user_id` (`user_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `login_time` timestamp NULL DEFAULT '0000-00-00 00:00:00' COMMENT '登录时间',
+  `login_ip` varchar(15) DEFAULT '' COMMENT '登录ip',
+  `login_lat` varchar(50) DEFAULT '' COMMENT '纬度',
+  `login_lng` varchar(50) DEFAULT '' COMMENT '经度',
+  `login_addr` varchar(255) DEFAULT '' COMMENT '登录描述',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of tb_user_log
+-- Records of tb_user_login_log
 -- ----------------------------
+INSERT INTO `tb_user_login_log` VALUES ('1', '100000', '2017-05-01 15:28:05', '127.0.0.1', '31.57003745', '120.3054559', '江苏省, 无锡市, 南长区, 振新路, 278号');
+INSERT INTO `tb_user_login_log` VALUES ('3', '100000', '2017-05-01 15:31:04', '192.168.1.10', '31.57003745', '120.3054559', '江苏省, 无锡市, 南长区, 振新路, 278号');
+INSERT INTO `tb_user_login_log` VALUES ('4', '100000', '2017-05-01 15:38:43', '192.168.1.10', '31.50774', '120.349309', '江苏省, 无锡市, 滨湖区, 华运路, ');
+INSERT INTO `tb_user_login_log` VALUES ('5', '100000', '2017-05-24 09:35:51', '192.168.3.92', '31.510983', '120.340452', '江苏省, 无锡市, 滨湖区, 高浪路辅路, ');
+INSERT INTO `tb_user_login_log` VALUES ('6', '100000', '2017-05-24 11:54:07', '127.0.0.1', '31.57003745', '120.3054559', '江苏省, 无锡市, 南长区, 振新路, 278号');
+INSERT INTO `tb_user_login_log` VALUES ('7', '100000', '2017-05-08 14:23:05', '127.0.0.1', '31.57003745', '120.3054559', '江苏省, 无锡市, 南长区, 振新路, 278号');
+INSERT INTO `tb_user_login_log` VALUES ('8', '100000', '2017-05-08 14:32:18', '127.0.0.1', '31.57003745', '120.3054559', '江苏省, 无锡市, 南长区, 振新路, 278号');
+INSERT INTO `tb_user_login_log` VALUES ('9', '100000', '2017-05-08 14:52:22', '127.0.0.1', '35.6759950000', '139.8075640000', 'Tokyo, Koto, 木場公園第２駐車場 约65米, , ');
+INSERT INTO `tb_user_login_log` VALUES ('10', '100000', '2017-05-07 20:21:48', '192.168.3.92', '31.507852', '120.349524', '江苏省, 无锡市, 滨湖区, 华运路, ');
