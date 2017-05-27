@@ -12,7 +12,7 @@ class HomeController extends CommonController {
         if (parent::ismobile()) {
             //设置默认默认主题为 Mobile
             //C('DEFAULT_V_LAYER','Mobile');
-            C('DEFAULT_THEME','Mobile');
+            //C('DEFAULT_THEME','Mobile');
         }
     }   
     // 购物车
@@ -145,5 +145,10 @@ class HomeController extends CommonController {
             return session("user");
         }
         return null;
+    }
+    
+    protected function clearCurrUser() {
+        //清空session
+        session('user',null);
     }
 }

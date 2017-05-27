@@ -1,0 +1,85 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <meta charset="utf-8"/>  
+    <title>基于浏览器查找地理位置</title> 
+  <script>
+      var lng = '{$smarty.get.lng}';
+      var lat = '{$smarty.get.lat}';
+      {literal}                
+                var locationMap;
+                
+                function loadmap() {
+                    locationMap = new BMap.Map("container"); // 创建Map实例
+                    if(lng === '') lng = 120.3189534644;
+                    if(lat === '') lat = 31.4967394989;
+                        var point = new BMap.Point(lng, lat); //地图中心点，无锡市
+                        locationMap.centerAndZoom(point, 15); // 初始化地图,设置中心点坐标和地图级别。
+                        locationMap.enableScrollWheelZoom(true); //启用滚轮放大缩小
+                        //向地图中添加缩放控件
+                        var ctrlNav = new BMap.NavigationControl({
+                            anchor: BMAP_ANCHOR_TOP_LEFT,
+                            type: BMAP_NAVIGATION_CONTROL_LARGE
+                        });
+                        locationMap.addControl(ctrlNav);
+
+                        //向地图中添加缩略图控件
+                        var ctrlOve = new BMap.OverviewMapControl({
+                            anchor: BMAP_ANCHOR_BOTTOM_RIGHT,
+                            isOpen: 1
+                        });
+                        locationMap.addControl(ctrlOve);
+
+                        //向地图中添加比例尺控件
+                        var ctrlSca = new BMap.ScaleControl({
+                            anchor: BMAP_ANCHOR_BOTTOM_LEFT
+                        });
+                        locationMap.addControl(ctrlSca);
+                        // 2d,卫星
+                        var mapType1 = new BMap.MapTypeControl({mapTypes: [BMAP_NORMAL_MAP, BMAP_HYBRID_MAP]});
+                        locationMap.addControl(mapType1);
+                        // 右下角缩略图
+                        var overView = new BMap.OverviewMapControl();
+                        var overViewOpen = new BMap.OverviewMapControl({isOpen: true, anchor: BMAP_ANCHOR_BOTTOM_RIGHT});
+                        locationMap.addControl(overView);
+                        locationMap.addControl(overViewOpen);
+                         
+                        showLocation(point);
+                    }
+                    // 定位成功显示位置点标注
+                    function showLocation(mapPoint) {
+                        locationMap.centerAndZoom(mapPoint, 15); //  设置中心点坐标和地图级别。
+                        mapMarker = new BMap.Marker(mapPoint); //按照地图点坐标生成标记
+//                            var icons = "img/location.png";
+//                            var icon = new BMap.Icon(icons, new BMap.Size(15, 15));
+//                            mapMarker.setIcon(icon);
+                        locationMap.addOverlay(mapMarker);
+                        var label = new BMap.Label("当前位置", {offset: new window.BMap.Size(20, -10)});
+                        mapMarker.setLabel(label);
+                        new BMap.Geocoder().getLocation(mapPoint, function(rs){
+                            var addComp = rs.addressComponents;
+                            var title = "位置信息</br>";
+                            var content = "";
+                            var status = "";
+                            content = addComp.province + " " + addComp.city + " " + addComp.district + " " + addComp.street + " " + addComp.streetNumber;
+                            var info = "<p style='font-size:12px;lineheight:1.8em;'>" + title + "</br>" + content + "</br>" + status + "</p>";
+                            mapInfo = new window.BMap.InfoWindow(info); // 创建信息窗口对象
+                            mapMarker.addEventListener("click", function () {
+                                this.openInfoWindow(mapInfo);
+                            });
+                        });   
+                    }
+                    function map_load() {
+                        var load = document.createElement("script");
+                        load.src = "http://api.map.baidu.com/api?v=2.0&ak=e7nVZC6i3ybOtUs9OsxzcnIIZyzOusY5&callback=loadmap";
+                        document.body.appendChild(load);
+                    }
+
+                    window.onload = map_load;
+           {/literal}
+   </script>
+</head>
+<body>
+   <div id="container" style="width:600px;height:390px"></div>
+</body>
+</html>

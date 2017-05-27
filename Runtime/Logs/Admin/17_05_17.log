@@ -1,0 +1,18 @@
+[ 2017-05-17T02:01:42+08:00 ] 192.168.3.92 /supershop/Admin/Index/jquery.mobile.css
+ERR: 非法操作:jquery.mobile.css
+
+[ 2017-05-17T02:01:42+08:00 ] 192.168.3.92 /supershop/Admin/Index/jquery.min.js
+ERR: 非法操作:jquery.min.js
+
+[ 2017-05-17T02:01:42+08:00 ] 192.168.3.92 /supershop/Admin/Index/jquery.mobile.min.js
+ERR: 非法操作:jquery.mobile.min.js
+
+[ 2017-05-17T02:07:36+08:00 ] 192.168.3.92 /supershop/Admin/Index/jquery.mobile.css
+ERR: 非法操作:jquery.mobile.css
+
+[ 2017-05-17T02:09:41+08:00 ] 192.168.3.92 /supershop/Admin/Index/jquery.mobile.css
+ERR: 非法操作:jquery.mobile.css
+
+[ 2017-05-17T02:13:06+08:00 ] 192.168.3.92 /supershop/Admin/Index/location
+ERR: 非法操作:location
+

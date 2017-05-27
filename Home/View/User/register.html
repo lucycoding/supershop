@@ -24,19 +24,10 @@
   <script src="{$smarty.const.PUBLIC_URL}custom/register.js"></script>
   
 </head>
-<body>
-{include file="../inc/header.html"}
-  
-  <section id="main" class="entire_width">
-    <div class="container_12">      
-       <div id="content">
-		<div class="grid_12">
-			<h1 class="page_title">用户注册</h1>
-		</div><!-- .grid_12 -->
-		
-		<div class="grid_12">
-			<form class="registed" name="register_form" id="register_form" action="{$smarty.const.__CONTROLLER__}/register" method="post" style="border-bottom-color: #ffffff">
-				<div style="margin-left: 15%">			
+<body style="min-width:600px;">
+		<div class="grid_6">
+			<form class="registed" name="register_form" id="register_form" action="{$smarty.const.__CONTROLLER__}/register" method="post" style="margin: 4em;padding:0;border:0;border-bottom-color: #ffffff">
+				<div>			
 				<div class="email">
 					<strong>账号:　　</strong>
                                         <input type="text" id="name" name="name" onblur="checkNE()" onkeypress="checkName()" onfocus="clearRN()"/>
@@ -66,21 +57,11 @@
 				
 				</div>
 			</form><!-- .registed -->
-				<div class="submit" style="border: 1px solid #E0E0E0;border-top-color: #ffffff">		
-					<div style="margin-left: 420px;">						
+				<div class="submit">		
+					<div style="margin-left: 300px;">						
 						<button class="account" id="register" disabled onclick="checkAll()" style="width: 80px">注册</button><br/>
 					</div>
 				</div><!-- .submit -->
-         </div><!-- .grid_6 -->
-       </div><!-- #content -->
-       
-      <div class="clear"></div>
-    </div><!-- .container_12 -->
-  </section><!-- #main -->
-  
-  <div class="clear"></div>
-    
-{include file="../inc/footer.html"}
  <script>
     var controller_path = '{$smarty.const.__CONTROLLER__}';
     {literal}

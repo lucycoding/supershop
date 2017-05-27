@@ -32,15 +32,19 @@
 		<div class="grid_12">
 				<h1 class="page_title" style="border-bottom: 0">&nbsp;&nbsp;个人中心</h1>
 				<div class="grid_12">
-				<nav class="private" style="float: inherit;">
+				<nav class="private" style="float: inherit;background-color: #F5F7F9">
 		          <ul style="list-style-type:none;padding-left:0;">
-		            <li id="page1"><a href="{$smarty.const.__CONTROLLER__}/personalInfo" target="personal_Iframe">用户信息</a></li>
+		            <li class="page_tabs"><a href="{$smarty.const.__CONTROLLER__}/personalInfo" target="personal_Iframe">用户信息</a></li>
 				<li class="separator">|</li>
-		            <li id="page2"><a href="{$smarty.const.__CONTROLLER__}/personalInfoChange" target="personal_Iframe">修改资料</a></li>
+		            <li class="page_tabs"><a href="{$smarty.const.__CONTROLLER__}/personalInfoChange" target="personal_Iframe">修改资料</a></li>
 		        <li class="separator">|</li>
-		            <li id="page3"><a href="{$smarty.const.__CONTROLLER__}/personalPwdChange" target="personal_Iframe">更改密码</a></li>
+                        <li class="page_tabs pwd_change"><a href="{$smarty.const.__CONTROLLER__}/personalPwdChange" target="personal_Iframe"><span class="pwd_change_span">更改密码</span></a></li>
 		        <li class="separator">|</li>
-		            <li id="page4"><a href="{$smarty.const.__MODULE__}/Order/personalAllOrder" target="personal_Iframe">全部订单</a></li>
+		            <li class="page_tabs"><a href="{$smarty.const.__CONTROLLER__}/personalLoginLog" target="personal_Iframe">登录日志</a></li>
+		        <li class="separator">|</li>
+		            <li class="page_tabs"><a href="{$smarty.const.__CONTROLLER__}/retrievePwdIframe" target="personal_Iframe">找回密码</a></li>
+		        <li class="separator">|</li>
+		            <li class="page_tabs"><a href="{$smarty.const.__MODULE__}/Order/personalAllOrder" target="personal_Iframe">全部订单</a></li>
 		          </ul>
 		        </nav>
 		        </div>

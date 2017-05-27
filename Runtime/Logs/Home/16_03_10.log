@@ -1,9 +1,0 @@
-[ 2016-03-10T16:02:41+08:00 ] ::1 /supershop/index.php/showGoodsByIdServlet?GoodsId=1000011
-ERR: 无法加载控制器:ShowGoodsByIdServlet
-
-[ 2016-03-10T16:04:16+08:00 ] ::1 /supershop/index.php/Home/Goods/details/id/1000011
-ERR: Syntax Error in template "E:/MyEnv/apache/htdocs/supershop/Home/View\Goods\details.html"  on line 86 "&lt;!-- &lt;a href=&quot;&lt;%=serverPath %&gt;${Goods.picture }&quot;&gt; --&gt;"  - Unexpected ".", expected one of: "}" , " "
-
-[ 2016-03-10T16:05:00+08:00 ] ::1 /supershop/index.php/Home/Goods/details/id/1000011
-ERR: Syntax Error in template "E:/MyEnv/apache/htdocs/supershop/Home/View\Goods\details.html"  on line 88 "&lt;img id=&quot;detail${Goods.goodsId}&quot; src=&quot;{$smarty.const.WEB_URL}{$v.goods_image_url}&quot;  title=&quot;&quot; alt=&quot;&quot; style=&quot;width: 100px;height: 35px;display:none;&quot;/&gt;"  - Unexpected ".", expected one of: "}" , " "
-

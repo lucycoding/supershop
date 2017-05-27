@@ -1,3 +1,5 @@
+  <link href="{$smarty.const.PUBLIC_URL}css/thickbox.css" media="screen" rel="stylesheet" type="text/css">
+  <script src="{$smarty.const.PUBLIC_URL}js/thickbox-compressed.js"></script>
 {literal}
 <script type="text/javascript">
 function MoveBox(obj,goodsId,orderType) {
@@ -57,7 +59,7 @@ function MoveBox(obj,goodsId,orderType) {
             {if isset($user)}
                 欢迎光临　 <a href="###">{$user.user_name}</a>
             {else}
-                欢迎光临　 <a href="{$smarty.const.__MODULE__}/User/login">登录</a> / <a href="{$smarty.const.__MODULE__}/User/register">注册</a>
+                欢迎光临　 <a title="用户登录" href="{$smarty.const.__MODULE__}/User/login?TB_iframe=true&width=450&height=450" class="thickbox">登录</a> / <a id="reg" title="用户注册" href="{$smarty.const.__MODULE__}/User/register?TB_iframe=true&width=600&height=450" class="thickbox">注册</a>
             {/if}
         </div><!-- .welcome -->
       </div><!-- .grid_3 -->

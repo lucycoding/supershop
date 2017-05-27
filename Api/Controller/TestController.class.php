@@ -28,12 +28,20 @@ class TestController extends CommonController{
         }
         die(parent::returnApiError());
     }
+    /**
+     * 测试数据库链接
+     */
     public function testDbConn() {
         try {
-            D('Inform')->select();
-            die(parent::returnApiSuccess(null,'数据库连接正常！'));
+            $data=D()->query("select now() time");
+            die(parent::returnApiSuccess($data,'success to connect the localhost MySQL!'));
         } catch (Exception $e) {
-            die(parent::returnApiError('无法连接数据库！'));
+            die(parent::returnApiError('fail to connect the localhost MySQL!'));
         }
+    }
+    
+    public function testWriteFile() {
+        $FileOperator = new File();
+        $FileOperator->writeContent(time());
     }
 }

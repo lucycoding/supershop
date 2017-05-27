@@ -1,9 +1,0 @@
-[ 2016-04-03T15:40:46+08:00 ] 127.0.0.1 /supershop/Public/Admin/js/admin.js
-ERR: 无法加载控制器:Public
-
-[ 2016-04-03T15:40:49+08:00 ] 127.0.0.1 /supershop/Public/Admin/js/admin.js
-ERR: Controller can't be loaded:Public
-
-[ 2016-04-03T15:40:53+08:00 ] 127.0.0.1 /supershop/Public/Admin/js/admin.js
-ERR: 无法加载控制器:Public
-

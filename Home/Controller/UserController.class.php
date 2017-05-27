@@ -30,7 +30,7 @@ class UserController extends Tools\HomeController {
     /**
      * 用户登录
      */
-    public function login($name = "", $password = "", $vcode = "", $cookie = 0){
+    public function login($name = "", $password = "", $vcode = "", $cookie = 0, $lng = "", $lat = "", $address = ""){
         $this->assign("verflag", session("verify_flag"));
         if(!empty($_POST)) {
             $this->assign("username", $name);
@@ -59,7 +59,10 @@ class UserController extends Tools\HomeController {
                 }
                 $this->assign("reterr", parent::retScriptErr($info["reterr"]));
             }else{
-                $this->redirect("Index/index");
+                $this->addUserLoginLog(array('lng'=>$lng,'lat'=>$lat,'address'=>$address));
+                $this->assign("reterr", parent::retScriptErr("top.location.href='".HOME_URL."/Index/index';",true));
+                die($this->display());
+                //$this->redirect("Index/index");
             }
         }
         if($this->force_check_verify && session("check_vry_count") >= 3) {
@@ -67,6 +70,45 @@ class UserController extends Tools\HomeController {
             session("verify_flag",true);
         }
         $this->assign("verflag", session("verify_flag"));
+        $this->display();
+    }
+    /**
+     * 添加用户登陆日志记录
+     * @param type $params
+     */
+    private function addUserLoginLog($params) {
+        $user = parent::getCurrUser();
+        if(!empty($user)){
+            $userId = $user['user_id'];
+            $now = date("Y-m-d H:i:s",time());
+            $ip = parent::getIp();
+            $lng = $params['lng'];
+            $lat = $params['lat'];
+            $address = $params['address'];
+            // 日志记录
+            $logParams = array('user_id'=>$userId,'login_time'=>$now, 
+                'login_ip'=>$ip, 'login_lng'=>$lng, 
+                'login_lat'=>$lat, 'login_addr'=>$address);
+            D("User_login_log")->add($logParams);
+            // 更新用户表中信息
+            $U = new \Model\UserModel();
+            $updateParams = array('user_id'=>$userId,'last_login_time'=>$now, 
+                'last_login_ip'=>$ip, 'last_login_lng'=>$lng, 
+                'last_login_lat'=>$lat, 'last_login_addr'=>$address);
+            $U ->updateUser($updateParams);
+        }
+    }
+    /**
+     * 查看用户登录日志
+     */
+    public function personalLoginLog($count = 5) {
+        $user = parent::getCurrUser();
+        if(!empty($user) && is_int($count) && $count >0 && $count <100) {
+            $where['user_id'] = $user['user_id'];
+            $UserLoginLog = D('User_login_log');
+            $list = $UserLoginLog->where($where)->order('id desc')->limit($count)->select();
+            $this->assign("list",$list);
+        }
         $this->display();
     }
     
@@ -120,7 +162,7 @@ class UserController extends Tools\HomeController {
     /**
      * 找回密码
      */
-    public function retrievePwd($name ="",$answer = "",$newPwd = "") {
+    public function retrievePwdIframe($name ="",$answer = "",$newPwd = "") {
         if(!empty($_POST) && !empty($name) && !empty($answer) && !empty($newPwd)) {
             $user = new \Model\UserModel();
             $uinfo = $user->where(array("valid_flag"=>1,"user_name"=>$name))->limit(1)->select();
@@ -132,7 +174,11 @@ class UserController extends Tools\HomeController {
                 // 更新密码
                 $flag = $user->updateUserPwd($name, $newPwd);
                 if($flag) {
-                    die($this->success('密码重置成功！','/supershop/Home/User/login',3));
+                    //清空session
+                    parent::clearCurrUser();
+                    $this->assign("reterr", parent::retScriptErr("alert('密码重置成功！');top.location.href='".HOME_URL."/User/login';",true));
+                    die($this->display());
+                    //die($this->success('密码重置成功！','/supershop/Home/User/login',3));
                 }else{
                     $this->assign("reterr", parent::retScriptErr("密保重置失败"));
                     die($this->display());
@@ -159,7 +205,8 @@ class UserController extends Tools\HomeController {
             // 保存用户
             if($user->saveUser($name, md5($password))){
                 // 注册成功
-                die($this->success('用户注册成功！用户名：'.$name,'/supershop/Home/User/login',3));
+                $this->assign("reterr", parent::retScriptErr("alert('用户注册成功！');top.location.href='".HOME_URL."/Index/index';",true));
+                //die($this->success('用户注册成功！用户名：'.$name,'/supershop/Home/User/login',3));
             }else{
                 $this->assign("reterr", parent::retScriptErr("注册失败！"));
             }
@@ -174,15 +221,11 @@ class UserController extends Tools\HomeController {
             $userAddress, $userPostcode, $userOfficePhone, $userPhone) {
         if(!empty($_POST) && !empty($userId)) {
             $user = new \Model\UserModel();
-            $data['user_id'] = $userId;
-            $data['user_email'] = $userEmail;
-            $data['user_truename'] = $userTruename;
-            $data['user_gender'] = $userGender;
-            $data['user_birth'] = $userBirth;
-            $data['user_address'] = $userAddress;
-            $data['user_postcode'] = $userPostcode;
-            $data['user_office_phone'] = $userOfficePhone;
-            $data['user_phone'] = $userPhone;
+            $data = array('user_id'=>$userId,'user_email'=>$userEmail, 
+                'user_truename'=>$userTruename, 'user_gender'=>$userGender, 
+                'user_birth'=>$userBirth, 'user_address'=>$userAddress, 
+                'user_postcode'=>$userPostcode, 'user_office_phone'=>$userOfficePhone, 
+                'user_phone'=>$userPhone);
             if($user->updateUser($data)) {
                 $uinfo = $user->getUinfoById($userId);
                 session("user",$uinfo);
@@ -209,7 +252,7 @@ class UserController extends Tools\HomeController {
                 $flag = $user->updateUserPwdById($userId, $password, $newPassword);
                 if($flag) {
                     //清空session
-                    session('user',null);
+                    parent::clearCurrUser();
                     $this->assign("reterr", parent::retScriptErr("alert('修改成功！');top.location.href='".HOME_URL."/User/login';",true));
                 }else{
                     $this->assign("reterr", parent::retScriptErr("修改失败！"));

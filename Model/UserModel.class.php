@@ -71,16 +71,16 @@ class UserModel extends Model {
      * @param type $name
      */
     public function getUinfoByName($name) {
-        $uinfo = $this->field("user_keyval,safe_answer",true)->where(array("valid_flag"=>1,"user_name"=>$name))->limit(1)->select();
-        return $uinfo[0];
+        $uinfo = $this->field("user_keyval,safe_answer",true)->where(array("valid_flag"=>1,"user_name"=>$name))->find();
+        return $uinfo;
     }
     /**
      * 通过用户id查用户信息(排除密码、安全问题答案字段)
      * @param type $name
      */
     public function getUinfoById($id) {
-        $uinfo = $this->field("user_keyval,safe_answer",true)->where(array("valid_flag"=>1,"user_id"=>$id))->limit(1)->select();
-        return $uinfo[0];
+        $uinfo = $this->field("user_keyval,safe_answer",true)->where(array("valid_flag"=>1,"user_id"=>$id))->find();
+        return $uinfo;
     }
     /**
      * 重置密码
@@ -120,10 +120,8 @@ class UserModel extends Model {
      */
     public function saveUser($name, $password){
         if(!empty($name) && !empty($password)) {
-            $data["user_name"] = $name;
-            $data["user_keyval"] = $password;
-            $data["status"] = 1;
-            $data["valid_flag"] = 1;
+            $data = array("user_name"=>$name, "user_keyval"=>$password, 
+                "status"=>1,"valid_flag" =>1);
             return $this->add($data);
         }
         return false;

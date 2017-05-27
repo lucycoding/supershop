@@ -1,0 +1,15 @@
+[ 2017-05-01T13:51:51+08:00 ] 127.0.0.1 /supershop/Admin/Index/demo
+ERR: 模板不存在:D:/wnmp/www/supershop/Admin/View/Index/demo.html
+
+[ 2017-05-01T13:51:57+08:00 ] 127.0.0.1 /supershop/Admin/Index/demo
+ERR: 模板不存在:D:/wnmp/www/supershop/Admin/View/Index/demo.html
+
+[ 2017-05-01T13:52:10+08:00 ] 127.0.0.1 /supershop/Admin/index/demo
+ERR: 模板不存在:D:/wnmp/www/supershop/Admin/View/Index/demo.html
+
+[ 2017-05-01T13:52:13+08:00 ] 127.0.0.1 /supershop/Admin/index/demo.html
+ERR: 模板不存在:D:/wnmp/www/supershop/Admin/View/Index/demo.html
+
+[ 2017-05-01T13:52:19+08:00 ] 127.0.0.1 /supershop/Admin/index/demo.html
+ERR: 模板不存在:D:/wnmp/www/supershop/Admin/View/Index/demo.html
+

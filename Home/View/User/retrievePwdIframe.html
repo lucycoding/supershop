@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <title>找回密码</title>
+
+  <link rel="shortcut icon" href="{$smarty.const.PUBLIC_URL}favicon.ico">
+  <link href="{$smarty.const.PUBLIC_URL}css/style.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="{$smarty.const.PUBLIC_URL}css/grid.css" media="screen" rel="stylesheet" type="text/css">
+ 
+  <script src="{$smarty.const.PUBLIC_URL}js/jquery-1.7.2.min.js" ></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/html5.js" ></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/jflow.plus.js"></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/jquery.carouFredSel-5.2.2-packed.js"></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/checkbox.js"></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/radio.js"></script>
+  <script src="{$smarty.const.PUBLIC_URL}js/selectBox.js"></script>
+
+</head>
+<body>
+  
+  <section id="main" class="entire_width">
+			<form class="registed" action="{$smarty.const.__CONTROLLER__}/retrievePwdIframe" method="post" name="f1" onSubmit="return toSubmit()">
+				<div style="margin-left: 15%">			
+				<div class="name">
+                                    <strong>请输入您要找回的账号:</strong></br>
+					<input type="text"  id="name" name="name" onblur="checkName()" value="{$smarty.session.user.user_name}"/>
+                                        <a href="javascript:void(0);" onclick="checkName()">检查账号</a>
+				</div><!-- .email -->	
+                                <div id="callbackdiv" style="display: none">
+				<div class="name">
+					<strong>密保问题:</strong>
+                                        <span id="question"></span>
+				</div><!-- .email -->	
+                                </br>
+				<div class="answer">
+					<strong>请输入密保答案:</strong></br>
+					<input type="text"  id="answer" name="answer"/>
+				</div><!-- .email -->
+                                </br>
+				<div class="newPwd">
+					<strong>请输入新密码:</strong></br>
+					<input type="password"  id="newPwd" name="newPwd"/>
+				</div><!-- .email -->
+                                </div>
+				<div style="margin-left: 28%">										
+					<button type="submit" style="width: 50px">提交</button>
+				</div><!-- .submit -->
+				</div>
+			</form><!-- .registed -->
+       
+      <div class="clear"></div>
+  </section><!-- #main -->
+  
+  <div class="clear"></div>
+    
+<script>
+    var controller_path = '{$smarty.const.__CONTROLLER__}';
+    {literal}
+    $(function(){
+        if($.trim($("#name").val()).length > 0){
+            $("#name").attr("disabled","disabled");
+            checkName();
+        }
+    });
+    function checkName() {
+        var name = $("#name").val();
+        if(name === ""){
+            $("#question").html("");
+            $("#callbackdiv").hide();
+            return;
+        }
+        $.ajax({ 
+            url:controller_path+"/checkNameExist/r="+new Date().getTime(), 
+            type:"post", 
+            data:{name:name},
+            dataType:"json",
+            success:function(data){
+                    if(data.status == 1){
+                        $("#question").html(data.data.safe_question);
+                        $("#callbackdiv").show();
+                    } else {
+                        $("#question").html("");
+                        $("#callbackdiv").hide();
+                        alert(data.info);
+                        return;
+                    }
+            }
+        });
+    }
+    function toSubmit(){
+        var name = $("#name").val();
+        var answer = $("#answer").val();
+        var newPwd = $("#newPwd").val();
+        if(newPwd == "") {
+            alert("请输入新密码");
+            return false;
+        }
+        if(name == "") {
+            alert("请输入账号");
+            return false;
+        }
+        if(answer == "") {
+            alert("请输入密保答案");
+            return false;
+        }
+        return true;
+    }
+    {/literal}
+</script>
+{$reterr}
+</body>
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+</html>

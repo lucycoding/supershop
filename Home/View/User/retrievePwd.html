@@ -33,35 +33,8 @@
 		</div><!-- .grid_12 -->
 		
 		<div class="grid_12">
-			<form class="registed" action="{$smarty.const.__CONTROLLER__}/retrievePwd" method="post" name="f1" onSubmit="return toSubmit()">
-				<div style="margin-left: 15%">			
-				<div class="name">
-                                    <strong>请输入您要找回的账号:</strong></br>
-					<input type="text"  id="name" name="name" onblur="checkName()"/>
-                                        <a href="javascript:void(0);" onclick="checkName()">检查账号</a>
-				</div><!-- .email -->	
-                                <div id="callbackdiv" style="display: none">
-				<div class="name">
-					<strong>密保问题:</strong>
-                                        <span id="question"></span>
-				</div><!-- .email -->	
-                                </br>
-				<div class="answer">
-					<strong>请输入密保答案:</strong></br>
-					<input type="text"  id="answer" name="answer"/>
-				</div><!-- .email -->
-                                </br>
-				<div class="newPwd">
-					<strong>请输入新密码:</strong></br>
-					<input type="password"  id="newPwd" name="newPwd"/>
-				</div><!-- .email -->
-                                </div>
-				<div style="margin-left: 425px">										
-					<button type="submit">提交</button>
-				</div><!-- .submit -->
-				</div>
-			</form><!-- .registed -->
-         </div><!-- .grid_6 -->
+                    <iframe scrolling="yes" width="100%" height="800px" frameborder="0" src="{$smarty.const.__CONTROLLER__}/retrievePwdIframe"></iframe>
+         </div><!-- .grid_12 -->
        </div><!-- #content -->
        
       <div class="clear"></div>
@@ -71,55 +44,6 @@
   <div class="clear"></div>
     
 {include file="../inc/footer.html"}
-<script>
-    var controller_path = '{$smarty.const.__CONTROLLER__}';
-    {literal}
-    function checkName() {
-        var name = $("#name").val();
-        if(name === ""){
-            $("#question").html("");
-            $("#callbackdiv").hide();
-            return;
-        }
-        $.ajax({ 
-            url:controller_path+"/checkNameExist/r="+new Date().getTime(), 
-            type:"post", 
-            data:{name:name},
-            dataType:"json",
-            success:function(data){
-                    if(data.status == 1){
-                        $("#question").html(data.data.safe_question);
-                        $("#callbackdiv").show();
-                    } else {
-                        $("#question").html("");
-                        $("#callbackdiv").hide();
-                        alert(data.info);
-                        return;
-                    }
-            }
-        });
-    }
-    function toSubmit(){
-        var name = $("#name").val();
-        var answer = $("#answer").val();
-        var newPwd = $("#newPwd").val();
-        if(newPwd == "") {
-            alert("请输入新密码");
-            return false;
-        }
-        if(name == "") {
-            alert("请输入账号");
-            return false;
-        }
-        if(answer == "") {
-            alert("请输入密保答案");
-            return false;
-        }
-        return true;
-    }
-    {/literal}
-</script>
-{$reterr}
 </body>
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 </html>
