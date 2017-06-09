@@ -44,4 +44,13 @@ class TestController extends CommonController{
         $FileOperator = new File();
         $FileOperator->writeContent(time());
     }
+    public function testSeo() {
+        // example usage:
+        echo $this->getSeoVersion("German cars are amazing.");
+    }
+
+    private function getSeoVersion($phrase) {
+        return preg_replace('/[^a-z0-9_-]/i', '', strtolower(str_replace(' ', '-', trim($phrase))));
+    }
+    
 }

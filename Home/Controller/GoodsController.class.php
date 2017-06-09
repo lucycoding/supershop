@@ -30,9 +30,35 @@ class GoodsController extends HomeController {
     /**
      * 商品分类page
      */
-    public function page($type = '') {
+    public function page($type = '', $keywords = '', $superType = '', $searchMethod = '', $content='') {
         $map = array();
         $cateName = '所有商品';
+        if($superType !=='' && $searchMethod !=='' && trim($content) !=='') {
+            $map['gc.type_id'] = $superType;
+            if($searchMethod == "GoodsName") {
+                $map_search['g.goods_name'] = array('like','%'.trim($content).'%');
+            }
+            else if($searchMethod == "author") {
+                $map_search['g.goods_brand'] = array('like','%'.trim($content).'%');
+            }
+            else if($searchMethod == "publisher") {
+                $map_search['g.goods_produce_place'] = array('like','%'.trim($content).'%');
+            }
+            if(count($map_search)>0){
+                $map_search['_logic'] = 'or';
+                $map['_complex'] = $map_search;
+                $cateName = "搜索结果";
+            }
+        }
+        $keywords = trim($keywords);
+        if($keywords != '') {
+            $map_like['g.goods_name'] = array('like','%'.$keywords.'%');
+            $map_like['g.goods_info'] = array('like','%'.$keywords.'%');
+            $map_like['_logic'] = 'or';
+            $map['_complex'] = $map_like;
+            $cateName = "搜索结果";
+            $this->assign('keywords',$keywords);// 搜索内容
+        }
         if(is_numeric($type)) {
             $Cate = D('Category');
             $catedata = $Cate->getByType_id($type);

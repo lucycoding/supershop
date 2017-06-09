@@ -24,6 +24,6 @@ function checkDetails(){
 		if(superType.value != "noChoice" && searchMethod.value != "noChoice" && content.value!=null && content.value!=""){
 				document.detailSearch.submit();
 		}else {
-			alert(superType.value+" "+searchMethod.value+" "+content.value+"请选择好你的查询条件或查询输入框不能为空！");
+			alert(superType.value+" "+searchMethod.value+" "+content.value+"请选择查询条件或查询输入框不能为空！");
 		}
 }

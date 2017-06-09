@@ -60,7 +60,7 @@ class UserController extends Tools\HomeController {
                 $this->assign("reterr", parent::retScriptErr($info["reterr"]));
             }else{
                 $this->addUserLoginLog(array('lng'=>$lng,'lat'=>$lat,'address'=>$address));
-                $this->assign("reterr", parent::retScriptErr("top.location.href='".HOME_URL."/Index/index';",true));
+                $this->assign("reterr", parent::retScriptErr("top.tb_remove();top.location.href='".HOME_URL."/Index/index';",true));
                 die($this->display());
                 //$this->redirect("Index/index");
             }

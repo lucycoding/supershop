@@ -23,6 +23,6 @@ define('DIR_SECURE_CONTENT', 'deney Access!');
 // 项目名称
 define('WEB_NAME', '露信网店');
 // 项目域名
-define('WEB_URL', 'http://192.168.3.146/supershop/');
+define('WEB_URL', 'http://192.168.3.27/supershop/');
 
 include('../ThinkPHP/ThinkPHP.php');
