@@ -3,6 +3,8 @@ namespace Home\Controller;
 use Tools;
 
 class UserController extends Tools\HomeController {
+    // 安全过滤访问方法
+    const SECURITY_FUNC = 'personalLoginLog,updateUserInfo,updatePwdByOldpwd';
     /**
      * 是否开启三次校验失败后自动开启验证码
      */
@@ -19,11 +21,21 @@ class UserController extends Tools\HomeController {
             'fontttf'   =>  '4.ttf',              // 验证码字体，不设置随机获取
             'bg'        =>  array(240, 240, 240),  // 背景颜色
         );
-    
     public function __construct() {
         parent::__construct();
         if(!array_key_exists("verify_flag", session())) {
             session("verify_flag", false);
+        }
+        // 安全过滤
+        $now_ac = ACTION_NAME; //当前访问的操作方法
+        $pos = strpos($this::SECURITY_FUNC, $now_ac);
+        if($pos>0||$pos===0) { // 在安全过滤访问方法中
+            if(is_null(session('user'))) { // session无用户数据,跳转至登录页
+                if($this->is_ajax_request()) {
+                    die(parent::retAjaxInfo(false, '未登录！'));
+                }
+                die(parent::retScriptErr('parent.location.href="'.HOME_URL.'/index";', true));
+            }
         }
     }
 

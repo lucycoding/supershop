@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>消息推送服务</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	
+	{include file="../inc/cssall.html"}
+  </head>
+  
+  <body>
+				<div class="row-fluid">
+			   	   <div class="box span12" style="margin-top:0">
+                                        <div>
+                                                <ul class="breadcrumb">
+                                                    <li><i class="icon-envelope"></i>消息推送服务</li>
+                                                </ul>
+                                        </div>
+					<form name="sendMsg_form">  
+					<fieldset style="margin-left: 30%">
+						
+						<div class="control-group">
+                                                    <label class="control-label">推送消息:</label>
+                                                    <textarea class="input-large focused" rows="10" cols="20" id="content" name="content"></textarea>
+						</div>
+                                            
+						<div class="form-actions" style="background-color: white;border: 0;margin-left: 20%">
+							<button class="btn btn-primary" id="sendMsgBtn"><i class="icon-bullhorn icon-white"></i>推送</button><br/>
+						</div> <!-- /form-actions -->
+					</fieldset>
+    	</form>
+						<br/><br/>
+					
+			    </div>  <!-- row-fluid -->				
+			</div>
+			<!--/#content.span9-->
+  		{include file="../inc/jsall.html"}
+                <script>
+                var controller_path = '{$smarty.const.__CONTROLLER__}';
+                {literal}
+                    $(function(){
+                        $(document).on('click','#sendMsgBtn',function(){
+                            var content = $("#content").val();
+                            if(content && content!=='') {
+                                $.ajax({ 
+                                    url:controller_path+"/sendWebMsg/r="+new Date().getTime(), 
+                                    type:"post", 
+                                    data:{content:content},
+                                    async:false,
+                                    dataType:"json",
+                                    success:function(data){
+                                            if(data.retval == 'ok'){
+                                                bootbox.alert('发送成功！');
+                                            } else {
+                                                bootbox.alert(data.retinfo);
+                                            }
+                                    }
+                                });
+                            }
+                        });
+                    });
+                {/literal}
+                </script>
+  </body>
+</html>
+

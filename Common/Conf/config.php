@@ -11,7 +11,7 @@ return array(
     
     // 默认分组设置
     'DEFAULT_MODULE'        =>  'Home', // 默认模块
-    'MODULE_ALLOW_LIST'     =>  array('Home','Admin'),    
+    'MODULE_ALLOW_LIST'     =>  array('Home','Admin','Api'),    
     
     // 切换模板引擎 默认Think
     'TMPL_ENGINE_TYPE'      =>  'Smarty', 
@@ -25,7 +25,7 @@ return array(
     'DB_NAME'               =>  'supershop',          // 数据库名
     'DB_USER'               =>  'root',      // 用户名
     'DB_PWD'                =>  '123456',          // 密码
-    'DB_PORT'               =>  '',        // 端口
+    'DB_PORT'               =>  '3308',        // 端口
     'DB_PREFIX'             =>  'tb_',    // 数据库表前缀
     'DB_PARAMS'          	=>  array(), // 数据库连接参数    
     'DB_DEBUG'  			=>  TRUE, // 数据库调试模式 开启后可以记录SQL日志
@@ -50,8 +50,15 @@ return array(
 //    'COOKIE_DOMAIN'         =>  '127.0.0.1',
     
     // 缓存配置
-    'DATA_CACHE_TYPE'     => 'Memcache',
-    'MEMCACHE_HOST'       => '127.0.0.1',
-    'MEMCACHE_PORT'       => '11211',
-    'DATA_CACHE_TIME'     => '3600',
+//    'DATA_CACHE_TYPE'     => 'Memcache',
+//    'MEMCACHE_HOST'       => '127.0.0.1',
+//    'MEMCACHE_PORT'       => '11211',
+//    'DATA_CACHE_TIME'     => '3600',
+
+    // 定时任务
+    /* 自动运行配置 */   
+//    'CRON_CONFIG_ON' => true, // 是否开启自动运行   
+//    'CRON_CONFIG' => array(   
+//        '测试执行定时任务' => array('Api/Test/testWriteFile', '5', ''), //路径(格式同R)、间隔秒（0为一直运行）、指定一个开始时间   
+//    ),  
 );

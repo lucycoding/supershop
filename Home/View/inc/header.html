@@ -28,40 +28,46 @@ function MoveBox(obj,goodsId,orderType) {
 <!-- /Added by HTTrack --></head>
   <div class="container_12">
     <div id="top" style="">
-      <div class="grid_2">
+      <div class="grid_4">
         <div class="phone_top">
           {$smarty.session.web_lang.TEL_NAME} 025-12345678
         </div><!-- .phone_top -->
+        <div id="online_msg"></div>
       </div><!-- .grid_3 -->
       
-      <div class="grid_6">
+      <div class="grid_5">
       	<marquee direction="left" scrollamount="4" style="padding-top: 15px;" truespeed="truespeed" onmouseover="this.stop()" onmouseout="this.start()" >
    	 		{$informs = $smarty.session.informList}
                         {if $informs|@count neq 0}
                                 {foreach $informs as $k=>$v} 
-                                    {$v.create_time}&nbsp;<a href="javascript:;" onclick="alert('{$v.inform_content}')">{$v.inform_title}</a>　
+                                    {$v.create_time|date_format:"%Y-%m-%d"}&nbsp;<a href="javascript:;" onclick="alert('{$v.inform_content}')">{$v.inform_title}</a>　
                                 {/foreach}
                         {else}
    	 			<font color="red">暂时没有公告</font>
                         {/if}
    	 	</marquee>
       </div>
-		<div class="grid_2">
-			<div class="welcome">
-			{*<% out.print("当前在线用户："+application.getAttribute("online"));%>*}
-			</div>
-		</div>
 
-      <div class="grid_2">
-
-        <div class="welcome">
+      <div class="grid_3">
+          
+        <div class="welcome" style="float:right">
+            欢迎光临　 
             {$user = $smarty.session.user}
             {if isset($user)}
-                欢迎光临　 <a href="###">{$user.user_name}</a>
+            <a href="###">{$user.user_name}</a><br/><span id="wallet"></span>
             {else}
-                欢迎光临　 <a title="用户登录" href="{$smarty.const.__MODULE__}/User/login?TB_iframe=true&width=450&height=450" class="thickbox">登录</a> / <a id="reg" title="用户注册" href="{$smarty.const.__MODULE__}/User/register?TB_iframe=true&width=600&height=450" class="thickbox">注册</a>
+            <a title="用户登录" href="{$smarty.const.__MODULE__}/User/login?TB_iframe=true&width=450&height=450" class="thickbox">登录</a> / <a id="reg" title="用户注册" href="{$smarty.const.__MODULE__}/User/register?TB_iframe=true&width=600&height=450" class="thickbox">注册</a>
             {/if}
         </div><!-- .welcome -->
+            {if isset($user)}
+        <!-- 推送消息显示 -->
+        <ul class="msg_nav" id="msg_nav" style="float:right;margin-right: 10px"> 
+            <li id="msg_li"><image src="{$smarty.const.PUBLIC_URL}img/li_let.png" style="margin-top:22px"/>
+                <ul id="msg_content">
+                </ul>
+            </li>
+        </ul> 
+        {/if}
       </div><!-- .grid_3 -->
     </div><!-- #top -->
 
@@ -216,7 +222,7 @@ $(function() {
 			}
 		});
 	});
-  
+        
 });
 
 function addcart(id) {
@@ -235,17 +241,65 @@ function addcart(id) {
     	}
     });	
 }
+
 </script>
 {if isset($user)}
+<script>
+$(function() { 
+    // 加载余额
+    var userId = "{$user.user_id}";
+    if(userId != "") {
+        showWallet(userId);
+    }
+    
+    $("#msg_nav").mouseover(function(){
+            if(typeof(int_msg)!="undefined") {
+                window.clearInterval(int_msg);
+            }
+        });
+});
+function showWallet(userId) {
+    $.ajax({ 
+    	url:"{$smarty.const.__MODULE__}/Wallet/getWallet/r="+new Date().getTime(), 
+    	type:"post", 
+    	data:{ userId:userId },
+        async:false,
+    	dataType:"json",
+    	success:function(data){
+    		if(data.status == 1){
+                    var userWalletHtml = "账户余额：";
+                    userWalletHtml += "￥"+data.data.wallet_rmb_balance;
+                    $("#wallet").html(userWalletHtml);
+    		}else{
+                    alert("查询失败！");
+                }
+    	}
+    });	
+}
+function runMsg(){
+    var msg_nav=document.getElementById('msg_nav');
+    if(msg_nav.style.visibility=="hidden"){ msg_nav.style.visibility=""; }else{ msg_nav.style.visibility="hidden"; }
+}
+</script>
+<!-- 推送消息服务器 -->
 <script src='http://cdn.bootcss.com/socket.io/1.3.7/socket.io.js'></script>
 <script>
     // 初始化io对象
-    var socket = io('http://192.168.3.27:2120');
+    var socket = io('{$smarty.const.MSG_SOCKET_URL}');
     // uid 可以为网站用户的uid，作为例子这里用session_id代替
     var uid = '{$user.user_id}';
-    // 当socket连接后发送登录请求
-    socket.on('connect', function(){ socket.emit('login', uid); });
-    // 当服务端推送来消息时触发，这里简单的aler出来，用户可做成自己的展示效果
-    socket.on('new_msg', function(msg){ alert(msg); });
+    if(uid != '') {
+        // 当socket连接后发送登录请求
+        socket.on('connect', function(){ socket.emit('login', uid); });
+        // 当服务端推送来消息时触发，这里简单的aler出来，用户可做成自己的展示效果
+        socket.on('new_msg', function(msg){ 
+            window.int_msg = setInterval(runMsg,500);
+            $("#msg_content").append('<li><a href="#">'+msg+'</a></li> ');
+        });
+        socket.on('update_online_count',function(msg){
+            var online_msg = document.getElementById('online_msg');
+            online_msg.innerHTML = msg;
+        });
+    }
 </script>
 {/if}

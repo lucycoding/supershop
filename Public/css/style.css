@@ -2741,3 +2741,28 @@ ul.f_contact li+li+li{background: url(../img/li_let.png) no-repeat 0px 50%;}
 	float: left;
 	margin: 0 22px 0 0;
 }
+/**************
+ * 新加消息下拉 *
+ **************/
+.msg_nav{line-height: 24px;  list-style-type: none;} 
+ 
+.msg_nav a{display: block; text-align:center} 
+ 
+.msg_nav a:link {color:#666; text-decoration:none} 
+.msg_nav a:visited {color:#666;text-decoration:none} 
+.msg_nav a:hover {color:#FFF;text-decoration:none;font-weight:bold} 
+ 
+.msg_nav li{float: left;} 
+.msg_nav li a:hover{ background:#999} 
+.msg_nav li ul{line-height: 27px;  list-style-type: none;text-align:left;left: -999em; width: 150px; position: absolute;z-index: 9999} 
+.msg_nav li ul li{float: left; width: 150px;background:#EFEFEF} 
+ 
+ 
+.msg_nav li ul a{display: block;text-align:left;padding-left:10px; overflow:hidden} 
+ 
+.msg_nav li ul a:link {color:#666; text-decoration:none} 
+.msg_nav li ul a:visited {color:#666;text-decoration:none} 
+.msg_nav li ul a:hover {color:#F3F3F3;text-decoration:none;font-weight:normal;background:#C00} 
+ 
+.msg_nav li:hover ul{left: auto} 
+.msg_nav li.sfhover ul{left: auto}
