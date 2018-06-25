@@ -50,5 +50,12 @@ class ManageOtherController extends AdminController {
         curl_close ( $ch );
         return $return;
     }
+    
+    /**
+     * 服务器监控页面
+     */
+    public function serverVmStat() {
+        redirect(SERVER_VMSTAT_URL, 0, '');
+    }
 }
 

@@ -23,10 +23,14 @@ define('DIR_SECURE_CONTENT', 'deney Access!');
 // 项目名称
 define('WEB_NAME', '时尚网店');
 // 项目域名
-define('WEB_URL', 'http://192.168.3.36/supershop/');
+define('WEB_URL', 'http://10.0.0.188/supershop/');
 // 消息推送服务器（接收）
-define('MSG_SOCKET_URL', 'http://192.168.3.36:2120');
+define('MSG_SOCKET_URL', 'http://10.0.0.188:2120');
 // 消息推送服务器（推送）
-define('MSG_SOCKET_SEND_URL', 'http://192.168.3.36:2121');
+define('MSG_SOCKET_SEND_URL', 'http://10.0.0.188:2121');
+// 游戏外链
+define('GAME_URL', 'http://10.0.0.188:8787');
+// 服务器监测
+define('SERVER_VMSTAT_URL', 'http://10.0.0.188:55555');
 
 include('../ThinkPHP/ThinkPHP.php');

@@ -23,5 +23,6 @@
           <div>上次登录：{$smarty.session.admin.last_login_time}</div>
           <div>上次登录ip：{$smarty.session.admin.last_login_ip}</div>
       </div>
+	  <iframe name="statIframe" scrolling="auto" frameborder="0" width="100%" height="150%" src="{$smarty.const.SERVER_VMSTAT_URL}"></iframe>		
   </body>
 </html>
